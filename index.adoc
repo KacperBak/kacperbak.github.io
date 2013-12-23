@@ -1,0 +1,10 @@
+rapid reference
+===============
+Kacper Bak <kontakt@kacperbak.de>
+
+== Welcome to rapid reference
+This site provides short references how some technologies work.
+No claim to completeness, correctness or something else, just take its content as notes.
+
+* http://kacperbak.github.io/AsciiDoc-AsciiDoctor.html[AsciiDoc with AsciiDoctor] raw doc example.
+
