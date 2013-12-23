@@ -1,0 +1,187 @@
+AsciiDoc/AsciiDoctor rapid refrence
+===================================
+Kacper Bak <kontakt@kacperbak.de>
+:description: This description goes right into the header. As it is an argument of the document, it also can be displayed in the plain text.
+:toc:
+:toc-placement: manual
+:source-highlighter: Highlight.js
+:source-highlighter: highlightjs  
+
+== Headers
+
+== Level 1 Header
+Content ...
+
+=== Level 2 Header 
+Content ...
+
+==== Level 3 Header
+Content ... 
+
+===== Level 4 Header
+Content ... 
+
+====== Level 5 Header
+Content ... 
+
+TODO further Header Levels (6)
+
+Paragraph
+---------
+In AsciiDoc, the main structural element is the paragraph.
+A paragraph consists of adjacent lines of text.
+
+To start a new paragraph, leave a blank line by hitting
+Enter twice, then just keep on typing.
+
+Text formatting
+---------------
+forced line break +
+normal, _italic_, *bold*, +mono+. normal, ^super^, ~sub~. + 
+Command: `ls -al` +
+Path: '/some/filez.txt'
+
+
+////
+Comment this line shall NEVER be displayed
+////
+
+////
+DEFINED ARGUMENTS
+////
+:key1: argument1Value
+
+
+Arguments
+---------
+Retrieving value from key1= {key1} +
+Retrieving Author-argument: {Author}
+
+ * Document settings are configured using attribute entries immediately _following the document title_ (without any blank lines in between). There are several options of interest.
+ 
+.For example the document description
+{description}
+
+IMPORTANT: Argument values are defined in asciidoc.adoc file. The *definition* itself is not going to be [red]#rendered# !
+
+Source code 
+-----------
+
+=== Inline
+Reference code like +types+ or +methods+ inline.
+
+
+=== Literal line
+Indent the line one space to insert a code snippet.
+
+ System.out.println("Hello AsciiDoctor")
+ 
+=== Literal block
+....
+$ java -version
+java version "1.7.0_45"
+Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
+Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)
+....
+
+=== Code block
+
+[source,java]
+----
+public class HelloWorld { <1> 
+ 
+    public static void main(String[] args)
+    {
+          System.out.println("Hello World!"); <2>
+    }
+}
+----
+<1> Class name
+<2> Simple stdout
+
+
+== Lists
+
+=== Bullet List
+
+* ListItem1
+* ListItem2
+** ListItem21
+** ListItem22
+*** ListItem221
+*** ListItem222
+*** ListItem223
+
+=== Labeled List
+
+Term 1:: Definition 1
+Term 2:: Definition 2
+Term 2.1::: Definition 2.1
+Term 2.2::: Definition 2.2
+Term 2.2.1:::: Definition 2.2.1
+Term 2.2.2:::: Definition 2.2.2
+Term 2.2.3:::: Definition 2.2.3
+
+== Create a .html file
+
+NOTE: The default file extension for AsciiDoc files is +ad+ . 
+
+.Generate a HTML file with AsciiDoctor
+This is the default command to generate a text file into an html document with AsciiDoctor. `asciidoctor test.ad`
+
+.Generate a HTML file with AsciiDoc
+If you are using the default installation of AsciiDoc, use this command. `python ~/asciidoc test.txt`
+
+TIP: My pesonal favorite is the +adoc+ extension. It clears out thats a file of type AsciiDoc, is short and is supported by GitHub.
+
+== Create a .pdf file
+
+[horizontal]
+1.:: Generate a DocBook file `$ asciidoctor -b docbook -d book sample.adoc`
+
+ sample.xml
+
+2.:: Run _fopub_ script on the current directory.
+
+ fopub sample.xml
+
+TIP: See the https://github.com/asciidoctor/asciidoctor-fopub/blob/master/README.adoc[project site] for install notes and detailed instructions.
+
+== Installation on mac
+
+[horizontal]
+1.:: Install JRuby for mac. +
+Download a *dmg* file from http://www.jruby.org/download[JRuby Downloads]
+
+2.:: Check installed JRuby version. +
+To do so, call this snippet from your home folder: `jruby -v` +
+Something like this should appear immediately:
+
+ jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java  HotSpot(TM) 64-Bit Server VM 1.7.0_45) [darwin-x86_64-java]
+
+3.:: Install asciidoctor. +
+Type `sudo gem install asciidoctor` into your CLI. +
+
+ Password: 
+ Successfully installed asciidoctor-0.1.4 1 
+ gem installed
+
+
+[horizontal]
+4.:: Check installed Asciidoctor. +
+Type `asciidoctor -V` to determine the current used version of AsciiDoctor. +
+
+ Asciidoctor 0.1.4 [http://asciidoctor.org]
+
+== Technical Facts
+ 
+ * AsciiDoc doesn’t care which extension you use. GitHub supports the extensions .asciidoc, .adoc and .asc 
+
+== Table of Contents on an arbitary document position
+toc::[]
+
+////
+SEE in Head section following init!
+:toc:
+:toc-placement: manual
+////
