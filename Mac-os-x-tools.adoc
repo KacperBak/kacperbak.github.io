@@ -15,25 +15,25 @@ It is uncomfortable to resize windows with OS X in the most common needed positi
 .Solution
 I'm not a big fan of microsoft products anymore, but in this case Windows 7 has introduced a very handy solution. It supports automatic resize for the most used window positions, just with the +window+ + +arrow+ keys. This approach is adopted by *Spectacle* app.
 
-* Simple to use
-* Free cause opensource
+* Simple to use.
+* Free, cause open source.
 * Keyboard shortcut based: +alt+ + +cmd+ + +arrows+ or ...
-* http://spectacleapp.com[Get it ...]
+* http://spectacleapp.com[Get it]
 
 == Alfred - Quick application launcher
 
 .Problem
-As a power user I want to have a very quick access to all my installed applications on my machine. Mac os has already a very powerful tool that can be used for this purpose: _spotlight_.
+As a power user I want to have a very quick access to all my installed applications on my machine. Mac os has already a very powerful tool that can be used for this purpose: _Spotlight_.
 But the results of _spotlight_ contains ALL types of indexed files and are not focused on applications.
 
 .Solution
-*Alfred* focuses on applications on your mac and displays only a set of apps as a result.
+*Alfred* focuses on applications on your mac and displays mostly a set of apps as a result.
 
-* Free in _basic_ version
-* Keyboard shortcut based: +alt+ + +space+
+* Free in _basic_ version.
+* Keyboard shortcut based: +alt+ + +space+.
 * Gets focus from _maximized_ and _minimized_ windows.
 * Reminds most used version of an app, in case of different versions are installed.
-* http://www.alfredapp.com[Get it ...]
+* http://www.alfredapp.com[Get it]
 
 == Clip Menu - Clipboard manager
 .Problem
@@ -41,12 +41,24 @@ If you handle a lot of content like account-, serial-numbers, text phrases or pi
 That feature would safe the effort to change the focus every time you copy from a different source. It should also be easy and fast to access the content from the clipboard by hot keys.
 
 .Solution
-All those needs are fulfilled with Clip Menu.
+All those needs are fulfilled with *Clip Menu*.
 
-* Copy content as you are used to by hitting +cmd+ + +c+
-* Paste content with +cmd+ + +shift+ + +v+
+* Copy content as you are used to by hitting +cmd+ + +c+.
+* Paste content with +cmd+ + +shift+ + +v+.
 * Increase access speed setting the following options:
-** Number of items place inline - 10
-** Add key equvalents to numeric keys - true
-* http://www.clipmenu.com[Get it ...]
+** Number of items place inline - 10.
+** Add key equvalents to numeric keys - true.
+* http://www.clipmenu.com[Get it]
 
+== TextExpander - Auto completion for your entire mac
+.Problem
+Any serious IDE has today an auto completion feature cause typing long phrases by hand takes time and is also error prone.
+So why should this feature be limited for developers?
+
+.Solution
+*TextExpander* brings completion of managed snippets to your entire mac.
+
+* Start with a simple match like your signature: Type +;kb+  to get _Kacper Bak_ completed.
+* Create entire text phrases, where only _new_ content has to be entered.
+* Demo version works without a license.
+* http://smilesoftware.com/TextExpander/index.html[Get it]
