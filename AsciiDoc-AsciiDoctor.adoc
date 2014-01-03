@@ -1,21 +1,16 @@
-AsciiDoc/AsciiDoctor rapid refrence
-===================================
-Kacper Bak <kontakt@kacperbak.de>
+= AsciiDoc/AsciiDoctor rapid reference
+An result of AsciiDoctor processor - by Kacper Bak
+
+:author: Kacper Bak
 :description: This description goes right into the header. As it is an argument of the document, it also can be displayed in the plain text.
 :toc:
 :toc-placement: manual
 :source-highlighter: Highlight.js
 :source-highlighter: highlightjs
+:docinfo1: docinfo-footer.html
 
-== Note
-This site provides short references how AsciiDoc works with AsciiDoctor.
-No claim to completeness, correctness or something else, just take its content as notes.
-
-See SourceCode https://raw.github.com/KacperBak/kacperbak.github.io/master/AsciiDoc-AsciiDoctor.adoc[here].
-
-More rapid refrence articles can be found http://kacperbak.github.io/[here].
-
-And GO...
+NOTE: This is a test page to try things out with AsciiDoc and AsciiDoctor. +
+See SourceCode https://raw.github.com/KacperBak/kacperbak.github.io/mastesr/AsciiDoc-AsciiDoctor.adoc[here].
 
 == Headers
 

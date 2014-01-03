@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spring Boot</title>
+<title>Mac OS X tools</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -362,9 +362,8 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </head>
 <body class="article">
 <div id="header">
-<h1>Spring Boot</h1>
-<span id="author" class="author">Kacper Bak</span><br>
-<span id="email" class="email"><a href="mailto:kontakt@kacperbak.de">kontakt@kacperbak.de</a></span><br>
+<h1>Mac OS X tools</h1>
+<span id="author" class="author">For best productivity with OS X - by Kacper Bak</span><br>
 </div>
 <div id="content">
 <div id="preamble">
@@ -372,139 +371,124 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="toc">
 <div class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_features">Features</a></li>
-<li><a href="#_notes">Notes</a></li>
-<li>
-<ul class="sectlevel2">
-<li><a href="#_building_java_projects_with_maven">Building Java Projects with Maven</a></li>
-<li><a href="#_maven_shade_plugin">maven shade plugin</a></li>
-</ul>
-</li>
+<li><a href="#_spectacle_the_missing_window_manager_in_os_x">Spectacle - The missing window manager in OS X</a></li>
+<li><a href="#_alfred_quick_application_launcher">Alfred - Quick application launcher</a></li>
+<li><a href="#_clip_menu_clipboard_manager">Clip Menu - Clipboard manager</a></li>
 </ul>
 </div>
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_features">Features</h2>
+<h2 id="_spectacle_the_missing_window_manager_in_os_x">Spectacle - The missing window manager in OS X</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<div class="title">Problem</div>
+<p>It is uncomfortable to resize windows with OS X in the most common needed positions like: halfscreen- left, right, up down or fullscreen at all. I know there exist a dedicated fullscreen mode in OS X, but that one is not always appropriate.</p>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>I&#8217;m not a big fan of microsoft products anymore, but in this case Windows 7 has introduced a very handy solution. It supports automatic resize for the most used window positions, just with the <code>window</code> + <code>arrow</code> keys. This approach is adopted by <strong>Spectacle</strong> app.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Create stand-alone Spring applications</p>
+<p>Simple to use</p>
 </li>
 <li>
-<p>Embed Tomcat or Jetty directly (no need to deploy WAR files)</p>
+<p>Free cause opensource</p>
 </li>
 <li>
-<p>Absolutely no code generation and no requirement for XML configuration</p>
+<p>Keyboard shortcut based: <code>alt</code> + <code>cmd</code> + <code>arrows</code> or &#8230;</p>
+</li>
+<li>
+<p><a href="http://spectacleapp.com">Get it &#8230;</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_notes">Notes</h2>
+<h2 id="_alfred_quick_application_launcher">Alfred - Quick application launcher</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_building_java_projects_with_maven">Building Java Projects with Maven</h3>
-<div class="paragraph">
-<div class="title">execute the compile goal</div>
-<p>Resulting in compiled .class files in the target/classes directory. <code>mvn compile</code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>.
-├── gs-maven.iml
-├── pom.xml
-├── src
-│   └── main
-│       └── java
-│           └── hello
-│               ├── Greeter.java
-│               └── HelloWorld.java
-└── target
-    └── classes
-        └── hello
-            ├── Greeter.class
-            └── HelloWorld.class</pre>
-</div>
-</div>
-<div class="paragraph">
-<div class="title">execute the package goal</div>
-<p>The package goal will <strong>compile</strong> your Java code, run any <strong>tests</strong>, and finish by packaging the code up in a <strong>JAR</strong> file within the <em>target</em> directory.
-<code>mvn package</code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>.
-├── dependency-reduced-pom.xml
-├── gs-maven.iml
-├── pom.xml
-├── src
-│   └── main
-│       └── java
-│           └── hello
-│               ├── Greeter.java
-│               └── HelloWorld.java
-└── target
-    ├── classes
-    │   └── hello
-    │       ├── Greeter.class
-    │       └── HelloWorld.class
-    ├── gs-maven-0.1.0.jar
-    ├── maven-archiver
-    │   └── pom.properties
-    ├── original-gs-maven-0.1.0.jar
-    └── surefire
-</pre>
-</div>
-</div>
-<div class="paragraph">
-<div class="title">execute the install goal</div>
-<p>The install goal will <strong>compile</strong>, <strong>test</strong>, and <strong>package</strong> your project’s code and then <strong>copy</strong> it into the local dependency repository, <strong>ready for another project to reference it as a dependency</strong>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_maven_shade_plugin">maven shade plugin</h3>
 <div class="paragraph">
 <div class="title">Problem</div>
-<p>Aggregating classes/resources from several artifacts into one uber JAR is straight forward as long as there is no overlap.
-Otherwise, some kind of logic to merge resources from several JARs is required. This is where resource transformers kick in.
-<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span></p>
+<p>As a power user I want to have a very quick access to all my installed applications on my machine. Mac os has already a very powerful tool that can be used for this purpose: <em>spotlight</em>.
+But the results of <em>spotlight</em> contains ALL types of indexed files and are not focused on applications.</p>
 </div>
 <div class="paragraph">
-<p>In this case: <em>ManifestResourceTransformer</em><br>
-The ManifestResourceTransformer allows existing entries in the MANIFEST to be replaced and new entries added.</p>
+<div class="title">Solution</div>
+<p><strong>Alfred</strong> focuses on applications on your mac and displays only a set of apps as a result.</p>
 </div>
 <div class="ulist">
-<div class="title">But what is the MANIFEST file?</div>
 <ul>
 <li>
-<p>Define the entry point of the Application, make the Jar executable. (MainClass has to be set)</p>
+<p>Free in <em>basic</em> version</p>
 </li>
 <li>
-<p>Add project dependency classpath.
-<span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span></p>
+<p>Keyboard shortcut based: <code>alt</code> + <code>space</code></p>
+</li>
+<li>
+<p>Gets focus from <em>maximized</em> and <em>minimized</em> windows.</p>
+</li>
+<li>
+<p>Reminds most used version of an app, in case of different versions are installed.</p>
+</li>
+<li>
+<p><a href="http://www.alfredapp.com">Get it &#8230;</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clip_menu_clipboard_manager">Clip Menu - Clipboard manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Problem</div>
+<p>If you handle a lot of content like account-, serial-numbers, text phrases or pictures it would be very helpful to have an extended clipboard, that contains more than one item.
+That feature would safe the effort to change the focus every time you copy from a different source. It should also be easy and fast to access the content from the clipboard by hot keys.</p>
+</div>
+<div class="paragraph">
+<div class="title">Solution</div>
+<p>All those needs are fulfilled with Clip Menu.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Copy content as you are used to by hitting <code>cmd</code> + <code>c</code></p>
+</li>
+<li>
+<p>Paste content with <code>cmd</code> + <code>shift</code> + <code>v</code></p>
+</li>
+<li>
+<p>Increase access speed setting the following options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Number of items place inline - 10</p>
+</li>
+<li>
+<p>Add key equvalents to numeric keys - true</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="http://www.clipmenu.com">Get it &#8230;</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a>. <a href="http://maven.apache.org/plugins/maven-shade-plugin/examples/resource-transformers.html#ManifestResourceTransformer">http://maven.apache.org/plugins/maven-shade-plugin/examples/resource-transformers.html#ManifestResourceTransformer</a>
-</div>
-<div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a>. <a href="http://www.mkyong.com/maven/how-to-create-a-manifest-file-with-maven/">http://www.mkyong.com/maven/how-to-create-a-manifest-file-with-maven/</a>
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2013-12-26 00:44:08 CET
+Last updated 2014-01-03 22:03:48 CET
+</div>
+<div style="color: #dddddd">
+<a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
 </div>
 </body>
