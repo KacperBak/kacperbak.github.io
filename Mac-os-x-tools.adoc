@@ -52,7 +52,7 @@ All those needs are fulfilled with *Clip Menu*.
 
 == TextExpander - Fast snippets for your entire mac
 .Problem
-Typing long phrases by hand takes time and is also error prone.
+Typing long phrases by hand takes time and is also error-prone.
 
 .Solution
 *TextExpander* brings managed snippets to your entire mac.
