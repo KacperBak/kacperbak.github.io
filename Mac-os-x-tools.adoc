@@ -10,7 +10,7 @@ toc::[]
 
 == Spectacle - The missing window manager in OS X
 .Problem
-It is uncomfortable to resize windows with OS X in the most common needed positions like: halfscreen- left, right, up down or fullscreen at all. I know there exist a dedicated fullscreen mode in OS X, but that one is not always appropriate.
+It is uncomfortable to resize windows with OS X in the most common needed positions like: halfscreen-left, -right, -up, -down or fullscreen at all. I know there exists a dedicated fullscreen mode in OS X, but that one is not always appropriate.
 
 .Solution
 I'm not a big fan of microsoft products anymore, but in this case Windows 7 has introduced a very handy solution. It supports automatic resize for the most used window positions, just with the +window+ + +arrow+ keys. This approach is adopted by *Spectacle* app.
@@ -23,8 +23,8 @@ I'm not a big fan of microsoft products anymore, but in this case Windows 7 has 
 == Alfred - Quick application launcher
 
 .Problem
-As a power user I want to have a very quick access to all my installed applications on my machine. Mac os has already a very powerful tool that can be used for this purpose: _Spotlight_.
-But the results of _spotlight_ contains ALL types of indexed files and are not focused on applications.
+As a power user I want to have a very quick access to all my installed applications on my machine. Mac OS has already a very powerful tool that can be used for this purpose: _Spotlight_.
+But the results of _spotlight_ contain ALL types of indexed files and are not focused on applications.
 
 .Solution
 *Alfred* focuses on applications on your mac and displays mostly a set of apps as a result.
@@ -37,8 +37,8 @@ But the results of _spotlight_ contains ALL types of indexed files and are not f
 
 == Clip Menu - Clipboard manager
 .Problem
-If you handle a lot of content like account-, serial-numbers, text phrases or pictures it would be very helpful to have an extended clipboard, that contains more than one item.
-That feature would safe the effort to change the focus every time you copy from a different source. It should also be easy and fast to access the content from the clipboard by hot keys.
+If you handle a lot of content like account-, serial-numbers, text phrases or pictures it would be very helpful to have an extended clipboard that contains more than one item.
+This feature would safe the effort to change the focus every time you copy from a different source. It should also be easy and fast to access the content from the clipboard by hot keys.
 
 .Solution
 All those needs are fulfilled with *Clip Menu*.
@@ -50,13 +50,15 @@ All those needs are fulfilled with *Clip Menu*.
 ** Add key equvalents to numeric keys - true.
 * http://www.clipmenu.com[Get it]
 
-== TextExpander - Auto completion for your entire mac
+== TextExpander - Fast snippets for your entire mac
 .Problem
-Any serious IDE has today an auto completion feature cause typing long phrases by hand takes time and is also error prone.
-So why should this feature be limited for developers?
+Typing long phrases by hand takes time and is also error prone.
 
 .Solution
-*TextExpander* brings completion of managed snippets to your entire mac.
+*TextExpander* brings managed snippets to your entire mac.
+For each common used word or paragraph, you can define a short phrase that is typed instead of the long term.
+Those phrases can also be parametrized so that only new content, like the current date or a bug number, has to be filled in.
+
 
 * Start with a simple match like your signature: Type +;kb+  to get _Kacper Bak_ completed.
 * Create entire text phrases, where only _new_ content has to be entered.
