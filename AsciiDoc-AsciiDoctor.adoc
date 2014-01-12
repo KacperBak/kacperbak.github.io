@@ -12,6 +12,10 @@ An result of AsciiDoctor processor - by Kacper Bak
 NOTE: This is a test page to try things out with AsciiDoc and AsciiDoctor. +
 See SourceCode https://raw.github.com/KacperBak/kacperbak.github.io/mastesr/AsciiDoc-AsciiDoctor.adoc[here].
 
+== Commands
+
+current command: asci -o "../adoc.out/file.html" file.adoc
+
 == Headers
 
 == Level 1 Header
