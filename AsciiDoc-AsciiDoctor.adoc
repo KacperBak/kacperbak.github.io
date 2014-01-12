@@ -182,6 +182,16 @@ Type `asciidoctor -V` to determine the current used version of AsciiDoctor. +
 
  Asciidoctor 0.1.4 [http://asciidoctor.org]
 
+[horizontal]
+5.:: Create an quick access alias - *optional step* +
+
+ alias asci="jruby /Library/Ruby/Gems/1.8/gems/asciidoctor-0.1.4/bin/asciidoctor"
+
+[horizontal]
+6.:: Create HTML-file with a different *name* in an *upper directory* - *optional step*
+
+ 'asci -o "../adoc.out/file.html" file.adoc'
+
 == Technical Facts
  
  * AsciiDoc doesn’t care which extension you use. GitHub supports the extensions .asciidoc, .adoc and .asc 
