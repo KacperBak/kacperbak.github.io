@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rapid reference</title>
+<title>VI notes</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -362,33 +362,442 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </head>
 <body class="article">
 <div id="header">
-<h1>Rapid reference</h1>
-<span id="author" class="author">My place for technical details - by Kacper Bak</span><br>
+<h1>VI notes</h1>
+<span id="author" class="author">My place for effective VI usage - by Kacper Bak</span><br>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_welcome_to_rapid_reference">Welcome to rapid reference</h2>
+<div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>This site provides articles and short references how some technologies work or can be improved.
-No claim to completeness, correctness or something else&#8230; just notes for my lazy brain and easy spreading.</p>
+<div class="toc">
+<div class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_sources">Sources</a></li>
+<li><a href="#_basics">Basics</a></li>
+<li><a href="#_switch_to_command_mode">Switch to command mode</a></li>
+<li><a href="#_movement">Movement</a></li>
+<li><a href="#_switch_to_edit_insert_mode">Switch to edit/insert mode</a></li>
+<li><a href="#_delete">Delete</a></li>
+<li><a href="#_copy_and_paste">Copy and Paste</a></li>
+<li><a href="#_search">Search</a></li>
+<li><a href="#_working_with_multiple_files">Working with multiple files</a></li>
+<li><a href="#_common_usage">Common usage</a></li>
+<li><a href="#_settings">Settings</a></li>
+</ul>
 </div>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sources">Sources</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://kacperbak.github.io/Mac-os-x-tools.html">Mac tools</a> for best productivity with OS X.</p>
+<p><a href="http://www.lagmonster.org/docs/vi.html">http://www.lagmonster.org/docs/vi.html</a></p>
 </li>
 <li>
-<p><a href="http://kacperbak.github.io/VI-effective-usage.html">Basic commands</a> for effective VI usage.</p>
+<p>Plötner, Wenzel - Linux das distributions unabhängige Handbuch</p>
+</li>
+<li>
+<p>Stackoverflow &#8230;</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_basics">Basics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>VI has two basic modes:</p>
+</div>
+<div class="paragraph">
+<div class="title">Command mode</div>
+<p>All actions around VI are taken from <em>command mode</em>.
+To enter <em>command mode</em> hit <code>ESC</code> key. As response the status bar indicates an empty state. To execute an command it should be initilized by an colon <code>:</code> followed by the command <code>q</code> (in this case <em>quit</em>) and finished by hitting the enter/return key <code>CR</code>.</p>
+</div>
+<div class="paragraph">
+<p>E.g. <code>:q</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Insert mode</div>
+<p>In this mode all key strokes are inserted into the document, like in common GUI editors.
+To get from <em>command mode</em> to <em>insert mode</em> the user has to hit <code>i</code>.
+The status bar indicates this state with <em>-- INSERT --</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_switch_to_command_mode">Switch to command mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ESC</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_movement">Movement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Most of the movement in the document is beeing done from <em>command mode</em>.In <em>insert mode</em> the user can navigate via the <code>arrow keys</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move one word forward</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move one word back</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move to start of the current line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move to end of current line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move one paragraph forward</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move one paragraph back</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ctrl + u (holding ctrl down)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scroll up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ctrl + d (holding ctrl down)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scroll down</p></td>
+</tr>
+</tbody>
+</table>
+
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Go to first line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Go to last line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42G</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Go to line 42</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_switch_to_edit_insert_mode">Switch to edit/insert mode</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert before cursor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert before line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Append after cursor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Append after line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start new line after current line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start new line before current line</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_delete">Delete</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete 7 lines</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_copy_and_paste">Copy and Paste</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy the current line with <code>yy</code></p>
+</li>
+<li>
+<p>Move with the cursor to the wanted position</p>
+</li>
+<li>
+<p>Paste with <code>p</code> command</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy current line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7yy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy 7 lines</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paste</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate current line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ddkkp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move line up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ddp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move line down</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_search">Search</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/foo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for the pattern <em>foo</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/\cfoo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for the pattern <em>foo</em> and ignore case</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for next instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for previous instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:%s/foo/bar/gci</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Case insensitive search and replace<br>
+Change each <em>foo</em> into <em>bar</em><br>
+Interactive confirmation for each step.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_with_multiple_files">Working with multiple files</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open or edit file inside VI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Close file inside VI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:bd</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all open files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:ls</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch to open file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:b fileName</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_common_usage">Common usage</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ctrl + n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trigger VI Autocompletion</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Repeat last action with one key stroke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo last action</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_settings">Settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To configure VI use the keyword <code>set</code>.<br>
+The following command disables the line numbers e.g.: <code>set nonumber</code></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:33%;">
+<col style="width:33%;">
+<col style="width:33%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(no)number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables/Disables line numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">syntax</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use syntax highlighting of a specific language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set syntax=asciidoc</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-02-05 15:45:05 +01:00
+Last updated 2014-02-05 15:54:06 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
