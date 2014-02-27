@@ -10,17 +10,18 @@ toc::[]
 
 == Sources
 * http://www.lagmonster.org/docs/vi.html
-* Plötner, Wenzel - Linux das distributions unabhängige Handbuch
-* Stackoverflow ...
+* http://stackoverflow.com/questions/tagged/vi+vim
+* Plötner, Wenzel - Linux das distributionsunabhängige Handbuch
+
 
 == Basics
 VI has two basic modes:
 
 .Command mode
 All actions around VI are taken from _command mode_.
-To enter _command mode_ hit +ESC+ key. As response the status bar indicates an empty state. To execute an command it should be initilized by an colon +:+ followed by the command +q+ (in this case _quit_) and finished by hitting the enter/return key +CR+.
+To enter _command mode_ hit +ESC+ key. As response the status bar indicates an empty state. To execute a command it should be initilized by a colon +:+ followed by the command +q+ (in this case _quit_) and finished by hitting the enter/return key +CR+.
 
-E.g. +:q+
+E.g. +:q+ +Enter+
 
 .Insert mode
 In this mode all key strokes are inserted into the document, like in common GUI editors.
@@ -31,7 +32,7 @@ The status bar indicates this state with _-- INSERT --_.
 ESC
 
 == Movement
-Most of the movement in the document is beeing done from _command mode_.In _insert mode_ the user can navigate via the +arrow keys+.
+Most of the movement in the document is being done from _command mode_. In _insert mode_ the user can navigate via the +arrow keys+.
 
 [cols="1,1", options="header"]
 |===
