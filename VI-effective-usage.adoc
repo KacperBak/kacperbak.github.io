@@ -197,17 +197,17 @@ Interactive confirmation for each step.
 |Command
 |Description
 
-|Open or edit file inside VI
 |:e
+|Open or edit file inside VI
 
-|Close file inside VI
 |:bd
+|Close file inside VI
 
-|Display all open files
 |:ls
+|Display all open files
 
-|Switch to open file
 |:b fileName
+|Switch to open file
 
 |===
 
