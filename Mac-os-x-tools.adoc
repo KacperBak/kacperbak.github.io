@@ -2,23 +2,34 @@
 For best productivity with OS X - by Kacper Bak
 
 :author: Kacper Bak
+:imagesdir: ./img
 :toc:
 :toc-placement: manual
 :docinfo1: docinfo-footer.html
 
 toc::[]
 
-== Spectacle - The missing window manager in OS X
+== BetterSnapTool and Spectacle - Window managers in OS X
 .Problem
-It is uncomfortable to resize windows with OS X in the most common needed positions like: halfscreen-left, -right, -up, -down or fullscreen at all. I know there exists a dedicated fullscreen mode in OS X, but that one is not always appropriate.
+It is uncomfortable to resize windows with OS X in the most common needed positions like: halfscreen-**left**, -**right**, -**up**, -**down** or **expanded to fullscreen** at all.
+And the given default options of full-screen mode and maximize are not sufficient if you are used to work with a lot of application windows.
+Especially that a lot of actions in OS X are based on drag and drop, so that resizing and positioning windows is a vital performance aspect.
 
-.Solution
-I'm not a big fan of microsoft products anymore, but in this case Windows 7 has introduced a very handy solution. It supports automatic resize for the most used window positions, just with the +window+ + +arrow+ keys. This approach is adopted by *Spectacle* app.
+.Solutions
+I'm not a big fan of microsoft products anymore, but in this case Windows 7 has introduced a very handy solution.
+It supports automatic resize for the most used window positions, just with the +window+ + +arrow+ keys. This approach is adopted by apps like **BetterSnapTool** and **Spectacle**.
 
-* Simple to use.
-* Free, cause open source.
-* Keyboard shortcut based: +alt+ + +cmd+ + +arrows+ or ...
-* http://spectacleapp.com[Get it]
+https://itunes.apple.com/de/app/bettersnaptool/id417375580?mt=12&uo=4[**BetterSnapTool**]
+is very simple to use, by custumizable keyboard shortcuts or simple drag and drop of app windows.
+To avoid collisions with other tools on my system, I use the +ctrl+ + +alt+ + +...+ mapping.
+While +...+ is mapped to a keyboard +key+ for an action or a window position.
+
+image::BetterSnapTool-key-mapping.png[BetterSnapTool-key-mapping.png, align="center"]
+
+I also enjoy the multi monitor support, that allows to move a app window to the next connected monitor.
+BetterSnapTool is a commercial tool but moderately priced. With the expense of two bucks you get a higly reliable and customizable solution.
+
+http://spectacleapp.com[**Spectacle**] is the right app if you looking for an open source solution for **keyboard** usage **only**.
 
 == Alfred - Quick application launcher
 
@@ -34,21 +45,6 @@ But the results of _spotlight_ contain ALL types of indexed files and are not fo
 * Gets focus from _maximized_ and _minimized_ windows.
 * Reminds most used version of an app, in case of different versions are installed.
 * http://www.alfredapp.com[Get it]
-
-== Clip Menu - Clipboard manager
-.Problem
-If you handle a lot of content like account-, serial-numbers, text phrases or pictures it would be very helpful to have an extended clipboard that contains more than one item.
-This feature would safe the effort to change the focus every time you copy from a different source. It should also be easy and fast to access the content from the clipboard by hot keys.
-
-.Solution
-All those needs are fulfilled with *Clip Menu*.
-
-* Copy content as you are used to by hitting +cmd+ + +c+.
-* Paste content with +cmd+ + +shift+ + +v+.
-* Increase access speed setting the following options:
-** Number of items place inline - 10.
-** Add key equvalents to numeric keys - true.
-* http://www.clipmenu.com[Get it]
 
 == TextExpander - Fast snippets for your entire mac
 .Problem
