@@ -1,5 +1,5 @@
 = AsciiDoc/AsciiDoctor rapid reference
-An result of AsciiDoctor processor - by Kacper Bak
+Kacper Bak <http://kacperbak.de>
 
 :author: Kacper Bak
 :description: This description goes right into the header. As it is an argument of the document, it also can be displayed in the plain text.
@@ -21,17 +21,17 @@ current command: asci -o "../adoc.out/file.html" file.adoc
 == Level 1 Header
 Content ...
 
-=== Level 2 Header 
+=== Level 2 Header
 Content ...
 
 ==== Level 3 Header
-Content ... 
+Content ...
 
 ===== Level 4 Header
-Content ... 
+Content ...
 
 ====== Level 5 Header
-Content ... 
+Content ...
 
 TODO: How to mark deeper levels?
 
@@ -46,7 +46,7 @@ Enter twice, then just keep on typing.
 Text formatting
 ---------------
 forced line break +
-normal, _italic_, *bold*, +mono+. normal, ^super^, ~sub~. + 
+normal, _italic_, *bold*, +mono+. normal, ^super^, ~sub~. +
 Command: `ls -al` +
 Path: '/some/filez.txt'
 
@@ -67,13 +67,13 @@ Retrieving value from key1= {key1} +
 Retrieving Author-argument: {Author}
 
  * Document settings are configured using attribute entries immediately _following the document title_ (without any blank lines in between). There are several options of interest.
- 
+
 .For example the document description
 {description}
 
 IMPORTANT: Argument values are defined in asciidoc.adoc file. The *definition* itself is not going to be [red]#rendered# !
 
-Source code 
+Source code
 -----------
 
 === Inline
@@ -84,7 +84,7 @@ Reference code like +types+ or +methods+ inline.
 Indent the line one space to insert a code snippet.
 
  System.out.println("Hello AsciiDoctor")
- 
+
 === Literal block
 ....
 $ java -version
@@ -97,8 +97,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)
 
 [source,java]
 ----
-public class HelloWorld { <1> 
- 
+public class HelloWorld { <1>
+
     public static void main(String[] args)
     {
           System.out.println("Hello World!"); <2>
@@ -133,7 +133,7 @@ Term 2.2.3:::: Definition 2.2.3
 
 == Create a .html file
 
-NOTE: The default file extension for AsciiDoc files is +ad+ . 
+NOTE: The default file extension for AsciiDoc files is +ad+ .
 
 .Generate a HTML file with AsciiDoctor
 This is the default command to generate a text file into an html document with AsciiDoctor. `asciidoctor test.ad`
@@ -171,8 +171,8 @@ Something like this should appear immediately:
 3.:: Install asciidoctor. +
 Type `sudo gem install asciidoctor` into your CLI. +
 
- Password: 
- Successfully installed asciidoctor-0.1.4 1 
+ Password:
+ Successfully installed asciidoctor-0.1.4 1
  gem installed
 
 
@@ -193,8 +193,8 @@ Type `asciidoctor -V` to determine the current used version of AsciiDoctor. +
  'asci -o "../adoc.out/file.html" file.adoc'
 
 == Technical Facts
- 
- * AsciiDoc doesn’t care which extension you use. GitHub supports the extensions .asciidoc, .adoc and .asc 
+
+ * AsciiDoc doesn’t care which extension you use. GitHub supports the extensions .asciidoc, .adoc and .asc
 
 == Table of Contents on an arbitary document position
 toc::[]
