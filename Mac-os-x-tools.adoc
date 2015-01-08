@@ -1,7 +1,9 @@
-= Mac OS X tools
-For best productivity with OS X - by Kacper Bak
+= OS X tools - For best productivity
+Kacper Bak <http://kacperbak.de>
 
 :author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
 :toc:
 :toc-placement: manual
 :docinfo1: docinfo-footer.html

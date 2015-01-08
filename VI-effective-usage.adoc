@@ -1,18 +1,13 @@
-= VI notes
-My place for effective VI usage - by Kacper Bak
+= VI notes - For basic VI usage
+Kacper Bak <http://kacperbak.de>
 
 :author: Kacper Bak
+:homepage: http://kacperbak.de
 :toc:
 :toc-placement: manual
 :docinfo1: docinfo-footer.html
 
 toc::[]
-
-== Sources
-* http://www.lagmonster.org/docs/vi.html
-* http://stackoverflow.com/questions/tagged/vi+vim
-* Plötner, Wenzel - Linux das distributionsunabhängige Handbuch
-
 
 == Basics
 VI has two basic modes:
@@ -104,7 +99,7 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Start new line after current line
 
 |O
-|Start new line before current line 
+|Start new line before current line
 
 |===
 
@@ -142,10 +137,10 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Command
 |Description
 
-|yy 
+|yy
 |Copy current line
 
-|7yy 
+|7yy
 |Copy 7 lines
 
 |p
@@ -184,7 +179,7 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Search for previous instance
 
 |:%s/foo/bar/gci
-|Case insensitive search and replace + 
+|Case insensitive search and replace +
 Change each 'foo' into 'bar' +
 Interactive confirmation for each step.
 
@@ -230,7 +225,7 @@ Interactive confirmation for each step.
 |===
 
 == Settings
-To configure VI use the keyword +set+. + 
+To configure VI use the keyword +set+. +
 The following command disables the line numbers e.g.: +set nonumber+
 
 [cols="1,1,1", options="header"]
@@ -246,6 +241,11 @@ The following command disables the line numbers e.g.: +set nonumber+
 
 |syntax
 |Use syntax highlighting of a specific language
-|set syntax=asciidoc 
+|set syntax=asciidoc
 
 |===
+
+== Sources
+* http://www.lagmonster.org/docs/vi.html
+* http://stackoverflow.com/questions/tagged/vi+vim
+* Plötner, Wenzel - Linux das distributionsunabhängige Handbuch
