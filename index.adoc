@@ -9,5 +9,6 @@ Kacper Bak <http://kacperbak.de>
 This site provides articles and short references how some technologies work or can be improved.
 No claim to completeness, correctness or something else... just notes for my lazy brain and easy spreading.
 
-* http://kacperbak.github.io/Mac-os-x-tools.html[Mac tools] for best productivity with OS X.
+* http://kacperbak.github.io/Basic-Bash-usage.html[Basic bash] usage on OS X and Ubuntu Linux.
 * http://kacperbak.github.io/VI-effective-usage.html[Basic commands] for effective VI usage.
+* http://kacperbak.github.io/Mac-os-x-tools.html[Mac tools] for best productivity with OS X.

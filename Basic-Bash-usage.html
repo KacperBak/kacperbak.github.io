@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VI notes - For basic VI usage</title>
+<title>Basic bash usage</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -362,7 +362,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </head>
 <body class="article">
 <div id="header">
-<h1>VI notes - For basic VI usage</h1>
+<h1>Basic bash usage</h1>
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de">http://kacperbak.de</a></span><br>
 </div>
@@ -372,62 +372,163 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="toc">
 <div class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_basics">Basics</a></li>
-<li><a href="#_switch_to_command_mode">Switch to command mode</a></li>
-<li><a href="#_movement">Movement</a></li>
-<li><a href="#_switch_to_edit_insert_mode">Switch to edit/insert mode</a></li>
-<li><a href="#_delete">Delete</a></li>
-<li><a href="#_copy_and_paste">Copy and Paste</a></li>
-<li><a href="#_search">Search</a></li>
-<li><a href="#_working_with_multiple_files">Working with multiple files</a></li>
-<li><a href="#_common_usage">Common usage</a></li>
-<li><a href="#_settings">Settings</a></li>
-<li><a href="#_sources">Sources</a></li>
+<li><a href="#_basic_unix_commands">Basic unix commands</a></li>
+<li><a href="#_platform_dependent_tools">Platform dependent tools</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_os_x_using_pasteboard_clipboard">OS X - Using pasteboard/clipboard</a></li>
+<li><a href="#_ubuntu_linux">Ubuntu Linux</a></li>
+</ul>
+</li>
+<li><a href="#_bash_configuration">Bash Configuration</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_mac_os_x">Mac OS X</a></li>
+<li><a href="#_ubuntu_linux_2">Ubuntu Linux</a></li>
+</ul>
+</li>
 </ul>
 </div>
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_basics">Basics</h2>
+<h2 id="_basic_unix_commands">Basic unix commands</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>VI has two basic modes:</p>
-</div>
-<div class="paragraph">
-<div class="title">Command mode</div>
-<p>All actions around VI are taken from <em>command mode</em>.
-To enter <em>command mode</em> hit <code>ESC</code> key. As response the status bar indicates an empty state. To execute a command it should be initilized by a colon <code>:</code> followed by the command <code>q</code> (in this case <em>quit</em>) and finished by hitting the enter/return key <code>CR</code>.</p>
-</div>
-<div class="paragraph">
-<p>E.g. <code>:q</code> <code>Enter</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Insert mode</div>
-<p>In this mode all key strokes are inserted into the document, like in common GUI editors.
-To get from <em>command mode</em> to <em>insert mode</em> the user has to hit <code>i</code>.
-The status bar indicates this state with <em>-- INSERT --</em>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_switch_to_command_mode">Switch to command mode</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>ESC</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_movement">Movement</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Most of the movement in the document is being done from <em>command mode</em>. In <em>insert mode</em> the user can navigate via the <code>arrow keys</code>.</p>
-</div>
 <table class="tableblock frame-all grid-all" style="width:100%; ">
+<caption class="title">Table 1. Basic Bash commands</caption>
 <colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
+<col style="width:33%;">
+<col style="width:66%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Unix Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tail -f *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays last lines of <strong>ALL files</strong> in current directory, waits for further input</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grep -ir "main(String\[\] args)" .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Look for the string <code>main(String[] args</code> in <strong>ALL</strong> files of the current directory<br>
+<code>-i</code>: case insensitive<br>
+<code>-r</code>: recursive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find . | grep -i app.jar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all <code>app.jar</code> files in current directory case insensitive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cp -r /src/dir/. /dest/dir/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copies <strong>ALL files</strong>, including <strong>hidden files</strong> and the whole directory structure <strong>recursiv</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">echo "myLine" &gt;&gt; file.txt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Write the String <em>myLine</em> inside of the file <code>file.txt</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">df -h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays statistics about the amount of free disk space in "Human-readable" output.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">du -sh folderName OR fileName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays size in human readable format of <code>folderName</code> OR <code>fileName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mkdir -p src/main/java</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a parent directory <code>src</code>, a child directory <code>main</code> and another child <code>java</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ls -ltr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list all files in time stamped in reverse order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ls -al | tee out.txt | grep test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tee</strong> reads standard input and writes it to both standard output and one or more files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find /tmp -name core -type f -print | xargs /bin/rm -f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find files named <code>core</code> <strong>in</strong> OR <strong>below</strong> the directory <code>/tmp</code> and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grep .svn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xargs  rm -f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find all files containing the pattern <code>.svn</code> in the current directory and delete them.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chown -R bakka /home/bakka</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change ownership of directory <code>/home/bakka</code> to user <code>bakka</code> ALL including files and subdirectories are affected.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">top -o command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays periodically a sorted list of system processes, sorted by <strong>command</strong> name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scp LocalFile.example User@Host:Verzeichnis/DestinationFile.example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>LocalFile.example</code> from YOUR mashine to the HOST in <code>DestinationFile.example</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scp User@Host:/home/bakka/HostFile.example DestinationFile.example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>HostFile.example</code> from the HOST to YOUR local maschine as <code>DestinationFile.example</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for i in *.jpg; do mv "$i" "my.$i"; done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loop: for each file that end with <code>jpg</code> rename the file to the current name with the prefix <code>my.</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tar zxfv file.tar.gz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tar</strong> process stream files<br>
+<code>z</code>: uncompress gunzip<br>
+<code>x</code>: extraxt<br>
+<code>f</code>: force overwrite existing<br>
+<code>v</code>: verbose</p></td>
+</tr>
+</tbody>
+</table>
+
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<caption class="title">Table 2. Network</caption>
+<colgroup>
+<col style="width:33%;">
+<col style="width:66%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Unix Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ifconfig -a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display information about all interfaces in the system</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nslookup mucsgvpint64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query Internet domain name servers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">netstat -a -n -p TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows network status with IP adresses and ports<br>
+<code>-a</code>: All connections<br>
+<code>-n</code>: Show adresses and ports as numbers<br>
+<code>-p</code>: Protokol: TCP</p></td>
+</tr>
+</tbody>
+</table>
+
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<caption class="title">Table 3. Bash environment</caption>
+<colgroup>
+<col style="width:33%;">
+<col style="width:66%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -437,57 +538,8 @@ The status bar indicates this state with <em>-- INSERT --</em>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move one word forward</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move one word back</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move to start of the current line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move to end of current line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">}</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move one paragraph forward</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move one paragraph back</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ctrl + u (holding ctrl down)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scroll up</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ctrl + d (holding ctrl down)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scroll down</p></td>
-</tr>
-</tbody>
-</table>
-
-<table class="tableblock frame-all grid-all" style="width:100%; ">
-<colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Go to first line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Go to last line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">42G</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Go to line 42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">printenv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List ALL environment variables</p></td>
 </tr>
 </tbody>
 </table>
@@ -495,310 +547,109 @@ The status bar indicates this state with <em>-- INSERT --</em>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_switch_to_edit_insert_mode">Switch to edit/insert mode</h2>
+<h2 id="_platform_dependent_tools">Platform dependent tools</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width:100%; ">
-<colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert before cursor</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert before line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Append after cursor</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Append after line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Start new line after current line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Start new line before current line</p></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_delete">Delete</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width:100%; ">
-<colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a character</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dw</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a word</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7dd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete 7 lines</p></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_copy_and_paste">Copy and Paste</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Copy the current line with <code>yy</code></p>
-</li>
-<li>
-<p>Move with the cursor to the wanted position</p>
-</li>
-<li>
-<p>Paste with <code>p</code> command</p>
-</li>
-</ol>
-</div>
-<table class="tableblock frame-all grid-all" style="width:100%; ">
-<colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy current line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7yy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy 7 lines</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Paste</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yyp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate current line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ddkkp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move line up</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ddp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move line down</p></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_search">Search</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width:100%; ">
-<colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/foo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search for the pattern <em>foo</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/\cfoo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search for the pattern <em>foo</em> and ignore case</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search for next instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search for previous instance</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:%s/foo/bar/gci</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Case insensitive search and replace<br>
-Change each <em>foo</em> into <em>bar</em><br>
-Interactive confirmation for each step.</p></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_working_with_multiple_files">Working with multiple files</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width:100%; ">
-<colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:e</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open or edit file inside VI</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:bd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Close file inside VI</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:ls</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Display all open files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:b fileName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Switch to open file</p></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_common_usage">Common usage</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width:100%; ">
-<colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ctrl + n</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trigger VI Autocompletion</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repeat last action with one key stroke</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Undo last action</p></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_settings">Settings</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To configure VI use the keyword <code>set</code>.<br>
-The following command disables the line numbers e.g.: <code>set nonumber</code></p>
-</div>
+<div class="sect2">
+<h3 id="_os_x_using_pasteboard_clipboard">OS X - Using pasteboard/clipboard</h3>
 <table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
 <col style="width:33%;">
-<col style="width:33%;">
-<col style="width:33%;"> 
+<col style="width:66%;"> 
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Command</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(no)number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables/Disables line numbers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pwd | pbcopy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(1) Copies current directory inside the clipboard</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">syntax</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use syntax highlighting of a specific language</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set syntax=asciidoc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cd `pbpaste`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(2) changes directory to the value inside clipboard</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="_ubuntu_linux">Ubuntu Linux</h3>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:33%;">
+<col style="width:66%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Linux Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dpkg -i package.deb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installs debian package <code>package.deb</code>, requires <code>sudo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update debian package list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get install ExmpPackage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installs <code>ExmpPackage</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get remove ExmpPackage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes <code>ExmpPackage</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get purge ExmpPackage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes <code>ExmpPackage</code> and wipeouts any configuration</p></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_sources">Sources</h2>
+<h2 id="_bash_configuration">Bash Configuration</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_mac_os_x">Mac OS X</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://www.lagmonster.org/docs/vi.html">http://www.lagmonster.org/docs/vi.html</a></p>
-</li>
-<li>
-<p><a href="http://stackoverflow.com/questions/tagged/vi+vim">http://stackoverflow.com/questions/tagged/vi+vim</a></p>
-</li>
-<li>
-<p>Plötner, Wenzel - Linux das distributionsunabhängige Handbuch</p>
+<p><a href="http://apple.stackexchange.com/questions/71101/how-do-i-make-%E2%8C%98%E2%86%90-and-%E2%8C%98%E2%86%92-work-for-home-end-combo-for-terminal">move cursor to beginning of line | move cursor to end of line</a></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ubuntu_linux_2">Ubuntu Linux</h3>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:33%;">
+<col style="width:66%;"> 
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export PS1='\u@\h:\W$ '</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prompt shows only current directory in ubuntu-bash.</p></td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-01-08 22:14:28 +01:00
+Last updated 2015-01-30 19:14:32 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
