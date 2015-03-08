@@ -54,13 +54,13 @@ toc::[]
 |find /tmp -name core -type f -print \| xargs /bin/rm -f
 |Find files named `core` *in* OR *below* the directory `/tmp` and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.
 
-|find . | grep .svn | xargs  rm -f
+|find . \| grep .svn \| xargs  rm -f
 |Find all files containing the pattern `.svn` in the current directory and delete them.
 
 |chown -R bakka /home/bakka
 |Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
 
-|ps aux | grep -i java
+|ps aux \| grep -i java
 |Displays all current running processes containing `java` as name.
 
 |top -pid 66939
