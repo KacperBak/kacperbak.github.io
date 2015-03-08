@@ -60,17 +60,20 @@ toc::[]
 |chown -R bakka /home/bakka
 |Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
 
-|top -o command
-|Displays periodically a sorted list of system processes, sorted by *command* name
+|ps aux | grep -i java
+|Displays all current running processes containing `java` as name.
+
+|top -pid 66939
+|Displays detailed view of the process with the given process ID.
+
+|grep -i git ~/.bash_history
+|Show all current `git` calls
 
 |scp LocalFile.example User@Host:Verzeichnis/DestinationFile.example
 |Copys `LocalFile.example` from YOUR mashine to the HOST in `DestinationFile.example`
 
 |scp User@Host:/home/bakka/HostFile.example DestinationFile.example
 |Copys `HostFile.example` from the HOST to YOUR local maschine as `DestinationFile.example`
-
-|for i in *.jpg; do mv "$i" "my.$i"; done
-|Loop: for each file that end with `jpg` rename the file to the current name with the prefix `my.`
 
 |tar zxfv file.tar.gz
 |*tar* process stream files +
@@ -168,3 +171,15 @@ toc::[]
 |Prompt shows only current directory in ubuntu-bash.
 
 |===
+
+== Bash Scripting
+=== Simple loop
+
+[cols="1,2"]
+|===
+
+|for i in *.jpg; do mv "$i" "my.$i"; done
+|Loop: for each file that end with `jpg` rename the file to the current name with the prefix `my.`
+
+|===
+

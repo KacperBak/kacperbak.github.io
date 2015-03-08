@@ -387,6 +387,12 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_ubuntu_linux_2">Ubuntu Linux</a></li>
 </ul>
 </li>
+<li><a href="#_bash_scripting">Bash Scripting</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_simple_loop">Simple loop</a></li>
+</ul>
+</li>
 </ul>
 </div>
 
@@ -467,28 +473,28 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <td class="tableblock halign-left valign-top"><p class="tableblock">Change ownership of directory <code>/home/bakka</code> to user <code>bakka</code> ALL including files and subdirectories are affected.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">top -o command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays periodically a sorted list of system processes, sorted by <strong>command</strong> name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ps aux</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grep -i java</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all current running processes containing <code>java</code> as name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">top -pid 66939</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays detailed view of the process with the given process ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grep -i git ~/.bash_history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show all current <code>git</code> calls</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scp LocalFile.example User@Host:Verzeichnis/DestinationFile.example</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>LocalFile.example</code> from YOUR mashine to the HOST in <code>DestinationFile.example</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scp User@Host:/home/bakka/HostFile.example DestinationFile.example</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>HostFile.example</code> from the HOST to YOUR local maschine as <code>DestinationFile.example</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for i in *.jpg; do mv "$i" "my.$i"; done</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Loop: for each file that end with <code>jpg</code> rename the file to the current name with the prefix <code>my.</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tar zxfv file.tar.gz</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tar</strong> process stream files<br>
-<code>z</code>: uncompress gunzip<br>
-<code>x</code>: extraxt<br>
-<code>f</code>: force overwrite existing<br>
-<code>v</code>: verbose</p></td>
 </tr>
 </tbody>
 </table>
@@ -646,10 +652,31 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_bash_scripting">Bash Scripting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_simple_loop">Simple loop</h3>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:33%;">
+<col style="width:66%;"> 
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for i in *.jpg; do mv "$i" "my.$i"; done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loop: for each file that end with <code>jpg</code> rename the file to the current name with the prefix <code>my.</code></p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-01-30 19:14:32 +01:00
+Last updated 2015-03-08 19:31:49 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
