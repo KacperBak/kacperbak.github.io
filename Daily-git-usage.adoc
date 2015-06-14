@@ -1,0 +1,35 @@
+= Daily Git usage
+Kacper Bak <http://kacperbak.de>
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:toc:
+:toc-placement: manual
+:docinfo1: docinfo-footer.html
+
+toc::[]
+
+== Number of commits per user
+....
+git shortlog -sne
+....
+
+== Working with a local test repository
+* We assume that we are in an empty folder
+* Create a local repository with the name `testrepo`.
+
+....
+git init --bare testrepo
+....
+* Type `ls -al` to get an overview.
+* As you can see the last command created a directory with the name `testrepo`.
+* To clone that repo we need the exact file system path. So type `pwd` to get your current location.
+* Now you can `clone` the repo with the following command.
+
+....
+git clone file:///Users/bakka/Projects/gitRepos/testrepo
+....
+
+* As you can see, the `testrepo` name has been added to the end of the absolut path.
+* The command is using the `file` protocoll as we operate on our local machine.

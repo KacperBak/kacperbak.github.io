@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rapid reference</title>
+<title>Daily Git usage</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -362,31 +362,79 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </head>
 <body class="article">
 <div id="header">
-<h1>Rapid reference</h1>
+<h1>Daily Git usage</h1>
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de">http://kacperbak.de</a></span><br>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_welcome_to_my_place_for_technical_details">Welcome to my place for technical details</h2>
+<div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>This site provides articles and short references how some technologies work or can be improved.
-No claim to completeness, correctness or something else&#8230; just notes for my lazy brain and easy spreading.</p>
+<div class="toc">
+<div class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_number_of_commits_per_user">Number of commits per user</a></li>
+<li><a href="#_working_with_a_local_test_repository">Working with a local test repository</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_number_of_commits_per_user">Number of commits per user</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>git shortlog -sne</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_with_a_local_test_repository">Working with a local test repository</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>We assume that we are in an empty folder</p>
+</li>
+<li>
+<p>Create a local repository with the name <code>testrepo</code>.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git init --bare testrepo</pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://kacperbak.github.io/Daily-git-usage.html">Git</a> on the CLI.</p>
+<p>Type <code>ls -al</code> to get an overview.</p>
 </li>
 <li>
-<p><a href="http://kacperbak.github.io/Basic-Bash-usage.html">Bash</a> usage on OS X and Ubuntu Linux.</p>
+<p>As you can see the last command created a directory with the name <code>testrepo</code>.</p>
 </li>
 <li>
-<p>Basic commands for <a href="http://kacperbak.github.io/VI-effective-usage.html">VI</a>.</p>
+<p>To clone that repo we need the exact file system path. So type <code>pwd</code> to get your current location.</p>
 </li>
 <li>
-<p>Mac <a href="http://kacperbak.github.io/Mac-os-x-tools.html">tools</a> for best productivity with OS X.</p>
+<p>Now you can <code>clone</code> the repo with the following command.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git clone file:///Users/bakka/Projects/gitRepos/testrepo</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As you can see, the <code>testrepo</code> name has been added to the end of the absolut path.</p>
+</li>
+<li>
+<p>The command is using the <code>file</code> protocoll as we operate on our local machine.</p>
 </li>
 </ul>
 </div>
@@ -395,7 +443,7 @@ No claim to completeness, correctness or something else&#8230; just notes for my
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-06-14 14:58:17 +02:00
+Last updated 2015-06-14 15:00:29 +02:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
