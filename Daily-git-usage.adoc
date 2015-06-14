@@ -10,6 +10,11 @@ Kacper Bak <http://kacperbak.de>
 
 toc::[]
 
+== Number of commits per user
+....
+git shortlog -sne
+....
+
 == Working with a local test repository
 * We assume that we are in an empty folder
 * Create a local repository with the name `testrepo`.
@@ -28,4 +33,3 @@ git clone file:///Users/bakka/Projects/gitRepos/testrepo
 
 * As you can see, the `testrepo` name has been added to the end of the absolut path.
 * The command is using the `file` protocoll as we operate on our local machine.
-
