@@ -1,64 +1,46 @@
 = Basic bash usage
 Kacper Bak <http://kacperbak.de>
+:toc:
 
 :author: Kacper Bak
 :homepage: http://kacperbak.de
 :imagesdir: ./img
-:toc:
-:toc-placement: manual
 :docinfo1: docinfo-footer.html
-
-toc::[]
 
 == Basic unix commands
 
-.Basic Bash commands
-[cols="1,2" options="header"]
+=== Find and grep examples
+[cols="1,1" options="header"]
 |===
 
 |Unix Command
 |Description
 
-|tail -f *
-|Displays last lines of *ALL files* in current directory, waits for further input
+|find . \| grep -i app.jar
+|Lists all `app.jar` files in current directory case insensitive
+
+|find . \| grep .svn \| xargs  rm -f
+|Find all files containing the pattern `.svn` in the current directory and delete them.
+
+|find */tmp* -name *core* -type f -print \| xargs /bin/rm -f
+|Find files named `core` *in* OR *below* the directory `/tmp` and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.
 
 |grep -ir "main(String\[\] args)" .
 |Look for the string `main(String[] args` in *ALL* files of the current directory +
 `-i`: case insensitive +
 `-r`: recursive
 
-|find . \| grep -i app.jar
-|Lists all `app.jar` files in current directory case insensitive
+|grep -i git ~/.bash_history
+|Show all current `git` calls
 
-|cp -r /src/dir/. /dest/dir/
-|Copies *ALL files*, including *hidden files* and the whole directory structure *recursiv*
+|===
 
-|echo "myLine" >> file.txt
-|Write the String 'myLine' inside of the file `file.txt`
+=== Current processes examples
+[cols="1,1" options="header"]
+|===
 
-|df -h
-|Displays statistics about the amount of free disk space in "Human-readable" output.
-
-|du -sh folderName OR fileName
-|Displays size in human readable format of `folderName` OR `fileName`
-
-|mkdir -p src/main/java
-|Creates a parent directory `src`, a child directory `main` and another child `java`
-
-|ls -ltr
-|list all files in time stamped in reverse order
-
-|ls -al \| tee out.txt \| grep test
-|*tee* reads standard input and writes it to both standard output and one or more files
-
-|find /tmp -name core -type f -print \| xargs /bin/rm -f
-|Find files named `core` *in* OR *below* the directory `/tmp` and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.
-
-|find . \| grep .svn \| xargs  rm -f
-|Find all files containing the pattern `.svn` in the current directory and delete them.
-
-|chown -R bakka /home/bakka
-|Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
+|Unix Command
+|Description
 
 |ps aux \| grep -i java
 |Displays all current running processes containing `java` as name.
@@ -66,26 +48,28 @@ toc::[]
 |top -pid 66939
 |Displays detailed view of the process with the given process ID.
 
-|grep -i git ~/.bash_history
-|Show all current `git` calls
+|===
 
-|scp LocalFile.example User@Host:Verzeichnis/DestinationFile.example
+=== Copy examples
+[cols="1,1" options="header"]
+|===
+
+|Unix Command
+|Description
+
+|cp -r /src/dir/. /dest/dir/
+|Copies *ALL files*, including *hidden files* and the whole directory structure *recursiv*
+
+|scp LocalFile.example User@Host:Folder/DestinationFile.example
 |Copys `LocalFile.example` from YOUR mashine to the HOST in `DestinationFile.example`
 
 |scp User@Host:/home/bakka/HostFile.example DestinationFile.example
-|Copys `HostFile.example` from the HOST to YOUR local maschine as `DestinationFile.example`
-
-|tar zxfv file.tar.gz
-|*tar* process stream files +
-`z`: uncompress gunzip +
-`x`: extraxt +
-`f`: force overwrite existing +
-`v`: verbose
+|Copys `HostFile.example` from the HOST to YOUR local machine as `DestinationFile.example`
 
 |===
 
-.Network
-[cols="1,2" options="header"]
+=== Network examples
+[cols="1,1" options="header"]
 |===
 
 |Unix Command
@@ -104,8 +88,8 @@ toc::[]
 `-p`: Protokol: TCP
 |===
 
-.Bash environment
-[cols="1,2" options="header"]
+=== Bash environment
+[cols="1,1" options="header"]
 |===
 
 |Command
@@ -116,11 +100,51 @@ toc::[]
 
 |===
 
+=== Mixed examples
+[cols="1,1" options="header"]
+|===
+
+|Unix Command
+|Description
+
+|tail -f *
+|Displays last lines of *ALL files* in current directory, waits for further input
+
+|echo "myLine" >> file.txt
+|Write the String 'myLine' inside of the file `file.txt`
+
+|df -h
+|Displays statistics about the amount of free disk space in "Human-readable" output.
+
+|du -sh folderName OR fileName
+|Displays size in human readable format of `folderName` OR `fileName`
+
+|mkdir -p src/main/java
+|Creates a parent directory `src`, a child directory `main` and another child `java`
+
+|ls -ltr
+|list all files sorted by time as most recently modified are last displayed
+
+|ls -al \| tee out.txt \| grep test
+|*tee* reads standard input and writes it to both standard output and one or more files
+
+|chown -R bakka /home/bakka
+|Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
+
+|tar zxfv file.tar.gz
+|*tar* process stream files +
+`z`: uncompress gunzip +
+`x`: extraxt +
+`f`: force overwrite existing +
+`v`: verbose
+
+|===
+
 == Platform dependent tools
 
 === OS X - Using pasteboard/clipboard
 
-[cols="1,2" options="header"]
+[cols="1,1" options="header"]
 |===
 
 |Command
@@ -136,7 +160,7 @@ toc::[]
 
 === Ubuntu Linux
 
-[cols="1,2" options="header"]
+[cols="1,1" options="header"]
 |===
 |Linux Command
 |Description
@@ -164,7 +188,7 @@ toc::[]
 
 === Ubuntu Linux
 
-[cols="1,2"]
+[cols="1,1"]
 |===
 
 |export PS1='\u@\h:\W$ '
@@ -175,7 +199,7 @@ toc::[]
 == Bash Scripting
 === Simple loop
 
-[cols="1,2"]
+[cols="1,1"]
 |===
 
 |for i in *.jpg; do mv "$i" "my.$i"; done

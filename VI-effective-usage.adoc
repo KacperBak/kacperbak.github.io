@@ -1,10 +1,9 @@
 = VI notes - For basic VI usage
 Kacper Bak <http://kacperbak.de>
+:toc:
 
 :author: Kacper Bak
 :homepage: http://kacperbak.de
-:toc:
-:toc-placement: manual
 :docinfo1: docinfo-footer.html
 
 toc::[]

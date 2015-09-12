@@ -1,10 +1,9 @@
 = AsciiDoc/AsciiDoctor rapid reference
 Kacper Bak <http://kacperbak.de>
+:toc:
 
 :author: Kacper Bak
 :description: This description goes right into the header. As it is an argument of the document, it also can be displayed in the plain text.
-:toc:
-:toc-placement: manual
 :source-highlighter: Highlight.js
 :source-highlighter: highlightjs
 :docinfo1: docinfo-footer.html

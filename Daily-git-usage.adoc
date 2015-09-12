@@ -1,11 +1,10 @@
 = Daily Git usage
 Kacper Bak <http://kacperbak.de>
+:toc:
 
 :author: Kacper Bak
 :homepage: http://kacperbak.de
 :imagesdir: ./img
-:toc:
-:toc-placement: manual
 :docinfo1: docinfo-footer.html
 
 toc::[]
