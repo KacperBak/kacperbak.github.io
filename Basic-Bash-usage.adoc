@@ -29,7 +29,7 @@ Kacper Bak <http://kacperbak.de>
 |Show all current `git` calls in the file `.bash_history`
 
 |grep -ir "main(String\[\] args)" .
-|Look for the string `main(String[] args` in *ALL* files of the current directory +
+|Look for the string `main(String[] args)` in *ALL* files of the current directory +
 `-i`: case insensitive +
 `-r`: recursive
 
@@ -65,10 +65,15 @@ Kacper Bak <http://kacperbak.de>
 |Copies *ALL files*, including *hidden files* and the whole directory structure *recursiv*
 
 |scp LocalFile.example User@Host:Folder/DestinationFile.example
-|Copys `LocalFile.example` from YOUR mashine to the HOST in `DestinationFile.example`
+|Copys `LocalFile.example` from your *local machine* to the *host* in `DestinationFile.example`
 
 |scp User@Host:/home/bakka/HostFile.example DestinationFile.example
-|Copys `HostFile.example` from the HOST to YOUR local machine as `DestinationFile.example`
+|Copys `HostFile.example` from the *host* to your *local machine* as `DestinationFile.example`
+
+|scp -rp sourcedirectory User@Host:/path
+|Copys `sourcedirectory` from your *local machine* to the *host* +
+`-r`: copy the directory recursive +
+`-p`: preserves modification times, access times, and modes from the original file.
 
 |===
 

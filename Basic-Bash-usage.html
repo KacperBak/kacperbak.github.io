@@ -487,7 +487,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grep -ir "main(String\[\] args)" .</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Look for the string <code>main(String[] args</code> in <strong>ALL</strong> files of the current directory<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Look for the string <code>main(String[] args)</code> in <strong>ALL</strong> files of the current directory<br>
 <code>-i</code>: case insensitive<br>
 <code>-r</code>: recursive</p></td>
 </tr>
@@ -544,11 +544,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scp LocalFile.example User@Host:Folder/DestinationFile.example</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>LocalFile.example</code> from YOUR mashine to the HOST in <code>DestinationFile.example</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>LocalFile.example</code> from your <strong>local machine</strong> to the <strong>host</strong> in <code>DestinationFile.example</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scp User@Host:/home/bakka/HostFile.example DestinationFile.example</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>HostFile.example</code> from the HOST to YOUR local machine as <code>DestinationFile.example</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>HostFile.example</code> from the <strong>host</strong> to your <strong>local machine</strong> as <code>DestinationFile.example</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scp -rp sourcedirectory User@Host:/path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>sourcedirectory</code> from your <strong>local machine</strong> to the <strong>host</strong><br>
+<code>-r</code>: copy the directory recursive<br>
+<code>-p</code>: preserves modification times, access times, and modes from the original file.</p></td>
 </tr>
 </tbody>
 </table>
@@ -825,7 +831,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-13 17:53:46 CEST
+Last updated 2015-09-13 18:07:16 CEST
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
