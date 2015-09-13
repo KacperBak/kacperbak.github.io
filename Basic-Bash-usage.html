@@ -422,12 +422,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_basic_unix_commands">Basic unix commands</a>
 <ul class="sectlevel2">
-<li><a href="#_find_and_grep_examples">Find and grep examples</a></li>
-<li><a href="#_current_processes_examples">Current processes examples</a></li>
-<li><a href="#_copy_examples">Copy examples</a></li>
-<li><a href="#_network_examples">Network examples</a></li>
+<li><a href="#_find_and_grep">Find and grep</a></li>
+<li><a href="#_current_process">Current process</a></li>
+<li><a href="#_copy">Copy</a></li>
+<li><a href="#_network">Network</a></li>
 <li><a href="#_inspect_files">Inspect files</a></li>
-<li><a href="#_mixed_examples">Mixed examples</a></li>
+<li><a href="#_mixed">Mixed</a></li>
 <li><a href="#_bash_environment">Bash environment</a></li>
 </ul>
 </li>
@@ -456,7 +456,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_basic_unix_commands">Basic unix commands</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_find_and_grep_examples">Find and grep examples</h3>
+<h3 id="_find_and_grep">Find and grep</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -482,20 +482,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Find files named <code>core</code> <strong>in</strong> OR <strong>below</strong> the directory <code>/tmp</code> and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grep git ~/.bash_history</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show all current <code>git</code> calls in the file <code>.bash_history</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grep -ir "main(String\[\] args)" .</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Look for the string <code>main(String[] args</code> in <strong>ALL</strong> files of the current directory<br>
 <code>-i</code>: case insensitive<br>
 <code>-r</code>: recursive</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grep -i git ~/.bash_history</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show all current <code>git</code> calls</p></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_current_processes_examples">Current processes examples</h3>
+<h3 id="_current_process">Current process</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -516,11 +516,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">top -pid 66939</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Displays detailed view of the process with the given process ID.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">killall -s ssh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kill processes with the name <code>ssh</code><br>
+<code>-s</code>:  Show only what would be done, but do not send any signal.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_copy_examples">Copy examples</h3>
+<h3 id="_copy">Copy</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -549,7 +554,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_network_examples">Network examples</h3>
+<h3 id="_network">Network</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -625,7 +630,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_mixed_examples">Mixed examples</h3>
+<h3 id="_mixed">Mixed</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -690,6 +695,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">printenv</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List ALL environment variables</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">whereis ssh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate the program <code>ssh</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -816,7 +825,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-13 16:29:47 CEST
+Last updated 2015-09-13 17:53:46 CEST
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

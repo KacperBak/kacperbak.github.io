@@ -9,7 +9,7 @@ Kacper Bak <http://kacperbak.de>
 
 == Basic unix commands
 
-=== Find and grep examples
+=== Find and grep
 [cols="1,1" options="header"]
 |===
 
@@ -25,17 +25,17 @@ Kacper Bak <http://kacperbak.de>
 |find */tmp* -name *core* -type f -print \| xargs /bin/rm -f
 |Find files named `core` *in* OR *below* the directory `/tmp` and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.
 
+|grep git ~/.bash_history
+|Show all current `git` calls in the file `.bash_history`
+
 |grep -ir "main(String\[\] args)" .
 |Look for the string `main(String[] args` in *ALL* files of the current directory +
 `-i`: case insensitive +
 `-r`: recursive
 
-|grep -i git ~/.bash_history
-|Show all current `git` calls
-
 |===
 
-=== Current processes examples
+=== Current process
 [cols="1,1" options="header"]
 |===
 
@@ -48,9 +48,13 @@ Kacper Bak <http://kacperbak.de>
 |top -pid 66939
 |Displays detailed view of the process with the given process ID.
 
+|killall -s ssh
+|kill processes with the name `ssh` +
+`-s`:  Show only what would be done, but do not send any signal.
+
 |===
 
-=== Copy examples
+=== Copy
 [cols="1,1" options="header"]
 |===
 
@@ -68,7 +72,7 @@ Kacper Bak <http://kacperbak.de>
 
 |===
 
-=== Network examples
+=== Network
 [cols="1,1" options="header"]
 |===
 
@@ -118,7 +122,7 @@ Kacper Bak <http://kacperbak.de>
 
 |===
 
-=== Mixed examples
+=== Mixed
 [cols="1,1" options="header"]
 |===
 
@@ -162,6 +166,9 @@ Kacper Bak <http://kacperbak.de>
 
 |printenv
 |List ALL environment variables
+
+|whereis ssh
+|locate the program `ssh`
 
 |===
 
