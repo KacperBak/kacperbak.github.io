@@ -7,7 +7,14 @@ Kacper Bak <http://kacperbak.de>
 :imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
-toc::[]
+== Setting up a Git on the CLI
+There are a few convenience settings to use Git very smoothly from your command line interface like bash.
+Simple follow the links to achieve the wanted result:
+
+* https://help.github.com/articles/setting-your-username-in-git/[Setting your username in Git]
+* http://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks[Auto completion of the current branch name with the `tabulator` key]
+* https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases[Define short aliases `st` for standard commands like `status`]
+* https://coderwall.com/p/fz0e0g/show-current-git-branch-name-in-bash-ps1[Shows the current branch in the bash prompt]
 
 == Number of commits per user
 ....
