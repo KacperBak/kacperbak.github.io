@@ -426,8 +426,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_current_processes_examples">Current processes examples</a></li>
 <li><a href="#_copy_examples">Copy examples</a></li>
 <li><a href="#_network_examples">Network examples</a></li>
-<li><a href="#_bash_environment">Bash environment</a></li>
+<li><a href="#_inspect_files">Inspect files</a></li>
 <li><a href="#_mixed_examples">Mixed examples</a></li>
+<li><a href="#_bash_environment">Bash environment</a></li>
 </ul>
 </li>
 <li><a href="#_platform_dependent_tools">Platform dependent tools</a>
@@ -580,7 +581,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_bash_environment">Bash environment</h3>
+<h3 id="_inspect_files">Inspect files</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -588,14 +589,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Unix Command</th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">printenv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List ALL environment variables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ls -ltr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list all files sorted by time as most recently modified are last displayed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ls -al | tee out.txt | grep test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tee</strong> reads standard input and writes it to both standard output and one or more files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">file testfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inspects the <code>testfile</code> and displays an assumption about the file content, e.g.: <code>index.html: HTML document text</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tail -f *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays last lines of <strong>ALL files</strong> in current directory, waits for further input</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diff file1 file2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">compare files line by line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diff -arq folder1 folder2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recursive compare of folders<br>
+<code>a</code>: treat all files as text<br>
+<code>r</code>: recursive compare of subdirectories<br>
+<code>q</code>: output only whether files differ</p></td>
 </tr>
 </tbody>
 </table>
@@ -615,8 +639,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tail -f *</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays last lines of <strong>ALL files</strong> in current directory, waits for further input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shutdown -h now</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">halt and close down the system immediately, requires <code>sudo</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">echo "myLine" &gt;&gt; file.txt</p></td>
@@ -635,14 +659,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Creates a parent directory <code>src</code>, a child directory <code>main</code> and another child <code>java</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ls -ltr</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list all files sorted by time as most recently modified are last displayed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ls -al | tee out.txt | grep test</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tee</strong> reads standard input and writes it to both standard output and one or more files</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">chown -R bakka /home/bakka</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Change ownership of directory <code>/home/bakka</code> to user <code>bakka</code> ALL including files and subdirectories are affected.</p></td>
 </tr>
@@ -653,6 +669,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <code>x</code>: extraxt<br>
 <code>f</code>: force overwrite existing<br>
 <code>v</code>: verbose</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_bash_environment">Bash environment</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Unix Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">printenv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List ALL environment variables</p></td>
 </tr>
 </tbody>
 </table>
@@ -779,7 +816,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-12 20:44:07 CEST
+Last updated 2015-09-13 16:29:47 CEST
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

@@ -88,15 +88,33 @@ Kacper Bak <http://kacperbak.de>
 `-p`: Protokol: TCP
 |===
 
-=== Bash environment
+=== Inspect files
 [cols="1,1" options="header"]
 |===
 
-|Command
+|Unix Command
 |Description
 
-|printenv
-|List ALL environment variables
+|ls -ltr
+|list all files sorted by time as most recently modified are last displayed
+
+|ls -al \| tee out.txt \| grep test
+|*tee* reads standard input and writes it to both standard output and one or more files
+
+|file testfile
+|Inspects the `testfile` and displays an assumption about the file content, e.g.: `index.html: HTML document text`
+
+|tail -f *
+|Displays last lines of *ALL files* in current directory, waits for further input
+
+|diff file1 file2
+|compare files line by line
+
+|diff -arq folder1 folder2
+|recursive compare of folders +
+`a`: treat all files as text +
+`r`: recursive compare of subdirectories +
+`q`: output only whether files differ
 
 |===
 
@@ -107,8 +125,9 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|tail -f *
-|Displays last lines of *ALL files* in current directory, waits for further input
+|shutdown -h now
+|halt and close down the system immediately, requires `sudo`
+
 
 |echo "myLine" >> file.txt
 |Write the String 'myLine' inside of the file `file.txt`
@@ -122,12 +141,6 @@ Kacper Bak <http://kacperbak.de>
 |mkdir -p src/main/java
 |Creates a parent directory `src`, a child directory `main` and another child `java`
 
-|ls -ltr
-|list all files sorted by time as most recently modified are last displayed
-
-|ls -al \| tee out.txt \| grep test
-|*tee* reads standard input and writes it to both standard output and one or more files
-
 |chown -R bakka /home/bakka
 |Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
 
@@ -139,6 +152,19 @@ Kacper Bak <http://kacperbak.de>
 `v`: verbose
 
 |===
+
+=== Bash environment
+[cols="1,1" options="header"]
+|===
+
+|Unix Command
+|Description
+
+|printenv
+|List ALL environment variables
+
+|===
+
 
 == Platform dependent tools
 
