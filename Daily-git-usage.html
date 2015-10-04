@@ -432,13 +432,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_displaying_changes_on_different_operating_systems">Displaying changes on different operating systems</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are a lot of git clients out there, but the one and only truth shows your CLI.
+<p>There are a lot of git clients out there, but the one and only <strong>truth</strong> shows your CLI.
 A simple workflow to achieve this is:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>git fetch origin -p</code> fetches the most current data from your <em>origin</em> repository and cleans up any no longer existing references.</p>
+<p><code>git fetch origin -p</code> fetches the most current data from your <code>origin</code> repository and cleans up any no longer existing references.</p>
 </li>
 <li>
 <p><code>git status</code> shows the status of the working directory, about tracked files and their staged state.</p>
@@ -450,7 +450,14 @@ A simple workflow to achieve this is:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>commit 174b974b227f09a06ee3323aecc3fdbc803c7a2b
+<pre>bakka$ git log
+commit 45e9143531ef8d9a67845fcf62904b93ece34658
+Author: Kacper Bak &lt;github@kacperbak.de&gt;
+Date:   Sun Oct 4 19:34:08 2015 +0200
+
+    Added more text
+
+commit 174b974b227f09a06ee3323aecc3fdbc803c7a2b
 Author: Kacper Bak &lt;github@kacperbak.de&gt;
 Date:   Sun Oct 4 18:25:42 2015 +0200
 
@@ -462,12 +469,6 @@ Date:   Sun Sep 13 18:36:24 2015 +0200
 
     Setting up a Git on the CLI - content added
 
-commit 886b9be12984bd0733eee2f7c7c1527201756dc9
-Author: Kacper Bak &lt;github@kacperbak.de&gt;
-Date:   Sun Sep 13 18:12:06 2015 +0200
-
-    Basic Bash content added
-
 ...</pre>
 </div>
 </div>
@@ -477,6 +478,7 @@ Date:   Sun Sep 13 18:12:06 2015 +0200
 <div class="literalblock">
 <div class="content">
 <pre>bakka$ git log --oneline
+45e9143 Added more text
 174b974 Started git changes content...
 d49d549 Setting up a Git on the CLI - content added
 886b9be Basic Bash content added</pre>
@@ -488,7 +490,8 @@ d49d549 Setting up a Git on the CLI - content added
 <div class="literalblock">
 <div class="content">
 <pre>bakka$ git log --graph --decorate --oneline
-* 174b974 (HEAD, origin/feature/git-display-branches, feature/git-display-branches) Started git changes content...
+* 45e9143 (HEAD, origin/feature/git-display-branches, feature/git-display-branches) Added more text
+* 174b974 Started git changes content...
 * d49d549 (origin/master, origin/HEAD, master) Setting up a Git on the CLI - content added
 * 886b9be Basic Bash content added
 * 411434b Basic Bash content added
@@ -504,7 +507,7 @@ d49d549 Setting up a Git on the CLI - content added
 </div>
 </div>
 <div class="paragraph">
-<p>It is always nice to have a more sophisticated UI, just be aware that those tools might not always show the current state of your working directory.
+<p>It is always nice to have a more sophisticated UI, just be aware that those tools might <strong>not always</strong> show the current state of your working directory.
 Two light weight ones are <a href="https://wiki.gnome.org/Apps/Gitg/">gitg</a> (for Ubuntu) or <a href="https://github.com/pieter/gitx/wiki">gitx</a> (for Mac OS X) both can be simple started directly from your working directory by hitting its name.</p>
 </div>
 <div class="literalblock">
@@ -620,7 +623,7 @@ Simple follow the links to achieve the wanted result:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-04 19:32:36 CEST
+Last updated 2015-10-04 19:44:52 CEST
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
