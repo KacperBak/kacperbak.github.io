@@ -420,6 +420,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#_displaying_changes_on_different_operating_systems">Displaying changes on different operating systems</a></li>
 <li><a href="#_setting_up_a_git_on_the_cli">Setting up a Git on the CLI</a></li>
 <li><a href="#_number_of_commits_per_user">Number of commits per user</a></li>
 <li><a href="#_working_with_a_local_test_repository">Working with a local test repository</a></li>
@@ -427,6 +428,109 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_displaying_changes_on_different_operating_systems">Displaying changes on different operating systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are a lot of git clients out there, but the one and only truth shows your CLI.
+A simple workflow to achieve this is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>git fetch origin -p</code> fetches the most current data from your <em>origin</em> repository and cleans up any no longer existing references.</p>
+</li>
+<li>
+<p><code>git status</code> shows the status of the working directory, about tracked files and their staged state.</p>
+</li>
+<li>
+<p><code>git log</code> shows the history of the working directory. Hit <code>SPACE</code> show more content and <code>q</code> to quite the view.</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>commit 174b974b227f09a06ee3323aecc3fdbc803c7a2b
+Author: Kacper Bak &lt;github@kacperbak.de&gt;
+Date:   Sun Oct 4 18:25:42 2015 +0200
+
+    Started git changes content...
+
+commit d49d54935226ce8bf1c6130a9e2d11d040b07b91
+Author: Kacper Bak &lt;github@kacperbak.de&gt;
+Date:   Sun Sep 13 18:36:24 2015 +0200
+
+    Setting up a Git on the CLI - content added
+
+commit 886b9be12984bd0733eee2f7c7c1527201756dc9
+Author: Kacper Bak &lt;github@kacperbak.de&gt;
+Date:   Sun Sep 13 18:12:06 2015 +0200
+
+    Basic Bash content added
+
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is very verbose, to reduce the noise type: <code>git log --oneline</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bakka$ git log --oneline
+174b974 Started git changes content...
+d49d549 Setting up a Git on the CLI - content added
+886b9be Basic Bash content added</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To see a tree view like in many typical GUI tools for git use: <code>git log --graph --decorate --oneline</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bakka$ git log --graph --decorate --oneline
+* 174b974 (HEAD, origin/feature/git-display-branches, feature/git-display-branches) Started git changes content...
+* d49d549 (origin/master, origin/HEAD, master) Setting up a Git on the CLI - content added
+* 886b9be Basic Bash content added
+* 411434b Basic Bash content added
+* abb9055 Basic Bash content added
+* 40a24fa Mac-os-x-tools article deleted
+* 95a69b6 Generated all files with adoc 1.5.2
+*   f289e9a Merge branch 'Daily-git-usage'
+|\
+| * 965dc97 Git section added
+| * 963d9e3 Daily git usage added
+|/
+* 7c50a9b Test new content</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is always nice to have a more sophisticated UI, just be aware that those tools might not always show the current state of your working directory.
+Two light weight ones are <a href="https://wiki.gnome.org/Apps/Gitg/">gitg</a> (for Ubuntu) or <a href="https://github.com/pieter/gitx/wiki">gitx</a> (for Mac OS X) both can be simple started directly from your working directory by hitting its name.</p>
+</div>
+<div class="literalblock">
+<div class="title">Simple git GUI tool for Ubuntu Linux</div>
+<div class="content">
+<pre>$ gitg</pre>
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="./img/gitg.png" alt="gitg.png">
+</div>
+</div>
+<div class="literalblock">
+<div class="title">Simple git GUI tool for Mac OS X</div>
+<div class="content">
+<pre>$ gitx</pre>
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="./img/gitx.png" alt="gitx.png">
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_setting_up_a_git_on_the_cli">Setting up a Git on the CLI</h2>
 <div class="sectionbody">
@@ -516,7 +620,7 @@ Simple follow the links to achieve the wanted result:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-13 18:34:16 CEST
+Last updated 2015-10-04 19:32:36 CEST
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
