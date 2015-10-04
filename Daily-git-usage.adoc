@@ -7,6 +7,15 @@ Kacper Bak <http://kacperbak.de>
 :imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
+== Displaying changes on different operating systems
+There are a lot of git clients out there, but the one and only truth shows your CLI.
+A simple workflow to achieve this is:
+
+. `git fetch origin -p` fetches the most current data from your _origin_ repository and cleans up any no longer existing references
+. `git status` shows the status of the working directory, about tracked files and their staged state
+. `git log` shows the history of the working directory, 
+To display commits in a very incisive way add
+
 == Setting up a Git on the CLI
 There are a few convenience settings to use Git very smoothly from your command line interface like bash.
 Simple follow the links to achieve the wanted result:
