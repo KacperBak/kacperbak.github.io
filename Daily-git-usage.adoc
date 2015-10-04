@@ -7,6 +7,82 @@ Kacper Bak <http://kacperbak.de>
 :imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
+== Displaying changes on different operating systems
+There are a lot of git clients out there, but the one and only *truth* shows your CLI.
+A simple workflow to achieve this is:
+
+. `git fetch origin -p` fetches the most current data from your `origin` repository and cleans up any no longer existing references.
+. `git status` shows the status of the working directory, about tracked files and their staged state.
+. `git log` shows the history of the working directory. Hit `SPACE` show more content and `q` to quite the view.
+
+....
+bakka$ git log
+commit 45e9143531ef8d9a67845fcf62904b93ece34658
+Author: Kacper Bak <github@kacperbak.de>
+Date:   Sun Oct 4 19:34:08 2015 +0200
+
+    Added more text
+
+commit 174b974b227f09a06ee3323aecc3fdbc803c7a2b
+Author: Kacper Bak <github@kacperbak.de>
+Date:   Sun Oct 4 18:25:42 2015 +0200
+
+    Started git changes content...
+
+commit d49d54935226ce8bf1c6130a9e2d11d040b07b91
+Author: Kacper Bak <github@kacperbak.de>
+Date:   Sun Sep 13 18:36:24 2015 +0200
+
+    Setting up a Git on the CLI - content added
+
+...
+....
+
+This is very verbose, to reduce the noise type: `git log --oneline`
+
+....
+bakka$ git log --oneline
+45e9143 Added more text
+174b974 Started git changes content...
+d49d549 Setting up a Git on the CLI - content added
+886b9be Basic Bash content added
+....
+
+To see a tree view like in many typical GUI tools for git use: `git log --graph --decorate --oneline`
+
+....
+bakka$ git log --graph --decorate --oneline
+* 45e9143 (HEAD, origin/feature/git-display-branches, feature/git-display-branches) Added more text
+* 174b974 Started git changes content...
+* d49d549 (origin/master, origin/HEAD, master) Setting up a Git on the CLI - content added
+* 886b9be Basic Bash content added
+* 411434b Basic Bash content added
+* abb9055 Basic Bash content added
+* 40a24fa Mac-os-x-tools article deleted
+* 95a69b6 Generated all files with adoc 1.5.2
+*   f289e9a Merge branch 'Daily-git-usage'
+|\
+| * 965dc97 Git section added
+| * 963d9e3 Daily git usage added
+|/
+* 7c50a9b Test new content
+....
+
+It is always nice to have a more sophisticated UI, just be aware that those tools might *not always* show the current state of your working directory.
+Two light weight ones are https://wiki.gnome.org/Apps/Gitg/[gitg] (for Ubuntu) or https://github.com/pieter/gitx/wiki[gitx] (for Mac OS X) both can be simple started directly from your working directory by hitting its name.
+
+.Simple git GUI tool for Ubuntu Linux
+....
+$ gitg
+....
+image::gitg.png[gitg.png, align="center"]
+
+.Simple git GUI tool for Mac OS X
+....
+$ gitx
+....
+image::gitx.png[gitx.png, align="center"]
+
 == Setting up a Git on the CLI
 There are a few convenience settings to use Git very smoothly from your command line interface like bash.
 Simple follow the links to achieve the wanted result:
