@@ -470,23 +470,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find . | grep -i app.jar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find . | grep -i app.jar</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lists all <code>app.jar</code> files in current directory case insensitive</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find . | grep .svn | xargs  rm -f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find . | grep .svn | xargs  rm -f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Find all files containing the pattern <code>.svn</code> in the current directory and delete them.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find <strong>/tmp</strong> -name <strong>core</strong> -type f -print | xargs /bin/rm -f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find <strong>/tmp</strong> -name <strong>core</strong> -type f -print | xargs /bin/rm -f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Find files named <code>core</code> <strong>in</strong> OR <strong>below</strong> the directory <code>/tmp</code> and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grep git ~/.bash_history</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grep git ~/.bash_history</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Show all current <code>git</code> calls in the file <code>.bash_history</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grep -ir "main(String\[\] args)" .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grep -ir "main(String\[\] args)" .</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Look for the string <code>main(String[] args)</code> in <strong>ALL</strong> files of the current directory<br>
 <code>-i</code>: case insensitive<br>
 <code>-r</code>: recursive</p></td>
@@ -509,16 +509,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ps aux | grep -i java</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ps aux | grep -i java</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Displays all current running processes containing <code>java</code> as name.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">top -pid 66939</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>top -pid 66939</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Displays detailed view of the process with the given process ID.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">killall -s ssh</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kill processes with the name <code>ssh</code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kill -9 66939</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kill processes with the <em>id</em> <code>66939</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>killall -s ssh</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kill processes with the <em>name</em> <code>ssh</code><br>
 <code>-s</code>:  Show only what would be done, but do not send any signal.</p></td>
 </tr>
 </tbody>
@@ -539,19 +543,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cp -r /src/dir/. /dest/dir/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cp -r /src/dir/. /dest/dir/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Copies <strong>ALL files</strong>, including <strong>hidden files</strong> and the whole directory structure <strong>recursiv</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scp LocalFile.example User@Host:Folder/DestinationFile.example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scp LocalFile.example User@Host:Folder/DestinationFile.example</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>LocalFile.example</code> from your <strong>local machine</strong> to the <strong>host</strong> in <code>DestinationFile.example</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scp User@Host:/home/bakka/HostFile.example DestinationFile.example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scp User@Host:/home/bakka/HostFile.example DestinationFile.example</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>HostFile.example</code> from the <strong>host</strong> to your <strong>local machine</strong> as <code>DestinationFile.example</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scp -rp sourcedirectory User@Host:/path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scp -rp sourcedirectory User@Host:/path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>sourcedirectory</code> from your <strong>local machine</strong> to the <strong>host</strong><br>
 <code>-r</code>: copy the directory recursive<br>
 <code>-p</code>: preserves modification times, access times, and modes from the original file.</p></td>
@@ -574,15 +578,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ifconfig -a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ifconfig -a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Display information about all interfaces in the system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nslookup mucsgvpint64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nslookup mucsgvpint64</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Query Internet domain name servers</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">netstat -a -n -p TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>netstat -a -n -p TCP</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shows network status with IP adresses and ports<br>
 <code>-a</code>: All connections<br>
 <code>-n</code>: Show adresses and ports as numbers<br>
@@ -606,27 +610,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ls -ltr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls -ltr</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list all files sorted by time as most recently modified are last displayed</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ls -al | tee out.txt | grep test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls -al | tee out.txt | grep test</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tee</strong> reads standard input and writes it to both standard output and one or more files</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">file testfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file testfile</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inspects the <code>testfile</code> and displays an assumption about the file content, e.g.: <code>index.html: HTML document text</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tail -f *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tail -f *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Displays last lines of <strong>ALL files</strong> in current directory, waits for further input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">diff file1 file2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>diff file1 file2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">compare files line by line</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">diff -arq folder1 folder2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>diff -arq folder1 folder2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">recursive compare of folders<br>
 <code>a</code>: treat all files as text<br>
 <code>r</code>: recursive compare of subdirectories<br>
@@ -650,31 +654,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">shutdown -h now</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>shutdown -h now</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">halt and close down the system immediately, requires <code>sudo</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">echo "myLine" &gt;&gt; file.txt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>echo "myLine" &gt;&gt; file.txt</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Write the String 'myLine' inside of the file <code>file.txt</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">df -h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>df -h</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Displays statistics about the amount of free disk space in "Human-readable" output.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">du -sh folderName OR fileName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>du -sh folderName OR fileName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Displays size in human readable format of <code>folderName</code> OR <code>fileName</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mkdir -p src/main/java</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mkdir -p src/main/java</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Creates a parent directory <code>src</code>, a child directory <code>main</code> and another child <code>java</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">chown -R bakka /home/bakka</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chown -R bakka /home/bakka</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Change ownership of directory <code>/home/bakka</code> to user <code>bakka</code> ALL including files and subdirectories are affected.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tar zxfv file.tar.gz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tar zxfv file.tar.gz</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tar</strong> process stream files<br>
 <code>z</code>: uncompress gunzip<br>
 <code>x</code>: extraxt<br>
@@ -699,11 +703,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">printenv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>printenv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List ALL environment variables</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">whereis ssh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>whereis ssh</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate the program <code>ssh</code></p></td>
 </tr>
 </tbody>
@@ -729,11 +733,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pwd | pbcopy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pwd | pbcopy</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(1) Copies current directory inside the clipboard</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cd `pbpaste`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cd `pbpaste`</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(2) changes directory to the value inside clipboard</p></td>
 </tr>
 </tbody>
@@ -754,23 +758,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dpkg -i package.deb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dpkg -i package.deb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Installs debian package <code>package.deb</code>, requires <code>sudo</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get update</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Update debian package list</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get install ExmpPackage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get install ExmpPackage</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Installs <code>ExmpPackage</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get remove ExmpPackage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get remove ExmpPackage</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Removes <code>ExmpPackage</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apt-get purge ExmpPackage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get purge ExmpPackage</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Removes <code>ExmpPackage</code> and wipeouts any configuration</p></td>
 </tr>
 </tbody>
@@ -800,7 +804,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">export PS1='\u@\h:\W$ '</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export PS1='\u@\h:\W$ '</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prompt shows only current directory in ubuntu-bash.</p></td>
 </tr>
 </tbody>
@@ -820,7 +824,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for i in *.jpg; do mv "$i" "my.$i"; done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>for i in *.jpg; do mv "$i" "my.$i"; done</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Loop: for each file that end with <code>jpg</code> rename the file to the current name with the prefix <code>my.</code></p></td>
 </tr>
 </tbody>
@@ -831,7 +835,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-13 18:07:16 CEST
+Last updated 2015-10-18 19:03:35 CEST
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

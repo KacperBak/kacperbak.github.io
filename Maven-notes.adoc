@@ -1,0 +1,44 @@
+= Maven notes
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+== Commands
+
+[cols="1,1" options="header"]
+|===
+
+|Option
+|Description
+
+|`mvn clean install -DskipTests`
+|Perform a clean top down build, but skip tests
+
+|`mvn clean install -T2C`
+|Perform a parallel clean top down build, with 2 threads per core
+
+|===
+
+== Options
+Common used Maven settings inside `.bashrc` (Ubuntu linux) or `bash_profile`(Mac OS X).
+Multiple settings can be defined in a row, like: +
+`export MAVEN_OPTS='-Xms1024m -Xmx2048m -XX:MaxPermSize=512m -Denforcer.skip=true'`
+
+
+[cols="1,1" options="header"]
+|===
+
+|Option
+|Description
+
+|`MAVEN_OPTS='-Denforcer.skip=true'`
+|Skip enforcer plugin
+
+|`MAVEN_OPTS='-Dfile.encoding=UTF-8'`
+|Set `UTF-8` as character set
+
+|===

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
 <meta name="author" content="Kacper Bak">
-<title>AsciiDoc/AsciiDoctor rapid reference</title>
+<title>Maven notes</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -412,7 +412,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>AsciiDoc/AsciiDoctor rapid reference</h1>
+<h1>Maven notes</h1>
 <div class="details">
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
@@ -421,508 +421,74 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_commands">Commands</a></li>
-<li><a href="#_headers">Headers</a></li>
-<li><a href="#_level_1_header">Level 1 Header</a>
-<ul class="sectlevel2">
-<li><a href="#_level_2_header">Level 2 Header</a></li>
-</ul>
-</li>
-<li><a href="#_paragraph">Paragraph</a></li>
-<li><a href="#_text_formatting">Text formatting</a></li>
-<li><a href="#_arguments">Arguments</a></li>
-<li><a href="#_source_code">Source code</a>
-<ul class="sectlevel2">
-<li><a href="#_inline">Inline</a></li>
-<li><a href="#_literal_line">Literal line</a></li>
-<li><a href="#_literal_block">Literal block</a></li>
-<li><a href="#_code_block">Code block</a></li>
-</ul>
-</li>
-<li><a href="#_lists">Lists</a>
-<ul class="sectlevel2">
-<li><a href="#_bullet_list">Bullet List</a></li>
-<li><a href="#_labeled_list">Labeled List</a></li>
-</ul>
-</li>
-<li><a href="#_create_a_html_file">Create a .html file</a></li>
-<li><a href="#_create_a_pdf_file">Create a .pdf file</a></li>
-<li><a href="#_installation_on_mac">Installation on mac</a></li>
-<li><a href="#_technical_facts">Technical Facts</a></li>
-<li><a href="#_table_of_contents_on_an_arbitary_document_position">Table of Contents on an arbitary document position</a></li>
+<li><a href="#_options">Options</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-This is a test page to try things out with AsciiDoc and AsciiDoctor.<br>
-See SourceCode <a href="https://raw.github.com/KacperBak/kacperbak.github.io/mastesr/AsciiDoc-AsciiDoctor.adoc">here</a>.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_commands">Commands</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>current command: asci -o "../adoc.out/file.html" file.adoc</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_headers">Headers</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_level_1_header">Level 1 Header</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Content &#8230;&#8203;</p>
-</div>
-<div class="sect2">
-<h3 id="_level_2_header">Level 2 Header</h3>
-<div class="paragraph">
-<p>Content &#8230;&#8203;</p>
-</div>
-<div class="sect3">
-<h4 id="_level_3_header">Level 3 Header</h4>
-<div class="paragraph">
-<p>Content &#8230;&#8203;</p>
-</div>
-<div class="sect4">
-<h5 id="_level_4_header">Level 4 Header</h5>
-<div class="paragraph">
-<p>Content &#8230;&#8203;</p>
-</div>
-<div class="sect5">
-<h6 id="_level_5_header">Level 5 Header</h6>
-<div class="paragraph">
-<p>Content &#8230;&#8203; Test new content</p>
-</div>
-<div class="paragraph">
-<p>TODO: How to mark deeper levels?</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_paragraph">Paragraph</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In AsciiDoc, the main structural element is the paragraph.
-A paragraph consists of adjacent lines of text.</p>
-</div>
-<div class="paragraph">
-<p>To start a new paragraph, leave a blank line by hitting
-Enter twice, then just keep on typing.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_text_formatting">Text formatting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>forced line break<br>
-normal, <em>italic</em>, <strong>bold</strong>, mono. normal, <sup>super</sup>, <sub>sub</sub>.<br>
-Command: <code>ls -al</code><br>
-Path: '/some/filez.txt'</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_arguments">Arguments</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Retrieving value from key1= argument1Value<br>
-Retrieving Author-argument: Kacper Bak</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Document settings are configured using attribute entries immediately <em>following the document title</em> (without any blank lines in between). There are several options of interest.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<div class="title">For example the document description</div>
-<p>This description goes right into the header. As it is an argument of the document, it also can be displayed in the plain text.</p>
-</div>
-<div class="admonitionblock important">
-<table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-Argument values are defined in asciidoc.adoc file. The <strong>definition</strong> itself is not going to be <span class="red">rendered</span> !
-</td>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mvn clean install -DskipTests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perform a clean top down build, but skip tests</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mvn clean install -T2C</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perform a parallel clean top down build, with 2 threads per core</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="_source_code">Source code</h2>
+<h2 id="_options">Options</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_inline">Inline</h3>
 <div class="paragraph">
-<p>Reference code like types or methods inline.</p>
+<p>Common used Maven settings inside <code>.bashrc</code> (Ubuntu linux) or <code>bash_profile</code>(Mac OS X).
+Multiple settings can be defined in a row, like:<br>
+<code>export MAVEN_OPTS='-Xms1024m -Xmx2048m -XX:MaxPermSize=512m -Denforcer.skip=true'</code></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_literal_line">Literal line</h3>
-<div class="paragraph">
-<p>Indent the line one space to insert a code snippet.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>System.out.println("Hello AsciiDoctor")</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_literal_block">Literal block</h3>
-<div class="literalblock">
-<div class="content">
-<pre>$ java -version
-java version "1.7.0_45"
-Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
-Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_code_block">Code block</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public class HelloWorld { <b class="conum">(1)</b>
-
-    public static void main(String[] args)
-    {
-          System.out.println("Hello World!"); <b class="conum">(2)</b>
-    }
-}</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<ol>
-<li>
-<p>Class name</p>
-</li>
-<li>
-<p>Simple stdout</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_lists">Lists</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_bullet_list">Bullet List</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>ListItem1</p>
-</li>
-<li>
-<p>ListItem2</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ListItem21</p>
-</li>
-<li>
-<p>ListItem22</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ListItem221</p>
-</li>
-<li>
-<p>ListItem222</p>
-</li>
-<li>
-<p>ListItem223</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_labeled_list">Labeled List</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Term 1</dt>
-<dd>
-<p>Definition 1</p>
-</dd>
-<dt class="hdlist1">Term 2</dt>
-<dd>
-<p>Definition 2</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Term 2.1</dt>
-<dd>
-<p>Definition 2.1</p>
-</dd>
-<dt class="hdlist1">Term 2.2</dt>
-<dd>
-<p>Definition 2.2</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Term 2.2.1</dt>
-<dd>
-<p>Definition 2.2.1</p>
-</dd>
-<dt class="hdlist1">Term 2.2.2</dt>
-<dd>
-<p>Definition 2.2.2</p>
-</dd>
-<dt class="hdlist1">Term 2.2.3</dt>
-<dd>
-<p>Definition 2.2.3</p>
-</dd>
-</dl>
-</div>
-</dd>
-</dl>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_create_a_html_file">Create a .html file</h2>
-<div class="sectionbody">
-<div class="admonitionblock note">
-<table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The default file extension for AsciiDoc files is ad .
-</td>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MAVEN_OPTS='-Denforcer.skip=true'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skip enforcer plugin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MAVEN_OPTS='-Dfile.encoding=UTF-8'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set <code>UTF-8</code> as character set</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-<div class="paragraph">
-<div class="title">Generate a HTML file with AsciiDoctor</div>
-<p>This is the default command to generate a text file into an html document with AsciiDoctor. <code>asciidoctor test.ad</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Generate a HTML file with AsciiDoc</div>
-<p>If you are using the default installation of AsciiDoc, use this command. <code>python ~/asciidoc test.txt</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-My pesonal favorite is the adoc extension. It clears out thats a file of type AsciiDoc, is short and is supported by GitHub.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_create_a_pdf_file">Create a .pdf file</h2>
-<div class="sectionbody">
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-1.
-</td>
-<td class="hdlist2">
-<p>Generate a DocBook file <code>$ asciidoctor -b docbook -d book sample.adoc</code></p>
-<div class="literalblock">
-<div class="content">
-<pre>sample.xml</pre>
-</div>
-</div>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-2.
-</td>
-<td class="hdlist2">
-<p>Run <em>fopub</em> script on the current directory.</p>
-<div class="literalblock">
-<div class="content">
-<pre>fopub sample.xml</pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-See the <a href="https://github.com/asciidoctor/asciidoctor-fopub/blob/master/README.adoc">project site</a> for install notes and detailed instructions.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_installation_on_mac">Installation on mac</h2>
-<div class="sectionbody">
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-1.
-</td>
-<td class="hdlist2">
-<p>Install JRuby for mac.<br>
-Download a <strong>dmg</strong> file from <a href="http://www.jruby.org/download">JRuby Downloads</a></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-2.
-</td>
-<td class="hdlist2">
-<p>Check installed JRuby version.<br>
-To do so, call this snippet from your home folder: <code>jruby -v</code><br>
-Something like this should appear immediately:</p>
-<div class="literalblock">
-<div class="content">
-<pre>jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java  HotSpot(TM) 64-Bit Server VM 1.7.0_45) [darwin-x86_64-java]</pre>
-</div>
-</div>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-3.
-</td>
-<td class="hdlist2">
-<p>Install asciidoctor.<br>
-Type <code>sudo gem install asciidoctor</code> into your CLI.<br></p>
-<div class="literalblock">
-<div class="content">
-<pre>Password:
-Successfully installed asciidoctor-0.1.4 1
-gem installed</pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-4.
-</td>
-<td class="hdlist2">
-<p>Check installed Asciidoctor.<br>
-Type <code>asciidoctor -V</code> to determine the current used version of AsciiDoctor.<br></p>
-<div class="literalblock">
-<div class="content">
-<pre>Asciidoctor 0.1.4 [http://asciidoctor.org]</pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-5.
-</td>
-<td class="hdlist2">
-<p>Create an quick access alias - <strong>optional step</strong><br></p>
-<div class="literalblock">
-<div class="content">
-<pre>alias asci="jruby /Library/Ruby/Gems/1.8/gems/asciidoctor-0.1.4/bin/asciidoctor"</pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-6.
-</td>
-<td class="hdlist2">
-<p>Create HTML-file with a different <strong>name</strong> in an <strong>upper directory</strong> - <strong>optional step</strong></p>
-<div class="literalblock">
-<div class="content">
-<pre>'asci -o "../adoc.out/file.html" file.adoc'</pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_technical_facts">Technical Facts</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>AsciiDoc doesn’t care which extension you use. GitHub supports the extensions .asciidoc, .adoc and .asc</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_table_of_contents_on_an_arbitary_document_position">Table of Contents on an arbitary document position</h2>
-<div class="sectionbody">
-<!-- toc disabled -->
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-12 21:02:47 CEST
+Last updated 2015-10-18 18:39:54 CEST
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

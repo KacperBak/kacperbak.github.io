@@ -34,23 +34,17 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Command
 |Description
 
-|w
+|`w`
 |Move one word forward
 
-|b
+|`b`
 |Move one word back
 
-|0
+|`0`
 |Move to start of the current line
 
-|$
+|`$`
 |Move to end of current line
-
-|}
-|Move one paragraph forward
-
-|{
-|Move one paragraph back
 
 |ctrl + u (holding ctrl down)
 |Scroll up
@@ -63,13 +57,13 @@ Most of the movement in the document is being done from _command mode_. In _inse
 [cols="1,1"]
 |===
 
-|gg
+|`gg`
 |Go to first line
 
-|G
+|`G`
 |Go to last line
 
-|42G
+|`42G`
 |Go to line 42
 
 |===
@@ -82,22 +76,22 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Command
 |Description
 
-|i
+|`i`
 |Insert before cursor
 
-|I
+|`I`
 |Insert before line
 
-|a
+|`a`
 |Append after cursor
 
-|A
+|`A`
 |Append after line
 
-|o
+|`o`
 |Start new line after current line
 
-|O
+|`O`
 |Start new line before current line
 
 |===
@@ -110,16 +104,16 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Command
 |Description
 
-|x
+|`x`
 |Delete a character
 
-|dw
+|`dw`
 |Delete a word
 
-|dd
+|`dd`
 |Delete a line
 
-|7dd
+|`7dd`
 |Delete 7 lines
 
 |===
@@ -136,22 +130,22 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Command
 |Description
 
-|yy
+|`yy`
 |Copy current line
 
-|7yy
+|`7yy`
 |Copy 7 lines
 
-|p
+|`p`
 |Paste
 
-|yyp
+|`yyp`
 |Duplicate current line
 
-|ddkkp
+|`ddkkp`
 |Move line up
 
-|ddp
+|`ddp`
 |Move line down
 
 |===
@@ -165,19 +159,19 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Command
 |Description
 
-|/foo
+|`/foo`
 |Search for the pattern _foo_
 
-|/\cfoo
+|`/\cfoo`
 |Search for the pattern _foo_ and ignore case
 
-|n
+|`n`
 |Search for next instance
 
-|N
+|`N`
 |Search for previous instance
 
-|:%s/foo/bar/gci
+|`:%s/foo/bar/gci`
 |Case insensitive search and replace +
 Change each 'foo' into 'bar' +
 Interactive confirmation for each step.
@@ -191,16 +185,16 @@ Interactive confirmation for each step.
 |Command
 |Description
 
-|:e
+|`:e`
 |Open or edit file inside VI
 
-|:bd
+|`:bd`
 |Close file inside VI
 
-|:ls
+|`:ls`
 |Display all open files
 
-|:b fileName
+|`:b fileName`
 |Switch to open file
 
 |===
@@ -212,13 +206,13 @@ Interactive confirmation for each step.
 |Command
 |Description
 
-|ctrl + n
+|`ctrl + n`
 |trigger VI Autocompletion
 
-|.
+|`.`
 |Repeat last action with one key stroke
 
-|u
+|`u`
 |Undo last action
 
 |===
@@ -234,17 +228,17 @@ The following command disables the line numbers e.g.: +set nonumber+
 |Description
 |Example
 
-|(no)number
+|`(no)number`
 |Enables/Disables line numbers
-|set number
+|`set number`
 
-|syntax
+|`syntax`
 |Use syntax highlighting of a specific language
-|set syntax=asciidoc
+|`set syntax=asciidoc`
 
 |===
 
 == Sources
 * http://www.lagmonster.org/docs/vi.html
 * http://stackoverflow.com/questions/tagged/vi+vim
-* Plötner, Wenzel - Linux das distributionsunabhängige Handbuch
+* Plötner, Wenzel - Linux das distributionsunabhängige Handbuch, ISBN 3-89842-677-7

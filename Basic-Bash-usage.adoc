@@ -16,19 +16,19 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|find . \| grep -i app.jar
+|`find . \| grep -i app.jar`
 |Lists all `app.jar` files in current directory case insensitive
 
-|find . \| grep .svn \| xargs  rm -f
+|`find . \| grep .svn \| xargs  rm -f`
 |Find all files containing the pattern `.svn` in the current directory and delete them.
 
-|find */tmp* -name *core* -type f -print \| xargs /bin/rm -f
+|`find */tmp* -name *core* -type f -print \| xargs /bin/rm -f`
 |Find files named `core` *in* OR *below* the directory `/tmp` and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.
 
-|grep git ~/.bash_history
+|`grep git ~/.bash_history`
 |Show all current `git` calls in the file `.bash_history`
 
-|grep -ir "main(String\[\] args)" .
+|`grep -ir "main(String\[\] args)" .`
 |Look for the string `main(String[] args)` in *ALL* files of the current directory +
 `-i`: case insensitive +
 `-r`: recursive
@@ -42,14 +42,17 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|ps aux \| grep -i java
+|`ps aux \| grep -i java`
 |Displays all current running processes containing `java` as name.
 
-|top -pid 66939
+|`top -pid 66939`
 |Displays detailed view of the process with the given process ID.
 
-|killall -s ssh
-|kill processes with the name `ssh` +
+|kill -9 66939
+|kill processes with the _id_ `66939`
+
+|`killall -s ssh`
+|kill processes with the _name_ `ssh` +
 `-s`:  Show only what would be done, but do not send any signal.
 
 |===
@@ -61,16 +64,16 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|cp -r /src/dir/. /dest/dir/
+|`cp -r /src/dir/. /dest/dir/`
 |Copies *ALL files*, including *hidden files* and the whole directory structure *recursiv*
 
-|scp LocalFile.example User@Host:Folder/DestinationFile.example
+|`scp LocalFile.example User@Host:Folder/DestinationFile.example`
 |Copys `LocalFile.example` from your *local machine* to the *host* in `DestinationFile.example`
 
-|scp User@Host:/home/bakka/HostFile.example DestinationFile.example
+|`scp User@Host:/home/bakka/HostFile.example DestinationFile.example`
 |Copys `HostFile.example` from the *host* to your *local machine* as `DestinationFile.example`
 
-|scp -rp sourcedirectory User@Host:/path
+|`scp -rp sourcedirectory User@Host:/path`
 |Copys `sourcedirectory` from your *local machine* to the *host* +
 `-r`: copy the directory recursive +
 `-p`: preserves modification times, access times, and modes from the original file.
@@ -84,13 +87,13 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|ifconfig -a
+|`ifconfig -a`
 |Display information about all interfaces in the system
 
-|nslookup mucsgvpint64
+|`nslookup mucsgvpint64`
 |Query Internet domain name servers
 
-|netstat -a -n -p TCP
+|`netstat -a -n -p TCP`
 |Shows network status with IP adresses and ports +
 `-a`: All connections +
 `-n`: Show adresses and ports as numbers +
@@ -104,22 +107,22 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|ls -ltr
+|`ls -ltr`
 |list all files sorted by time as most recently modified are last displayed
 
-|ls -al \| tee out.txt \| grep test
+|`ls -al \| tee out.txt \| grep test`
 |*tee* reads standard input and writes it to both standard output and one or more files
 
-|file testfile
+|`file testfile`
 |Inspects the `testfile` and displays an assumption about the file content, e.g.: `index.html: HTML document text`
 
-|tail -f *
+|`tail -f *`
 |Displays last lines of *ALL files* in current directory, waits for further input
 
-|diff file1 file2
+|`diff file1 file2`
 |compare files line by line
 
-|diff -arq folder1 folder2
+|`diff -arq folder1 folder2`
 |recursive compare of folders +
 `a`: treat all files as text +
 `r`: recursive compare of subdirectories +
@@ -134,26 +137,26 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|shutdown -h now
+|`shutdown -h now`
 |halt and close down the system immediately, requires `sudo`
 
 
-|echo "myLine" >> file.txt
+|`echo "myLine" >> file.txt`
 |Write the String 'myLine' inside of the file `file.txt`
 
-|df -h
+|`df -h`
 |Displays statistics about the amount of free disk space in "Human-readable" output.
 
-|du -sh folderName OR fileName
+|`du -sh folderName OR fileName`
 |Displays size in human readable format of `folderName` OR `fileName`
 
-|mkdir -p src/main/java
+|`mkdir -p src/main/java`
 |Creates a parent directory `src`, a child directory `main` and another child `java`
 
-|chown -R bakka /home/bakka
+|`chown -R bakka /home/bakka`
 |Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
 
-|tar zxfv file.tar.gz
+|`tar zxfv file.tar.gz`
 |*tar* process stream files +
 `z`: uncompress gunzip +
 `x`: extraxt +
@@ -169,10 +172,10 @@ Kacper Bak <http://kacperbak.de>
 |Unix Command
 |Description
 
-|printenv
+|`printenv`
 |List ALL environment variables
 
-|whereis ssh
+|`whereis ssh`
 |locate the program `ssh`
 
 |===
@@ -188,10 +191,10 @@ Kacper Bak <http://kacperbak.de>
 |Command
 |Description
 
-|pwd \| pbcopy
+|`pwd \| pbcopy`
 |(1) Copies current directory inside the clipboard
 
-|cd \`pbpaste`
+|`cd `pbpaste``
 |(2) changes directory to the value inside clipboard
 
 |===
@@ -203,19 +206,19 @@ Kacper Bak <http://kacperbak.de>
 |Linux Command
 |Description
 
-|dpkg -i package.deb
+|`dpkg -i package.deb`
 |Installs debian package `package.deb`, requires `sudo`
 
-|apt-get update
+|`apt-get update`
 |Update debian package list
 
-|apt-get install ExmpPackage
+|`apt-get install ExmpPackage`
 |Installs `ExmpPackage`
 
-|apt-get remove ExmpPackage
+|`apt-get remove ExmpPackage`
 |Removes `ExmpPackage`
 
-|apt-get purge ExmpPackage
+|`apt-get purge ExmpPackage`
 |Removes `ExmpPackage` and wipeouts any configuration
 |===
 
@@ -229,7 +232,7 @@ Kacper Bak <http://kacperbak.de>
 [cols="1,1"]
 |===
 
-|export PS1='\u@\h:\W$ '
+|`export PS1='\u@\h:\W$ '`
 |Prompt shows only current directory in ubuntu-bash.
 
 |===
@@ -240,7 +243,7 @@ Kacper Bak <http://kacperbak.de>
 [cols="1,1"]
 |===
 
-|for i in *.jpg; do mv "$i" "my.$i"; done
+|`for i in *.jpg; do mv "$i" "my.$i"; done`
 |Loop: for each file that end with `jpg` rename the file to the current name with the prefix `my.`
 
 |===
