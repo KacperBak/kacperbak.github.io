@@ -45,7 +45,7 @@ Kacper Bak <http://kacperbak.de>
 |`ps aux \| grep -i java`
 |Displays all current running processes containing `java` as name.
 
-|`top -pid 66939`
+|`top -p 66939`
 |Displays detailed view of the process with the given process ID.
 
 |kill -9 66939
