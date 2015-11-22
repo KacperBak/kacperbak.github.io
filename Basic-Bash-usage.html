@@ -797,6 +797,84 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="_ubuntu_linux_2">Ubuntu Linux</h3>
+<div class="sect3">
+<h4 id="_setting_global_environment_variables_for_login_and_sub_shells">Setting global environment variables for login and sub shells</h4>
+<div class="paragraph">
+<div class="title">Trivial definitions</div>
+<p>A <strong>login shell</strong> is started on system boot process. It&#8217;s the one where the user is going to be authenticated by its credentials (username, password). All user specific configurations are loaded on this point for the user. Other shells started from this point, derive the settings from the login shell and are called <strong>sub shells</strong> (like the manual start of the terminal program that runs the shell in a window).
+To see another <strong>login shell</strong> you can leave your desktop with <code>Ctrl + Alt + F1</code> and go back with <code>Ctrl + Alt + F7</code>.
+Another example of a <strong>login shell</strong> is the connection via <code>ssh</code>.</p>
+</div>
+<div class="paragraph">
+<p>Lets configure some environment variables for the <strong>login shells</strong> as a system wide configuration.</p>
+</div>
+<div class="literalblock">
+<div class="title">/etc/profile: system-wide .profile file for the Bourne shell</div>
+<div class="content">
+<pre># JDK 8 export
+export JAVA_HOME='/home/bakka/java/jdk1.8.0_65' <b class="conum">(1)</b>
+export PATH="$JAVA_HOME/bin:$PATH" <b class="conum">(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>The use of single quotation marks for <code>JAVA_HOME</code> causes interpolation to be <strong>suppressed</strong>! Only single quotation marks within the URL need be escaped.</p>
+</li>
+<li>
+<p>Double quotation marks in the second assignment allow interpolation.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Verify this global setting for <strong>login shells</strong> via the command <code>sh -l -c 'printenv JAVA_HOME'</code> that should result in:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/home/bakka/java/jdk1.8.0_65</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ok that works, but what about the sub shells those have to derive the global setting from <code>/etc/profile</code>?
+We simple evaluate the <code>/etc/profile</code> file and execute it in the current context with the <code>source</code> command inside of <code>.bashrc</code> that is called on each sub shell creation for the current user.</p>
+</div>
+<div class="literalblock">
+<div class="title">~/.bashrc: executed by bash(1) for non-login shells.</div>
+<div class="content">
+<pre>source /etc/profile</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check this result with <code>echo $JAVA_HOME</code> that should return:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/home/bakka/java/jdk1.8.0_65</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note:</p>
+</div>
+<div class="paragraph">
+<p>If <code>.bashrc</code> does not exist in your home folder create on and make sure it is referenced in <code>~/.profile</code> like that:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># ~/.profile: executed by Bourne-compatible login shells.
+
+if [ "$BASH" ]; then
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi
+fi</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As an alternative define <code>source /etc/profile</code> directly in <code>~/.profile</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_current_folder_in_bash_prompt">Current folder in bash prompt</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -809,6 +887,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -835,7 +914,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-18 19:03:35 +02:00
+Last updated 2015-11-22 21:33:03 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

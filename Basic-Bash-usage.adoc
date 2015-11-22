@@ -229,6 +229,61 @@ Kacper Bak <http://kacperbak.de>
 
 === Ubuntu Linux
 
+==== Setting global environment variables for login and sub shells
+
+.Trivial definitions
+A *login shell* is started on system boot process. It's the one where the user is going to be authenticated by its credentials (username, password). All user specific configurations are loaded on this point for the user. Other shells started from this point, derive the settings from the login shell and are called *sub shells* (like the manual start of the terminal program that runs the shell in a window).
+To see another *login shell* you can leave your desktop with `Ctrl + Alt + F1` and go back with `Ctrl + Alt + F7`.
+Another example of a *login shell* is the connection via `ssh`.
+
+
+Lets configure some environment variables for the *login shells* as a system wide configuration.
+
+./etc/profile: system-wide .profile file for the Bourne shell
+....
+# JDK 8 export
+export JAVA_HOME='/home/bakka/java/jdk1.8.0_65' <1>
+export PATH="$JAVA_HOME/bin:$PATH" <2>
+....
+
+<1> The use of single quotation marks for `JAVA_HOME` causes interpolation to be *suppressed*! Only single quotation marks within the URL need be escaped.
+<2> Double quotation marks in the second assignment allow interpolation.
+
+Verify this global setting for *login shells* via the command `sh -l -c 'printenv JAVA_HOME'` that should result in:
+....
+/home/bakka/java/jdk1.8.0_65
+....
+
+Ok that works, but what about the sub shells those have to derive the global setting from `/etc/profile`?
+We simple evaluate the `/etc/profile` file and execute it in the current context with the `source` command inside of `.bashrc` that is called on each sub shell creation for the current user.
+
+.~/.bashrc: executed by bash(1) for non-login shells.
+....
+source /etc/profile
+....
+
+Check this result with `echo $JAVA_HOME` that should return:
+....
+/home/bakka/java/jdk1.8.0_65
+....
+
+Note:
+
+If `.bashrc` does not exist in your home folder create one and make sure it is referenced in `~/.profile` like that:
+....
+# ~/.profile: executed by Bourne-compatible login shells.
+
+if [ "$BASH" ]; then
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi
+fi
+....
+As an alternative define `source /etc/profile` directly in `~/.profile`.
+
+
+==== Current folder in bash prompt
+
 [cols="1,1"]
 |===
 
