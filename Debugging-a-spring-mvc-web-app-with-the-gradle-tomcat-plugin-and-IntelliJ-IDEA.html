@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
 <meta name="author" content="Kacper Bak">
-<title>Java playground</title>
+<title>Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -412,7 +412,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Java playground</h1>
+<h1>Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</h1>
 <div class="details">
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
@@ -420,30 +420,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_debugging_a_spring_mvc_web_app_with_the_gradle_tomcat_plugin_and_intellij_idea">Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</a>
-<ul class="sectlevel2">
 <li><a href="#_problem_debugging_fails">Problem: Debugging fails</a></li>
-<li><a href="#_solution_run_embedded_tomcat_config">Solution: Run embedded tomcat config</a></li>
-</ul>
-</li>
+<li><a href="#_remote_debug_configuration">Remote debug configuration</a></li>
+<li><a href="#_solution_run_embedded_tomcat_config_in_your_ide">Solution: Run embedded tomcat config in your IDE</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_debugging_a_spring_mvc_web_app_with_the_gradle_tomcat_plugin_and_intellij_idea">Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>To debug the <a href="https://github.com/bmuschko/gradle-tomcat-plugin">gradle-tomcat-plugin</a> in Intellij IDEA there are two run/debug configurations required.
-It has not worked out for me to establish an debug connection as the server has been run from the CLI. Despite of the fact the <code>GRADLE_OPTS</code> has been correctly.
+It has not worked out for me to establish an debug connection as the server has been run from the CLI. Despite of the fact the <code>GRADLE_OPTS</code> has been set correctly.
 Both configurations has to be run from the IDE itself!</p>
 </div>
 <div class="paragraph">
 <p>The entire example is available on <a href="https://github.com/KacperBak/spring-mvc/tree/debug-with-gradle-tomcat-plugin">GitHub</a>
-It has been tested with Gradle 2.11 and JDK 1.8.0_65 on OSX.</p>
+It has been tested with Gradle 2.11 and JDK 1.8.0_65 on OSX with IDEA 15.0.2.</p>
 </div>
-<div class="sect2">
-<h3 id="_problem_debugging_fails">Problem: Debugging fails</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_problem_debugging_fails">Problem: Debugging fails</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If your <code>GRADLE_OPTS</code> are set correctly and you run an gradle task like <code>tomcatRunWar</code> to run the container, you get the following outcome.</p>
 </div>
@@ -465,8 +464,12 @@ The Server is running at http://localhost:8080/spring-mvc
 <div class="paragraph">
 <p>That seems ok, because the server started and the JVM is listening on port 5005 to connect.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_remote_debug_configuration">Remote debug configuration</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<div class="title">Remote debug configuration</div>
 <p>Now it&#8217;s time to connect to the running server process with your InteliJ IDEA by adding an <code>Remote</code> configuration and setting it to the address 5005.
 That should look like this:</p>
 </div>
@@ -488,8 +491,10 @@ That should look like this:</p>
 It seems the the connection between the debugger and the running java process is not established.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_solution_run_embedded_tomcat_config">Solution: Run embedded tomcat config</h3>
+</div>
+<div class="sect1">
+<h2 id="_solution_run_embedded_tomcat_config_in_your_ide">Solution: Run embedded tomcat config in your IDE</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Start your embedded tomcat also from IntelliJ IDEA by a run/debug config.
 To do so, create a simple Gradle config with your task like <code>tomcatRunWar</code> and set the JVM options direct in the config.</p>
@@ -500,7 +505,21 @@ To do so, create a simple Gradle config with your task like <code>tomcatRunWar</
 </div>
 </div>
 <div class="paragraph">
-<p>After that simply startup your embedded-tomcat with <code>Run embedded tomcat config</code> by hitting run-button and connecting to it with your <code>debug config</code> by hitting debug-button.</p>
+<p>After that, simply startup both configurations respectively in your IDE.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start your embedded-tomcat with <code>Run embedded tomcat config</code> by hitting run-button.</p>
+</li>
+<li>
+<p>Connect to it with your <code>debug config</code> by hitting debug-button.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="./img/ConnectedDebuggerToEmbeddedTomcat.png" alt="ConnectedDebuggerToEmbeddedTomcat.png">
 </div>
 </div>
 </div>
@@ -508,7 +527,7 @@ To do so, create a simple Gradle config with your task like <code>tomcatRunWar</
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-21 11:14:32 +01:00
+Last updated 2016-02-21 17:39:11 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

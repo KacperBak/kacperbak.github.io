@@ -1,4 +1,4 @@
-= Java playground
+= Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA
 Kacper Bak <http://kacperbak.de>
 :toc:
 
@@ -7,15 +7,14 @@ Kacper Bak <http://kacperbak.de>
 :imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
-== Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA
 To debug the https://github.com/bmuschko/gradle-tomcat-plugin[gradle-tomcat-plugin] in Intellij IDEA there are two run/debug configurations required.
-It has not worked out for me to establish an debug connection as the server has been run from the CLI. Despite of the fact the `GRADLE_OPTS` has been correctly.
+It has not worked out for me to establish an debug connection as the server has been run from the CLI. Despite of the fact the `GRADLE_OPTS` has been set correctly.
 Both configurations has to be run from the IDE itself!
 
 The entire example is available on https://github.com/KacperBak/spring-mvc/tree/debug-with-gradle-tomcat-plugin[GitHub]
-It has been tested with Gradle 2.11 and JDK 1.8.0_65 on OSX.
+It has been tested with Gradle 2.11 and JDK 1.8.0_65 on OSX with IDEA 15.0.2.
 
-=== Problem: Debugging fails
+== Problem: Debugging fails
 If your `GRADLE_OPTS` are set correctly and you run an gradle task like `tomcatRunWar` to run the container, you get the following outcome.
 ....
 $ gradle tomcatRunWar
@@ -32,7 +31,7 @@ The Server is running at http://localhost:8080/spring-mvc
 ....
 That seems ok, because the server started and the JVM is listening on port 5005 to connect.
 
-.Remote debug configuration
+== Remote debug configuration
 Now it's time to connect to the running server process with your InteliJ IDEA by adding an `Remote` configuration and setting it to the address 5005.
 That should look like this:
 
@@ -47,10 +46,15 @@ Connected to the target VM, address: 'localhost:5005', transport: 'socket'
 But something seems not to be working. For example if you set an break point into an controller and trigger the GET request the debugger is NOT *stopping*!
 It seems the the connection between the debugger and the running java process is not established.
 
-=== Solution: Run embedded tomcat config
+== Solution: Run embedded tomcat config in your IDE
 Start your embedded tomcat also from IntelliJ IDEA by a run/debug config.
 To do so, create a simple Gradle config with your task like `tomcatRunWar` and set the JVM options direct in the config.
 
 image::runEmbeddedTomcatConfig.png[runEmbeddedTomcatConfig.png, align="center"]
 
-After that simply startup your embedded-tomcat with `Run embedded tomcat config` by hitting run-button and connecting to it with your `debug config` by hitting debug-button.
+After that, simply startup both configurations respectively in your IDE.
+
+* Start your embedded-tomcat with `Run embedded tomcat config` by hitting run-button.
+* Connect to it with your `debug config` by hitting debug-button.
+
+image::ConnectedDebuggerToEmbeddedTomcat.png[ConnectedDebuggerToEmbeddedTomcat.png, align="center"]
