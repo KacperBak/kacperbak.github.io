@@ -10,6 +10,7 @@ This site provides short references how some technologies work.
 No claim to completeness, correctness or something else... just notes for my lazy brain and easy spreading.
 
 * http://kacperbak.github.io/Basic-Bash-usage.html[Bash] usage on OS X and Ubuntu Linux.
+* http://kacperbak.github.io/Java-playground.html[Java] playground.
 * http://kacperbak.github.io/Daily-git-usage.html[Git] on the CLI.
 * http://kacperbak.github.io/Maven-notes.html[Maven] common commands and settings.
 * http://kacperbak.github.io/VI-effective-usage.html[VI] basic commands.
