@@ -38,7 +38,7 @@ That should look like this:
 image::debugConfig.png[debugConfig.png, align="center"]
 
 
-After start the debug config by hitting the debug button and your IDE responds with:
+After editing the configuration it's time to hit the debug button that responds with:
 ....
 Connected to the target VM, address: 'localhost:5005', transport: 'socket'
 ....
