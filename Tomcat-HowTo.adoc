@@ -1,0 +1,17 @@
+= Apache Tomcat HowTo
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+== Main actions
+....
+/etc/init.d/tomcatX start
+/etc/init.d/tomcatX stop
+/etc/init.d/tomcatX restart
+/etc/init.d/tomcatX status
+....
+While `X` is the placeholder for the tomcat version
