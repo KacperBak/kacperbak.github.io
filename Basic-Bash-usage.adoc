@@ -93,6 +93,9 @@ Kacper Bak <http://kacperbak.de>
 |`nslookup mucsgvpint64`
 |Query Internet domain name servers
 
+|`nmap -p 5432 127.0.0.1`
+|Create and close *one* TCP connection to port 5432 to the host 127.0.0.1 (e.g check data base connectivity)
+
 |`netstat -a -n -p TCP`
 |Shows network status with IP adresses and ports +
 `-a`: All connections +
