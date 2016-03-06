@@ -1,0 +1,33 @@
+= Daily SVN usage
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+Tested against http://www.collab.net/products/subversion[CSVN] instance located on Lubuntu 14.04 LTS x64 `~/csvn`.
+Start the console with `~/csvn/bin/csvn start` command. After successfull launch the address to the browser interface is going to be displayed.
+....
+CSVN Console is ready at http://localhost:3343/csvn
+....
+The console can also be launched on system startup, see the README file for details.
+Using subversion with the default configuration, login as admin and run the server using the `Start` button.
+
+
+== CLI commands
+
+[cols="1,1" options="header"]
+|===
+
+
+|command
+|description
+
+|...
+|...
+
+|===
+
+
