@@ -421,6 +421,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_main_actions">Main actions</a></li>
+<li><a href="#_jndi_resource_example">JNDI resource example</a></li>
 </ul>
 </div>
 </div>
@@ -441,10 +442,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_jndi_resource_example">JNDI resource example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Those lines has been configured in <code>/conf/context.xml</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;!-- The contents of this file will be loaded for each web application --&gt;
+&lt;Context&gt;
+    &lt;!-- ... --&gt;
+
+    &lt;!-- Configure data base as JNDI resource --&gt;
+    &lt;Resource name="jdbc/prodDB" auth="Container" type="javax.sql.DataSource"
+               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+               username="prodUser" password="prodPassword" driverClassName="org.postgresql.Driver"
+               url="jdbc:postgresql://localhost:5432/prodDB"/&gt;
+
+    &lt;!-- Set Spring Profile (this can also be done in `catalina.properties`) --&gt;
+    &lt;Parameter name="spring.profiles.active" value="prod" override="false"/&gt;
+&lt;/Context&gt;</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-27 21:51:14 +01:00
+Last updated 2016-04-18 21:05:22 +02:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
