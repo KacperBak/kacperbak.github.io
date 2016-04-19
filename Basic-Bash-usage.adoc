@@ -223,6 +223,9 @@ Kacper Bak <http://kacperbak.de>
 
 |`apt-get purge ExmpPackage`
 |Removes `ExmpPackage` and wipeouts any configuration
+
+|`apt-get autoremove ExmpPackage`
+|Removes obsolete dependencies from `ExmpPackage`.
 |===
 
 == Bash Configuration
