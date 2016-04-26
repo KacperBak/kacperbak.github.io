@@ -166,6 +166,9 @@ Kacper Bak <http://kacperbak.de>
 `f`: force overwrite existing +
 `v`: verbose
 
+|`su root`
+|Change user ID to root.
+
 |===
 
 === Bash environment

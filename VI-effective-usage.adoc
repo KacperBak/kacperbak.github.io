@@ -130,6 +130,9 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Command
 |Description
 
+|`yw`
+|Copy current word, beginning from cursor position
+
 |`yy`
 |Copy current line
 
