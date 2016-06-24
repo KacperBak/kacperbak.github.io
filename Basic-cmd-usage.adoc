@@ -1,0 +1,27 @@
+= Basic cmd usage on Windows
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+== Basic `cmd.exe` commands
+[cols="1,1" options="header"]
+|===
+
+|Win32 Command
+|Description
+
+|`xcopy c:\tmp\src x:\tmp\dst /s /e`
+|copy recursive from `src` to `dst` +
+ `/s`: Copies directories and subdirectories, unless they are empty. +
+ `/e`: Copies all subdirectories, even if they are empty.
+
+|`rmdir /s /q`
+|remove directory recursive. +
+ `/s`: Removes the specified directory and all subdirectories including any files. +
+ `/q`: Deletes directories without confirmation.
+
+|===
