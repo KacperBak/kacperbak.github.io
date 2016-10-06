@@ -17,3 +17,4 @@ No claim to completeness, correctness or something else... just notes for my laz
 * http://kacperbak.github.io/Daily-git-usage.html[Git] on the CLI.
 * http://kacperbak.github.io/Maven-notes.html[Maven] common commands and settings.
 * http://kacperbak.github.io/VI-effective-usage.html[VI] basic commands.
+* http://kacperbak.github.io/LESS-usage.html[LESS] basic commands.

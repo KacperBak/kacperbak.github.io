@@ -1,0 +1,31 @@
+= VI notes - For basic VI usage
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+toc::[]
+
+== Description
+`less` is a tool to view large files on the CLI. It does not have to read the entire input of a file like common text editors. So even logfiles with the size of a GB can be inspected with it.
+The commands are based on the tools `more` and http://kacperbak.github.io/VI-effective-usage.html[vi].
+
+.Movement
+[cols="1,1" options="header"]
+|===
+
+|Command
+|Description
+
+|`space` OR `d`
+|Scroll forward
+
+|`b`
+|Scroll backward
+
+|`Nspace` OR `50space`
+|Scroll forward N lines, while N is a preceded decimal number
+
+|===

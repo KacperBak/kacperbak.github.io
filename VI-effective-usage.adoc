@@ -163,16 +163,29 @@ Most of the movement in the document is being done from _command mode_. In _inse
 |Description
 
 |`/foo`
-|Search for the pattern _foo_
+|Search for the pattern _foo_ *forward*
 
-|`/\cfoo`
-|Search for the pattern _foo_ and ignore case
+|`?foo`
+|Search for the pattern _foo_ *backward*
 
 |`n`
 |Search for next instance
 
 |`N`
-|Search for previous instance
+|Search for next instance in the opposite direction
+
+|`/\cfoo`
+|Search for the pattern _foo_ forward and *ignore case*
+
+|`/\<My Exact Search String\>`
+|Search for the *exact* string _My Exact Search String_ forward +
+`\<`: Beginning of the word +
+`\>`: End of the word
+
+|`/\<Kacper Bak\>\|\<kacper bak\>`
+|Search for the exact string _Kacper Bak_ *OR* for the exact string _kacper bak_ forward +
+`\|`: OR
+
 
 |`:%s/foo/bar/gci`
 |Case insensitive search and replace +
@@ -244,4 +257,6 @@ The following command disables the line numbers e.g.: +set nonumber+
 == Sources
 * http://www.lagmonster.org/docs/vi.html
 * http://stackoverflow.com/questions/tagged/vi+vim
+* http://vim.wikia.com/wiki/Search_patterns
+* https://www.cs.colostate.edu/helpdocs/vi.html
 * Plötner, Wenzel - Linux das distributionsunabhängige Handbuch, ISBN 3-89842-677-7
