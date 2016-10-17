@@ -57,6 +57,25 @@ Kacper Bak <http://kacperbak.de>
 
 |===
 
+=== Compress and encrypt with ZIP
+[cols="1,2" options="header"]
+|===
+
+|Unix Command
+|Description
+
+|zip -r -e FinalName SourceDirectory
+|Recursive compression of the `SourceDirectory` and encryption with a password provided by a terminal prompt. +
+`-r`: include all files and subdirectories. +
+`-p`: preserves modification times, access times, and modes from the original file. +
+`FinalName`: Resulting file name after compression and encryption. +
+`SourceDirectory`: Input folder.
+
+|unzip SourceDirectory
+|Uncompress (and decrypt) the `SourceDirectory`. If necessary a password has to be provided by a terminal prompt.
+
+|===
+
 === Copy
 [cols="1,1" options="header"]
 |===

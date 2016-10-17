@@ -424,6 +424,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_find_and_grep">Find and grep</a></li>
 <li><a href="#_current_process">Current process</a></li>
+<li><a href="#_compress_and_encrypt_with_zip">Compress and encrypt with ZIP</a></li>
 <li><a href="#_copy">Copy</a></li>
 <li><a href="#_network">Network</a></li>
 <li><a href="#_inspect_files">Inspect files</a></li>
@@ -524,6 +525,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>killall -s ssh</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kill processes with the <em>name</em> <code>ssh</code><br>
 <code>-s</code>:  Show only what would be done, but do not send any signal.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_compress_and_encrypt_with_zip">Compress and encrypt with ZIP</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 66%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Unix Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zip -r -e FinalName SourceDirectory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recursive compression of the <code>SourceDirectory</code> and encryption with a password provided by a terminal prompt.<br>
+<code>-r</code>: include all files and subdirectories.<br>
+<code>-p</code>: preserves modification times, access times, and modes from the original file.<br>
+<code>FinalName</code>: Resulting file name after compression and encryption.<br>
+<code>SourceDirectory</code>: Input folder.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unzip SourceDirectory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uncompress (and decrypt) the <code>SourceDirectory</code>. If necessary a password has to be provided by a terminal prompt.</p></td>
 </tr>
 </tbody>
 </table>
@@ -926,7 +956,7 @@ fi</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-04-26 14:08:14 +02:00
+Last updated 2016-10-17 02:06:23 +02:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
