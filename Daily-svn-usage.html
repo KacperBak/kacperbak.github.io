@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
 <meta name="author" content="Kacper Bak">
-<title>Apache Tomcat HowTo</title>
+<title>Daily SVN usage</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -412,7 +412,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Apache Tomcat HowTo</h1>
+<h1>Daily SVN usage</h1>
 <div class="details">
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
@@ -420,49 +420,158 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_main_actions">Main actions</a></li>
-<li><a href="#_jndi_resource_example">JNDI resource example</a></li>
+<li><a href="#_cli_commands">CLI commands</a>
+<ul class="sectlevel2">
+<li><a href="#_ckeckout_a_repository">Ckeckout a repository</a></li>
+<li><a href="#_ckeckout_a_specific_revision">Ckeckout a specific revision</a></li>
+<li><a href="#_commit_changes">Commit changes</a></li>
+<li><a href="#_create_branch_and_commit">Create branch and commit</a></li>
+<li><a href="#_remove_branch_and_commit">Remove branch and commit</a></li>
+<li><a href="#_list_last_10_commits">List last 10 commits</a></li>
+<li><a href="#_list_everything_in_ascending_order">List everything in ascending order</a></li>
+<li><a href="#_list_everything_in_descending_order">List everything in descending order</a></li>
+<li><a href="#_print_commit_statistics">Print commit statistics</a></li>
+<li><a href="#_ignore_a_single_directory_in_svn">Ignore a single directory in SVN</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_main_actions">Main actions</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>/etc/init.d/tomcatX start
-/etc/init.d/tomcatX stop
-/etc/init.d/tomcatX restart
-/etc/init.d/tomcatX status</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>While <code>X</code> is the placeholder for the tomcat version</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_jndi_resource_example">JNDI resource example</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Those lines has been configured in <code>/conf/context.xml</code></p>
+<p>Tested against <a href="http://www.collab.net/products/subversion">CSVN</a> instance located on Lubuntu 14.04 LTS x64 <code>~/csvn</code>.
+Start the console with <code>~/csvn/bin/csvn start</code> command. After successfull launch the address to the browser interface is going to be displayed.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>&lt;!-- The contents of this file will be loaded for each web application --&gt;
-&lt;Context&gt;
-    &lt;!-- ... --&gt;
-
-    &lt;!-- Configure data base as JNDI resource --&gt;
-    &lt;Resource name="jdbc/prodDB" auth="Container" type="javax.sql.DataSource"
-               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-               username="prodUser" password="prodPassword" driverClassName="org.postgresql.Driver"
-               url="jdbc:postgresql://localhost:5432/prodDB"/&gt;
-
-    &lt;!-- Set Spring Profile (this can also be done in `catalina.properties`) --&gt;
-    &lt;Parameter name="spring.profiles.active" value="prod" override="false"/&gt;
-&lt;/Context&gt;</pre>
+<pre>CSVN Console is ready at http://localhost:3343/csvn</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The console can also be launched on system startup, see the README file for details.
+Using subversion with the default configuration, login as admin and run the server using the <code>Start</code> button.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cli_commands">CLI commands</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ckeckout_a_repository">Ckeckout a repository</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn checkout http://localhost:3343/csvn/project1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ckeckout_a_specific_revision">Ckeckout a specific revision</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn checkout -r 123 http://localhost:3343/csvn/project1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_commit_changes">Commit changes</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn commit . -m "my commit message"</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_branch_and_commit">Create branch and commit</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn cp trunk branches/feature-branch-XYZ
+svn commit . -m "feature-branch-XYZ added"</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_remove_branch_and_commit">Remove branch and commit</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn rm --force trunk branches/feature-branch-XYZ
+svn commit . -m "feature-branch-XYZ removed"</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_last_10_commits">List last 10 commits</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn log -l 10 .</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>-l maximum number of log entries</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_everything_in_ascending_order">List everything in ascending order</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn log -r 1:HEAD</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_everything_in_descending_order">List everything in descending order</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn log -r HEAD:1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_print_commit_statistics">Print commit statistics</h3>
+<div class="literalblock">
+<div class="content">
+<pre>svn log -v --xml | grep '&lt;author.*/author&gt;' | sort $* | uniq -c | sort -rn</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ignore_a_single_directory_in_svn">Ignore a single directory in SVN</h3>
+<div class="paragraph">
+<p>Ignore a directory with the name <code>workdir</code>.
+Run this command from the directory that contains <code>workdir</code> e.g.: <code>trunk</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cd trunk
+svn propset svn:ignore workdir .</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now check that the folder has been ignored:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>svn status --no-ignore</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see the following output, the <code>I</code> indicates that this directory is now ready to be ignored:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ svn status --no-ignore
+ M      trunk
+I       trunk/workdir</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Commit your changes to apply.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>svn commit . -m "'workdir' excluded from versioning."</pre>
+</div>
 </div>
 </div>
 </div>
@@ -470,7 +579,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-14 21:38:09 +01:00
+Last updated 2016-11-14 21:42:28 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

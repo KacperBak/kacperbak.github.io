@@ -15,6 +15,7 @@ No claim to completeness, correctness or something else... just notes for my laz
 * *JVM* playground.
 ** http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html[Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA]
 * http://kacperbak.github.io/Daily-git-usage.html[Git] on the CLI.
+* http://kacperbak.github.io/Daily-svn-usage.html[SVN] on the CLI.
 * http://kacperbak.github.io/Maven-notes.html[Maven] common commands and settings.
 * http://kacperbak.github.io/VI-effective-usage.html[VI] basic commands.
 * http://kacperbak.github.io/LESS-usage.html[LESS] basic commands.
