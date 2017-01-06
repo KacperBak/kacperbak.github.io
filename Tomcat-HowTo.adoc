@@ -7,7 +7,7 @@ Kacper Bak <http://kacperbak.de>
 :imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
-== Main actions
+== Start/Stop Tomcat as a service (debian 8.4)
 ....
 /etc/init.d/tomcatX start
 /etc/init.d/tomcatX stop
@@ -18,18 +18,29 @@ While `X` is the placeholder for the tomcat version
 
 == JNDI resource example
 Those lines has been configured in `/conf/context.xml`
-....
+
+[source,xml]
+----
 <!-- The contents of this file will be loaded for each web application -->
 <Context>
-    <!-- ... -->
+ <!-- ... -->
 
-    <!-- Configure data base as JNDI resource -->
-    <Resource name="jdbc/prodDB" auth="Container" type="javax.sql.DataSource"
-               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-               username="prodUser" password="prodPassword" driverClassName="org.postgresql.Driver"
-               url="jdbc:postgresql://localhost:5432/prodDB"/>
+ <!-- Configure data base as JNDI resource -->
+ <Resource
+   name="jdbc/prodDB"
+   auth="Container"
+   type="javax.sql.DataSource"
+   maxTotal="100"
+   maxIdle="30"
+   maxWaitMillis="10000"
+   username="prodUser"
+   password="prodPassword"
+   driverClassName="org.postgresql.Driver"
+   url="jdbc:postgresql://localhost:5432/prodDB"
+ />
 
-    <!-- Set Spring Profile (this can also be done in `catalina.properties`) -->
-    <Parameter name="spring.profiles.active" value="prod" override="false"/>
+ <!-- Set Spring Profile (this can also be done in `catalina.properties`) -->
+ <Parameter name="spring.profiles.active" value="prod" override="false"/>
+
 </Context>
-....
+----
