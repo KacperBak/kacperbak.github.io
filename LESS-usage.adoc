@@ -1,4 +1,4 @@
-= VI notes - For basic VI usage
+= Less notes - Basic Less usage
 Kacper Bak <http://kacperbak.de>
 :toc:
 
@@ -16,16 +16,11 @@ The commands are based on the tools `more` and http://kacperbak.github.io/VI-eff
 [cols="1,1" options="header"]
 |===
 
-|Command
-|Description
-
-|`space` OR `d`
-|Scroll forward
-
-|`b`
-|Scroll backward
-
-|`Nspace` OR `50space`
-|Scroll forward N lines, while N is a preceded decimal number
+|Command                |Description
+|`space` OR `d`         |Scroll forward
+|`b`                    |Scroll backward
+|`Nspace` OR `50space`  |Scroll forward N lines, while N is a preceded decimal number
+|`gg`                   |Go to first line
+|`G`                    |Go to last line
 
 |===

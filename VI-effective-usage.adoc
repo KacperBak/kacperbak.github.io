@@ -1,4 +1,4 @@
-= VI notes - For basic VI usage
+= VI notes - Basic VI usage
 Kacper Bak <http://kacperbak.de>
 :toc:
 
@@ -31,40 +31,23 @@ Most of the movement in the document is being done from _command mode_. In _inse
 [cols="1,1", options="header"]
 |===
 
-|Command
-|Description
-
-|`w`
-|Move one word forward
-
-|`b`
-|Move one word back
-
-|`0`
-|Move to start of the current line
-
-|`$`
-|Move to end of current line
-
-|ctrl + u (holding ctrl down)
-|Scroll up
-
-|ctrl + d (holding ctrl down)
-|Scroll down
+|Command                        |Description
+|`w`                            |Move one word forward
+|`b`                            |Move one word back
+|`0`                            |Move to start of the current line
+|`$`                            |Move to end of current line
+|ctrl + u (holding ctrl down)   |Scroll up
+|ctrl + d (holding ctrl down)   |Scroll down
 
 |===
 
-[cols="1,1"]
+[cols="1,1", options="header"]
 |===
 
-|`gg`
-|Go to first line
-
-|`G`
-|Go to last line
-
-|`42G`
-|Go to line 42
+|Command                        |Description
+|`gg`                           |Go to first line
+|`G`                            |Go to last line
+|`42G`                          |Go to line 42
 
 |===
 
@@ -73,26 +56,13 @@ Most of the movement in the document is being done from _command mode_. In _inse
 [cols="1,1", options="header"]
 |===
 
-|Command
-|Description
-
-|`i`
-|Insert before cursor
-
-|`I`
-|Insert before line
-
-|`a`
-|Append after cursor
-
-|`A`
-|Append after line
-
-|`o`
-|Start new line after current line
-
-|`O`
-|Start new line before current line
+|Command    |Description
+|`i`        |Insert before cursor
+|`I`        |Insert before line
+|`a`        |Append after cursor
+|`A`        |Append after line
+|`o`        |Start new line after current line
+|`O`        |Start new line before current line
 
 |===
 
@@ -101,20 +71,11 @@ Most of the movement in the document is being done from _command mode_. In _inse
 [cols="1,1", options="header"]
 |===
 
-|Command
-|Description
-
-|`x`
-|Delete a character
-
-|`dw`
-|Delete a word
-
-|`dd`
-|Delete a line
-
-|`7dd`
-|Delete 7 lines
+|Command    |Description
+|`x`        |Delete a character
+|`dw`       |Delete a word
+|`dd`       |Delete a line
+|`7dd`      |Delete 7 lines
 
 |===
 
@@ -127,29 +88,14 @@ Most of the movement in the document is being done from _command mode_. In _inse
 [cols="1,1", options="header"]
 |===
 
-|Command
-|Description
-
-|`yw`
-|Copy current word, beginning from cursor position
-
-|`yy`
-|Copy current line
-
-|`7yy`
-|Copy 7 lines
-
-|`p`
-|Paste
-
-|`yyp`
-|Duplicate current line
-
-|`ddkkp`
-|Move line up
-
-|`ddp`
-|Move line down
+|Command    |Description
+|`yw`       |Copy current word, beginning from cursor position
+|`yy`       |Copy current line
+|`7yy`      |Copy 7 lines
+|`p`        |Paste
+|`yyp`      |Duplicate current line
+|`ddkkp`    |Move line up
+|`ddp`      |Move line down
 
 |===
 
@@ -159,77 +105,45 @@ Most of the movement in the document is being done from _command mode_. In _inse
 [cols="1,1", options="header"]
 |===
 
-|Command
-|Description
-
-|`/foo`
-|Search for the pattern _foo_ *forward*
-
-|`?foo`
-|Search for the pattern _foo_ *backward*
-
-|`n`
-|Search for next instance
-
-|`N`
-|Search for next instance in the opposite direction
-
-|`/\cfoo`
-|Search for the pattern _foo_ forward and *ignore case*
-
-|`/\<My Exact Search String\>`
-|Search for the *exact* string _My Exact Search String_ forward +
-`\<`: Beginning of the word +
-`\>`: End of the word
-
-|`/\<Kacper Bak\>\|\<kacper bak\>`
-|Search for the exact string _Kacper Bak_ *OR* for the exact string _kacper bak_ forward +
-`\|`: OR
-
-
-|`:%s/foo/bar/gci`
-|Case insensitive search and replace +
-Change each 'foo' into 'bar' +
-Interactive confirmation for each step.
+|Command                            |Description
+|`/foo`                             |Search for the pattern _foo_ *forward*
+|`?foo`                             |Search for the pattern _foo_ *backward*
+|`n`                                |Search for next instance
+|`N`                                |Search for next instance in the opposite direction
+|`/\cfoo`                           |Search for the pattern _foo_ forward and *ignore case*
+|`/\<My Exact Search String\>`      |Search for the *exact* string _My Exact Search String_ forward +
+                                     `\<`: Beginning of the word +
+                                     `\>`: End of the word.
+|`/\<Kacper Bak\>\|\<kacper bak\>`  |Search for the exact string _Kacper Bak_ *OR* for the exact string _kacper bak_ forward +
+                                    `\|`: OR
+|`:%s/foo/bar/gci`                  |Case insensitive search and replace +
+                                    Change each 'foo' into 'bar' +
+                                    Interactive confirmation for each step.
 
 |===
 
 == Working with multiple files
+
 [cols="1,1", options="header"]
 |===
 
-|Command
-|Description
-
-|`:e`
-|Open or edit file inside VI
-
-|`:bd`
-|Close file inside VI
-
-|`:ls`
-|Display all open files
-
-|`:b fileName`
-|Switch to open file
+|Command        |Description
+|`:e`           |Open or edit file inside VI
+|`:bd`          |Close file inside VI
+|`:ls`          |Display all open files
+|`:b fileName`  |Switch to open file
 
 |===
 
 == Common usage
+
 [cols="1,1", options="header"]
 |===
 
-|Command
-|Description
-
-|`ctrl + n`
-|trigger VI Autocompletion
-
-|`.`
-|Repeat last action with one key stroke
-
-|`u`
-|Undo last action
+|Command    |Description
+|`ctrl + n` |trigger VI Autocompletion
+|`.`        |Repeat last action with one key stroke
+|`u`        |Undo last action
 
 |===
 
@@ -240,17 +154,9 @@ The following command disables the line numbers e.g.: +set nonumber+
 [cols="1,1,1", options="header"]
 |===
 
-|Command
-|Description
-|Example
-
-|`(no)number`
-|Enables/Disables line numbers
-|`set number`
-
-|`syntax`
-|Use syntax highlighting of a specific language
-|`set syntax=asciidoc`
+|Command        |Description                                    |Example
+|`(no)number`   |Enables/Disables line numbers                  |`set number`
+|`syntax`       |Use syntax highlighting of a specific language |`set syntax=asciidoc`
 
 |===
 
