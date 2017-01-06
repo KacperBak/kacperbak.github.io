@@ -5,8 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
-<meta name="author" content="Kacper Bak">
-<title>Rapid reference</title>
+<title>Terminal multiplexer</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -412,71 +411,222 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Rapid reference</h1>
-<div class="details">
-<span id="author" class="author">Kacper Bak</span><br>
-<span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
-</div>
+<h1>Terminal multiplexer</h1>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_welcome_to_my_place_for_technical_details">Welcome to my place for technical details</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This site provides short references how some technologies work.
-No claim to completeness, correctness or something else&#8230;&#8203; just notes for my lazy brain and easy spreading.</p>
+<p>Working on two platforms (Linux/OSX) at once, is sometime cumbersome.
+Especially when it comes to memorize keyboard bindings for the same kind of software like a terminal.
+It is a lot easier to create a common set of key bindings between two platforms, then to mentally switch between those two.
+This <code>common set</code> is being referenced as <code>custom binding</code> in the next sections.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Tomcat-HowTo.html">Apache Tomcat</a> HowTo&#8217;s.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Basic-Bash-usage.html">Bash</a> usage on OS X and Ubuntu Linux.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Basic-cmd-usage.html">cmd</a> usage on Windows.</p>
-</li>
-<li>
-<p><strong>JVM</strong> playground.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html">Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</a></p>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-git-usage.html">Git</a> on the CLI.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-svn-usage.html">SVN</a> on the CLI.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Maven-notes.html">Maven</a> common commands and settings.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/LESS-usage.html">LESS</a> basic commands.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Terminal-multiplexer.html">Terminal-multiplexer</a> key binding for OSX and Ubuntu Linux.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/VI-effective-usage.html">VI</a> basic commands.</p>
-</li>
-</ul>
 </div>
+<div class="sect1">
+<h2 id="_byobu">byobu</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://byobu.co/">Byobu</a> is a open source text-based window manager and terminal multiplexer for the Ubuntu linux distribution.</p>
+</div>
+<div class="paragraph">
+<p>To change the key binding in byobu the following file has to be edited:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/usr/share/byobu/keybindings/f-keys.tmux</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Default binding</th>
+<th class="tableblock halign-left valign-top">Custom binding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Close tab/split</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + F6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New tab</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + t</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New split vertical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + F2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + d</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New split horizontal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shift + F2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + h</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move focus between tabs forward</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F4</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move focus between tabs backward</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F3</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move focus between splits left/right/top/down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shift + left/right/top/down</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zoom in/out in split</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shift + F11</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle function keys</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shift + F12</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle search/scroll mode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F7</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_iterm2">iTerm2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To change the key binding in iTerm2 the following steps can be taken:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Enter the <code>preferences</code> menu and switch to <code>profiles</code> tab.</p>
+</li>
+<li>
+<p>Duplicate the <code>Default</code> profile.</p>
+</li>
+<li>
+<p>Select the <code>Duplicated profile</code> and switch to <code>Keys</code> tab.</p>
+</li>
+<li>
+<p>Add a new keyboard shortcut with <code>+</code> and select the <code>action</code> from <code>Select menu item &#8230;&#8203;</code>.</p>
+</li>
+<li>
+<p>Set the <code>Duplicated profile</code> as default.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Default binding</th>
+<th class="tableblock halign-left valign-top">Custom Binding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Close tab/split</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cmd + w</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New tab</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cmd + t</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New split vertical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cmd + d</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New split horizontal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cmd + Shift + d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cmd + h</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch focus between splits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt + Cmd + left, right, up, down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shift + left/right/top/down</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_window_manager_specific_bindings">Window manager specific bindings</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Byobu on Ubuntu Linux</caption>
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Default binding</th>
+<th class="tableblock halign-left valign-top">Custom binding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle full screen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F11</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. iTerm2 on OSX</caption>
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Default binding</th>
+<th class="tableblock halign-left valign-top">Custom Binding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle full screen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cmd + Enter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cmd + Ctrl + f</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-06 10:00:05 +01:00
-</div>
-<div style="color: #dddddd">
-<a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+Last updated 2017-01-06 09:51:52 +01:00
 </div>
 </div>
 </body>

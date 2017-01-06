@@ -1,0 +1,70 @@
+= Terminal multiplexer
+
+Working on two platforms (Linux/OSX) at once, is sometime cumbersome.
+Especially when it comes to memorize keyboard bindings for the same kind of software like a terminal.
+It is a lot easier to create a common set of key bindings between two platforms, then to mentally switch between those two.
+This `common set` is being referenced as `custom binding` in the next sections.
+
+== byobu
+
+http://byobu.co/[Byobu] is a open source text-based window manager and terminal multiplexer for the Ubuntu linux distribution.
+
+To change the key binding in byobu the following file has to be edited:
+....
+/usr/share/byobu/keybindings/f-keys.tmux
+....
+
+
+[cols="1,1,1", options="header"]
+|===
+
+|Action                                                   |Default binding              |Custom binding
+|Close tab/split                                          |Ctrl + F6                    |Ctrl + w
+|New tab                                                  |F2                           |Ctrl + t
+|New split vertical                                       |Ctrl + F2                    |Ctrl + d
+|New split horizontal                                     |Shift + F2                   |Ctrl + h
+|Move focus between tabs forward                          |F4                           |
+|Move focus between tabs backward                         |F3                           |
+|Move focus between splits left/right/top/down            |Shift + left/right/top/down  |
+|Zoom in/out in split                                     |Shift + F11                  |
+|Toggle function keys                                     |Shift + F12                  |
+|Toggle search/scroll mode                                |F7                           |
+
+|===
+
+== iTerm2
+
+To change the key binding in iTerm2 the following steps can be taken:
+
+. Enter the `preferences` menu and switch to `profiles` tab.
+. Duplicate the `Default` profile.
+. Select the `Duplicated profile` and switch to `Keys` tab.
+. Add a new keyboard shortcut with `+` and select the `action` from `Select menu item ...`.
+. Set the `Duplicated profile` as default.
+
+[cols="1,1,1", options="header"]
+|===
+|Action                           |Default binding                    |Custom Binding
+|Close tab/split                  |Cmd + w                            |
+|New tab                          |Cmd + t                            |
+|New split vertical               |Cmd + d                            |
+|New split horizontal             |Cmd + Shift + d                    |Cmd + h
+|Switch focus between splits      |Alt + Cmd + left, right, up, down  |Shift + left/right/top/down
+
+|===
+
+== Window manager specific bindings
+
+.Byobu on Ubuntu Linux
+[cols="1,1,1", options="header"]
+|===
+|Action                                                   |Default binding              |Custom binding
+|Toggle full screen                                       |F11                          |
+|===
+
+.iTerm2 on OSX
+[cols="1,1,1", options="header"]
+|===
+|Action                           |Default binding                    |Custom Binding
+|Toggle full screen               |Cmd + Enter                        |Cmd + Ctrl + f
+|===
