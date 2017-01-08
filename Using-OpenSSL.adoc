@@ -1,0 +1,26 @@
+= Using OpenSSL
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+toc::[]
+
+== Password based encryption with OpenSSL
+
+.Symmetric encryption with AES
+....
+openssl aes-256-cbc -in secret.zip -out secret.zip.aes
+....
+
+.Decryption
+....
+openssl aes-256-cbc -d -in secret.zip.aes -out secret.zip
+....
+
+
+== Sources
+* https://www.openssl.org/
+* https://rietta.com/blog/2012/01/09/openssl-encrypt-file-with-password-from/
