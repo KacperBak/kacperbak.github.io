@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
 <meta name="author" content="Kacper Bak">
-<title>Basic bash usage</title>
+<title>Debian administrative commands</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -412,7 +412,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Basic bash usage</h1>
+<h1>Debian administrative commands</h1>
 <div class="details">
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
@@ -420,522 +420,67 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_basic_unix_commands">Basic unix commands</a>
-<ul class="sectlevel2">
-<li><a href="#_find_and_grep">Find and grep</a></li>
-<li><a href="#_current_process">Current process</a></li>
-<li><a href="#_compress_and_encrypt_with_zip">Compress and encrypt with ZIP</a></li>
-<li><a href="#_copy">Copy</a></li>
+<li><a href="#_users">Users</a></li>
 <li><a href="#_network">Network</a></li>
-<li><a href="#_inspect_files">Inspect files</a></li>
-<li><a href="#_mixed">Mixed</a></li>
-<li><a href="#_bash_environment">Bash environment</a></li>
-</ul>
-</li>
-<li><a href="#_platform_dependent_tools">Platform dependent tools</a>
-<ul class="sectlevel2">
-<li><a href="#_os_x_using_pasteboard_clipboard">OS X - Using pasteboard/clipboard</a></li>
-<li><a href="#_ubuntu_linux">Ubuntu Linux</a></li>
-</ul>
-</li>
-<li><a href="#_bash_configuration">Bash Configuration</a>
-<ul class="sectlevel2">
-<li><a href="#_mac_os_x">Mac OS X</a></li>
-<li><a href="#_ubuntu_linux_2">Ubuntu Linux</a></li>
-</ul>
-</li>
-<li><a href="#_bash_scripting">Bash Scripting</a>
-<ul class="sectlevel2">
-<li><a href="#_simple_loop">Simple loop</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_basic_unix_commands">Basic unix commands</h2>
+<h2 id="_users">Users</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_find_and_grep">Find and grep</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find . | grep -i app.jar</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all <code>app.jar</code> files in current directory case insensitive</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find . | grep .svn | xargs  rm -f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Find all files containing the pattern <code>.svn</code> in the current directory and delete them.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find <strong>/tmp</strong> -name <strong>core</strong> -type f -print | xargs /bin/rm -f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Find files named <code>core</code> <strong>in</strong> OR <strong>below</strong> the directory <code>/tmp</code> and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grep git ~/.bash_history</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show all current <code>git</code> calls in the file <code>.bash_history</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grep -ir "main(String\[\] args)" .</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Look for the string <code>main(String[] args)</code> in <strong>ALL</strong> files of the current directory<br>
-                                                                <code>-i</code>: case insensitive<br>
-                                                                <code>-r</code>: recursive</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_current_process">Current process</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ps aux | grep -i java</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all current running processes containing <code>java</code> as name.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>top -p 66939</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays detailed view of the process with the given process ID.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kill -9 66939</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kill processes with the <em>id</em> <code>66939</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>killall -s ssh</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kill processes with the <em>name</em> <code>ssh</code><br>
-                                                                <code>-s</code>:  Show only what would be done, but do not send any signal.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_compress_and_encrypt_with_zip">Compress and encrypt with ZIP</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 33%;">
-<col style="width: 66%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">zip -r -e FinalName SourceDirectory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Recursive compression of the <code>SourceDirectory</code> and encryption with a password provided by a terminal prompt.<br>
-                                                                <code>-r</code>: include all files and subdirectories.<br>
-                                                                <code>-p</code>: preserves modification times, access times, and modes from the original file.<br>
-                                                                <code>FinalName</code>: Resulting file name after compression and encryption.<br>
-                                                                <code>SourceDirectory</code>: Input folder.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unzip SourceDirectory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Uncompress (and decrypt) the <code>SourceDirectory</code>. If necessary a password has to be provided by a terminal prompt.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_copy">Copy</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cp -r /src/dir/. /dest/dir/</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copies <strong>ALL files</strong>, including <strong>hidden files</strong> and the whole directory structure <strong>recursiv</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scp LocalFile.example User@Host:Folder/DestinationFile.example</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>LocalFile.example</code> from your <strong>local machine</strong> to the <strong>host</strong> in <code>DestinationFile.example</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scp User@Host:/home/bakka/HostFile.example DestinationFile.example</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>HostFile.example</code> from the <strong>host</strong> to your <strong>local machine</strong> as <code>DestinationFile.example</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scp -rp sourcedirectory User@Host:/path</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copys <code>sourcedirectory</code> from your <strong>local machine</strong> to the <strong>host</strong><br>
-                                                                        <code>-r</code>: copy the directory recursive<br></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_network">Network</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ifconfig -a</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Display information about all interfaces in the system</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nslookup mucsgvpint64</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Query Internet domain name servers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nmap -p 5432 127.0.0.1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create and close <strong>one</strong> TCP connection to port 5432 to the host 127.0.0.1 (e.g check data base connectivity)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>netstat -a -n -p TCP</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shows network status with IP adresses and ports<br>
-                                <code>-a</code>: All connections<br>
-                                <code>-n</code>: Show adresses and ports as numbers<br>
-                                <code>-p</code>: Protokol: TCP</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_inspect_files">Inspect files</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls -ltr</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list all files sorted by time as most recently modified are last displayed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ls -al | tee out.txt | grep test</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tee</strong> reads standard input and writes it to both standard output and one or more files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file testfile</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inspects the <code>testfile</code> and displays an assumption about the file content, e.g.: <code>index.html: HTML document text</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tail -f *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays last lines of <strong>ALL files</strong> in current directory, waits for further input</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>diff file1 file2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">compare files line by line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>diff -arq folder1 folder2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">recursive compare of folders<br>
-                                        <code>a</code>: treat all files as text<br>
-                                        <code>r</code>: recursive compare of subdirectories<br>
-                                        <code>q</code>: output only whether files differ</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_mixed">Mixed</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>shutdown -h now</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">halt and close down the system immediately, requires <code>sudo</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>echo "myLine" &gt;&gt; file.txt</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Write the String 'myLine' inside of the file <code>file.txt</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>df -h</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays statistics about the amount of free disk space in "Human-readable" output.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>du -sh folderName OR fileName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays size in human readable format of <code>folderName</code> OR <code>fileName</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mkdir -p src/main/java</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a parent directory <code>src</code>, a child directory <code>main</code> and another child <code>java</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chown -R bakka /home/bakka</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Change ownership of directory <code>/home/bakka</code> to user <code>bakka</code> ALL including files and subdirectories are affected.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tar zxfv file.tar.gz</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tar</strong> process stream files<br>
-                                                <code>z</code>: uncompress gunzip<br>
-                                                <code>x</code>: extraxt<br>
-                                                <code>f</code>: force overwrite existing<br>
-                                                <code>v</code>: verbose</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_bash_environment">Bash environment</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unix Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>printenv</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List ALL environment variables</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>whereis ssh</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate the program <code>ssh</code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_platform_dependent_tools">Platform dependent tools</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_os_x_using_pasteboard_clipboard">OS X - Using pasteboard/clipboard</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pwd | pbcopy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(1) Copies current directory inside the clipboard</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cd `pbpaste`</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(2) changes directory to the value inside clipboard</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_ubuntu_linux">Ubuntu Linux</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Linux Command</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dpkg -i package.deb</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Installs debian package <code>package.deb</code>, requires <code>sudo</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get update</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update debian package list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get install ExmpPackage</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Installs <code>ExmpPackage</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get remove ExmpPackage</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Removes <code>ExmpPackage</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get purge ExmpPackage</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Removes <code>ExmpPackage</code> and wipeouts any configuration</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apt-get autoremove ExmpPackage</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Removes obsolete dependencies from <code>ExmpPackage</code>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_bash_configuration">Bash Configuration</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_mac_os_x">Mac OS X</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://apple.stackexchange.com/questions/71101/how-do-i-make-%E2%8C%98%E2%86%90-and-%E2%8C%98%E2%86%92-work-for-home-end-combo-for-terminal">move cursor to beginning of line | move cursor to end of line</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ubuntu_linux_2">Ubuntu Linux</h3>
-<div class="sect3">
-<h4 id="_setting_global_environment_variables_for_login_and_sub_shells">Setting global environment variables for login and sub shells</h4>
 <div class="paragraph">
-<div class="title">Trivial definitions</div>
-<p>A <strong>login shell</strong> is started on system boot process. It&#8217;s the one where the user is going to be authenticated by its credentials (username, password). All user specific configurations are loaded on this point for the user. Other shells started from this point, derive the settings from the login shell and are called <strong>sub shells</strong> (like the manual start of the terminal program that runs the shell in a window).
-To see another <strong>login shell</strong> you can leave your desktop with <code>Ctrl + Alt + F1</code> and go back with <code>Ctrl + Alt + F7</code>.
-Another example of a <strong>login shell</strong> is the connection via <code>ssh</code>.</p>
-</div>
-<div class="paragraph">
-<p>Lets configure some environment variables for the <strong>login shells</strong> as a system wide configuration.</p>
-</div>
-<div class="literalblock">
-<div class="title">/etc/profile: system-wide .profile file for the Bourne shell</div>
-<div class="content">
-<pre># JDK 8 export
-export JAVA_HOME='/home/bakka/java/jdk1.8.0_65' <b class="conum">(1)</b>
-export PATH="$JAVA_HOME/bin:$PATH" <b class="conum">(2)</b></pre>
-</div>
-</div>
-<div class="colist arabic">
-<ol>
-<li>
-<p>The use of single quotation marks for <code>JAVA_HOME</code> causes interpolation to be <strong>suppressed</strong>! Only single quotation marks within the URL need be escaped.</p>
-</li>
-<li>
-<p>Double quotation marks in the second assignment allow interpolation.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Verify this global setting for <strong>login shells</strong> via the command <code>sh -l -c 'printenv JAVA_HOME'</code> that should result in:</p>
+<p>Get <code>root</code> user</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>/home/bakka/java/jdk1.8.0_65</pre>
+<pre>su root OR sudo -s</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Ok that works, but what about the sub shells those have to derive the global setting from <code>/etc/profile</code>?
-We simple evaluate the <code>/etc/profile</code> file and execute it in the current context with the <code>source</code> command inside of <code>.bashrc</code> that is called on each sub shell creation for the current user.</p>
-</div>
-<div class="literalblock">
-<div class="title">~/.bashrc: executed by bash(1) for non-login shells.</div>
-<div class="content">
-<pre>source /etc/profile</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Check this result with <code>echo $JAVA_HOME</code> that should return:</p>
+<p>Get current debian version</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>/home/bakka/java/jdk1.8.0_65</pre>
+<pre>less /etc/debian_version</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Note:</p>
-</div>
-<div class="paragraph">
-<p>If <code>.bashrc</code> does not exist in your home folder create one and make sure it is referenced in <code>~/.profile</code> like that:</p>
+<p>Show users: <code>less /etc/passwd</code></p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre># ~/.profile: executed by Bourne-compatible login shells.
-
-if [ "$BASH" ]; then
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
-fi</pre>
+<pre>kacperbak:x:1000:1000:Kacper Bak,,,:/home/kacperbak:/bin/bash</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>As an alternative define <code>source /etc/profile</code> directly in <code>~/.profile</code>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_current_folder_in_bash_prompt">Current folder in bash prompt</h4>
-<div class="paragraph">
-<p>Prompt shows only current directory in ubuntu-bash.</p>
+<p>Show users: <code>less /etc/group</code></p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>export PS1='\u@\h:\W$ '</pre>
-</div>
-</div>
+<pre>sudo:x:27:kacperbak
+kacperbak:x:1000:</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bash_scripting">Bash Scripting</h2>
+<h2 id="_network">Network</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_simple_loop">Simple loop</h3>
 <div class="paragraph">
-<p>Loop: for each file that end with <code>jpg</code> rename the file to the current name with the prefix <code>my.</code></p>
+<p>Show open ports</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>for i in *.jpg; do mv "$i" "my.$i"; done</pre>
+<pre>sudo netstat -tulpn</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Show firewall status</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo ufw status</pre>
 </div>
 </div>
 </div>
@@ -943,7 +488,7 @@ fi</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-08 14:31:19 +01:00
+Last updated 2017-01-08 14:41:09 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>

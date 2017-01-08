@@ -1,0 +1,43 @@
+= Debian administrative commands
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+== Users
+
+Get `root` user
+....
+su root OR sudo -s
+....
+
+Get current debian version
+....
+less /etc/debian_version
+....
+
+Show users: `less /etc/passwd`
+....
+kacperbak:x:1000:1000:Kacper Bak,,,:/home/kacperbak:/bin/bash
+....
+
+Show users: `less /etc/group`
+....
+sudo:x:27:kacperbak
+kacperbak:x:1000:
+....
+
+== Network
+
+Show open ports
+....
+sudo netstat -tulpn
+....
+
+Show firewall status
+....
+sudo ufw status
+....

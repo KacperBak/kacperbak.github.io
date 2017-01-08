@@ -13,66 +13,41 @@ Kacper Bak <http://kacperbak.de>
 [cols="1,1" options="header"]
 |===
 
-|Unix Command
-|Description
-
-|`find . \| grep -i app.jar`
-|Lists all `app.jar` files in current directory case insensitive
-
-|`find . \| grep .svn \| xargs  rm -f`
-|Find all files containing the pattern `.svn` in the current directory and delete them.
-
-|`find */tmp* -name *core* -type f -print \| xargs /bin/rm -f`
-|Find files named `core` *in* OR *below* the directory `/tmp` and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.
-
-|`grep git ~/.bash_history`
-|Show all current `git` calls in the file `.bash_history`
-
-|`grep -ir "main(String\[\] args)" .`
-|Look for the string `main(String[] args)` in *ALL* files of the current directory +
-`-i`: case insensitive +
-`-r`: recursive
-
+|Unix Command                                                   |Description
+|`find . \| grep -i app.jar`                                    |Lists all `app.jar` files in current directory case insensitive
+|`find . \| grep .svn \| xargs  rm -f`                          |Find all files containing the pattern `.svn` in the current directory and delete them.
+|`find */tmp* -name *core* -type f -print \| xargs /bin/rm -f`  |Find files named `core` *in* OR *below* the directory `/tmp` and delete them. Note that this will work incorrectly if there are any filenames containing newlines, single or double quotes, or spaces.
+|`grep git ~/.bash_history`                                     |Show all current `git` calls in the file `.bash_history`
+|`grep -ir "main(String\[\] args)" .`                           |Look for the string `main(String[] args)` in *ALL* files of the current directory +
+                                                                `-i`: case insensitive +
+                                                                `-r`: recursive
 |===
 
 === Current process
 [cols="1,1" options="header"]
+
 |===
 
-|Unix Command
-|Description
-
-|`ps aux \| grep -i java`
-|Displays all current running processes containing `java` as name.
-
-|`top -p 66939`
-|Displays detailed view of the process with the given process ID.
-
-|kill -9 66939
-|kill processes with the _id_ `66939`
-
-|`killall -s ssh`
-|kill processes with the _name_ `ssh` +
-`-s`:  Show only what would be done, but do not send any signal.
-
+|Unix Command                                                   |Description
+|`ps aux \| grep -i java`                                       |Displays all current running processes containing `java` as name.
+|`top -p 66939`                                                 |Displays detailed view of the process with the given process ID.
+|kill -9 66939                                                  |kill processes with the _id_ `66939`
+|`killall -s ssh`                                               |kill processes with the _name_ `ssh` +
+                                                                `-s`:  Show only what would be done, but do not send any signal.
 |===
 
 === Compress and encrypt with ZIP
+
 [cols="1,2" options="header"]
 |===
 
-|Unix Command
-|Description
-
-|zip -r -e FinalName SourceDirectory
-|Recursive compression of the `SourceDirectory` and encryption with a password provided by a terminal prompt. +
-`-r`: include all files and subdirectories. +
-`-p`: preserves modification times, access times, and modes from the original file. +
-`FinalName`: Resulting file name after compression and encryption. +
-`SourceDirectory`: Input folder.
-
-|unzip SourceDirectory
-|Uncompress (and decrypt) the `SourceDirectory`. If necessary a password has to be provided by a terminal prompt.
+|Unix Command                                                   |Description
+|zip -r -e FinalName SourceDirectory                            |Recursive compression of the `SourceDirectory` and encryption with a password provided by a terminal prompt. +
+                                                                `-r`: include all files and subdirectories. +
+                                                                `-p`: preserves modification times, access times, and modes from the original file. +
+                                                                `FinalName`: Resulting file name after compression and encryption. +
+                                                                `SourceDirectory`: Input folder.
+|unzip SourceDirectory                                          |Uncompress (and decrypt) the `SourceDirectory`. If necessary a password has to be provided by a terminal prompt.
 
 |===
 
@@ -80,128 +55,70 @@ Kacper Bak <http://kacperbak.de>
 [cols="1,1" options="header"]
 |===
 
-|Unix Command
-|Description
-
-|`cp -r /src/dir/. /dest/dir/`
-|Copies *ALL files*, including *hidden files* and the whole directory structure *recursiv*
-
-|`scp LocalFile.example User@Host:Folder/DestinationFile.example`
-|Copys `LocalFile.example` from your *local machine* to the *host* in `DestinationFile.example`
-
-|`scp User@Host:/home/bakka/HostFile.example DestinationFile.example`
-|Copys `HostFile.example` from the *host* to your *local machine* as `DestinationFile.example`
-
-|`scp -rp sourcedirectory User@Host:/path`
-|Copys `sourcedirectory` from your *local machine* to the *host* +
-`-r`: copy the directory recursive +
-`-p`: preserves modification times, access times, and modes from the original file.
-
+|Unix Command                                                           |Description
+|`cp -r /src/dir/. /dest/dir/`                                          |Copies *ALL files*, including *hidden files* and the whole directory structure *recursiv*
+|`scp LocalFile.example User@Host:Folder/DestinationFile.example`       |Copys `LocalFile.example` from your *local machine* to the *host* in `DestinationFile.example`
+|`scp User@Host:/home/bakka/HostFile.example DestinationFile.example`   |Copys `HostFile.example` from the *host* to your *local machine* as `DestinationFile.example`
+|`scp -rp sourcedirectory User@Host:/path`                              |Copys `sourcedirectory` from your *local machine* to the *host* +
+                                                                        `-r`: copy the directory recursive +
 |===
 
 === Network
 [cols="1,1" options="header"]
+
 |===
 
-|Unix Command
-|Description
-
-|`ifconfig -a`
-|Display information about all interfaces in the system
-
-|`nslookup mucsgvpint64`
-|Query Internet domain name servers
-
-|`nmap -p 5432 127.0.0.1`
-|Create and close *one* TCP connection to port 5432 to the host 127.0.0.1 (e.g check data base connectivity)
-
-|`netstat -a -n -p TCP`
-|Shows network status with IP adresses and ports +
-`-a`: All connections +
-`-n`: Show adresses and ports as numbers +
-`-p`: Protokol: TCP
+|Unix Command                   |Description
+|`ifconfig -a`                  |Display information about all interfaces in the system
+|`nslookup mucsgvpint64`        |Query Internet domain name servers
+|`nmap -p 5432 127.0.0.1`       |Create and close *one* TCP connection to port 5432 to the host 127.0.0.1 (e.g check data base connectivity)
+|`netstat -a -n -p TCP`         |Shows network status with IP adresses and ports +
+                                `-a`: All connections +
+                                `-n`: Show adresses and ports as numbers +
+                                `-p`: Protokol: TCP
 |===
 
 === Inspect files
 [cols="1,1" options="header"]
 |===
 
-|Unix Command
-|Description
-
-|`ls -ltr`
-|list all files sorted by time as most recently modified are last displayed
-
-|`ls -al \| tee out.txt \| grep test`
-|*tee* reads standard input and writes it to both standard output and one or more files
-
-|`file testfile`
-|Inspects the `testfile` and displays an assumption about the file content, e.g.: `index.html: HTML document text`
-
-|`tail -f *`
-|Displays last lines of *ALL files* in current directory, waits for further input
-
-|`diff file1 file2`
-|compare files line by line
-
-|`diff -arq folder1 folder2`
-|recursive compare of folders +
-`a`: treat all files as text +
-`r`: recursive compare of subdirectories +
-`q`: output only whether files differ
-
+|Unix Command                           |Description
+|`ls -ltr`                              |list all files sorted by time as most recently modified are last displayed
+|`ls -al \| tee out.txt \| grep test`   |*tee* reads standard input and writes it to both standard output and one or more files
+|`file testfile`                        |Inspects the `testfile` and displays an assumption about the file content, e.g.: `index.html: HTML document text`
+|`tail -f *`                            |Displays last lines of *ALL files* in current directory, waits for further input
+|`diff file1 file2`                     |compare files line by line
+|`diff -arq folder1 folder2`            |recursive compare of folders +
+                                        `a`: treat all files as text +
+                                        `r`: recursive compare of subdirectories +
+                                        `q`: output only whether files differ
 |===
 
 === Mixed
 [cols="1,1" options="header"]
 |===
 
-|Unix Command
-|Description
-
-|`shutdown -h now`
-|halt and close down the system immediately, requires `sudo`
-
-
-|`echo "myLine" >> file.txt`
-|Write the String 'myLine' inside of the file `file.txt`
-
-|`df -h`
-|Displays statistics about the amount of free disk space in "Human-readable" output.
-
-|`du -sh folderName OR fileName`
-|Displays size in human readable format of `folderName` OR `fileName`
-
-|`mkdir -p src/main/java`
-|Creates a parent directory `src`, a child directory `main` and another child `java`
-
-|`chown -R bakka /home/bakka`
-|Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
-
-|`tar zxfv file.tar.gz`
-|*tar* process stream files +
-`z`: uncompress gunzip +
-`x`: extraxt +
-`f`: force overwrite existing +
-`v`: verbose
-
-|`su root`
-|Change user ID to root.
-
+|Unix Command                                   |Description
+|`shutdown -h now`                              |halt and close down the system immediately, requires `sudo`
+|`echo "myLine" >> file.txt`                    |Write the String 'myLine' inside of the file `file.txt`
+|`df -h`                                        |Displays statistics about the amount of free disk space in "Human-readable" output.
+|`du -sh folderName OR fileName`                |Displays size in human readable format of `folderName` OR `fileName`
+|`mkdir -p src/main/java`                       |Creates a parent directory `src`, a child directory `main` and another child `java`
+|`chown -R bakka /home/bakka`                   |Change ownership of directory `/home/bakka` to user `bakka` ALL including files and subdirectories are affected.
+|`tar zxfv file.tar.gz`                         |*tar* process stream files +
+                                                `z`: uncompress gunzip +
+                                                `x`: extraxt +
+                                                `f`: force overwrite existing +
+                                                `v`: verbose
 |===
 
 === Bash environment
 [cols="1,1" options="header"]
 |===
 
-|Unix Command
-|Description
-
-|`printenv`
-|List ALL environment variables
-
-|`whereis ssh`
-|locate the program `ssh`
+|Unix Command                       |Description
+|`printenv`                         |List ALL environment variables
+|`whereis ssh`                      |locate the program `ssh`
 
 |===
 
@@ -213,14 +130,9 @@ Kacper Bak <http://kacperbak.de>
 [cols="1,1" options="header"]
 |===
 
-|Command
-|Description
-
-|`pwd \| pbcopy`
-|(1) Copies current directory inside the clipboard
-
-|`cd `pbpaste``
-|(2) changes directory to the value inside clipboard
+|Command                    |Description
+|`pwd \| pbcopy`            |(1) Copies current directory inside the clipboard
+|`cd `pbpaste``             |(2) changes directory to the value inside clipboard
 
 |===
 
@@ -228,26 +140,13 @@ Kacper Bak <http://kacperbak.de>
 
 [cols="1,1" options="header"]
 |===
-|Linux Command
-|Description
-
-|`dpkg -i package.deb`
-|Installs debian package `package.deb`, requires `sudo`
-
-|`apt-get update`
-|Update debian package list
-
-|`apt-get install ExmpPackage`
-|Installs `ExmpPackage`
-
-|`apt-get remove ExmpPackage`
-|Removes `ExmpPackage`
-
-|`apt-get purge ExmpPackage`
-|Removes `ExmpPackage` and wipeouts any configuration
-
-|`apt-get autoremove ExmpPackage`
-|Removes obsolete dependencies from `ExmpPackage`.
+|Linux Command                      |Description
+|`dpkg -i package.deb`              |Installs debian package `package.deb`, requires `sudo`
+|`apt-get update`                   |Update debian package list
+|`apt-get install ExmpPackage`      |Installs `ExmpPackage`
+|`apt-get remove ExmpPackage`       |Removes `ExmpPackage`
+|`apt-get purge ExmpPackage`        |Removes `ExmpPackage` and wipeouts any configuration
+|`apt-get autoremove ExmpPackage`   |Removes obsolete dependencies from `ExmpPackage`.
 |===
 
 == Bash Configuration
@@ -312,22 +211,18 @@ As an alternative define `source /etc/profile` directly in `~/.profile`.
 
 ==== Current folder in bash prompt
 
-[cols="1,1"]
-|===
+Prompt shows only current directory in ubuntu-bash.
 
-|`export PS1='\u@\h:\W$ '`
-|Prompt shows only current directory in ubuntu-bash.
-
-|===
+....
+export PS1='\u@\h:\W$ '
+....
 
 == Bash Scripting
+
 === Simple loop
 
-[cols="1,1"]
-|===
-
-|`for i in *.jpg; do mv "$i" "my.$i"; done`
-|Loop: for each file that end with `jpg` rename the file to the current name with the prefix `my.`
-
-|===
+Loop: for each file that end with `jpg` rename the file to the current name with the prefix `my.`
+....
+for i in *.jpg; do mv "$i" "my.$i"; done
+....
 
