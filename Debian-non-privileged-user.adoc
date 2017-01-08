@@ -14,11 +14,11 @@ The following points should be matched for this user:
 . No login shell for this user.
 . Use only a home directory if necessary.
 . Disable the user login.
-. Add to a group with low privileges like `nobody`.
+. Add to a group with low privileges like `nogroup`.
 
 == Create a non privileged user
 ....
-sudo useradd -g nobody -s /sbin/nologin --no-create-home --disabled-login --gecos "" tomcat
+useradd -g nogroup -N -M -s /bin/false -c "Apache Tomcat" tomcat
 ....
 
 .Possible Tomcat user
@@ -27,11 +27,12 @@ sudo useradd -g nobody -s /sbin/nologin --no-create-home --disabled-login --geco
 
 |Command/Parameter      |Description
 |`useradd`		        |not interactive like `adduser` but available on most Unix distributions.
-|`-g tomcat`   		    |add user to group `tomcat`
-|`-s /sbin/nologin`     |set a non login shell
-|`--no-create-home`     |no home directory
-|`--disabled-login`     |account is inactive, no login possible
-|`--gecos ""`           |Skip dialog for `full name`, `phone number`, ... etc. //TODO
+|`-g nogroup`   	    |add user to group `nogroup`
+|`-N`          		    |do not create a user group with the same name as user, but respect the `-g` flag.
+|`-M`                   |no home directory
+|`-s /bin/false`        |set a non login shell
+|`-c "Apache Tomcat"`   |a comment about the created user.
+|`tomcat`		        |username
 
 |===
 
@@ -40,11 +41,18 @@ sudo useradd -g nobody -s /sbin/nologin --no-create-home --disabled-login --geco
 |===
 
 |Command/Parameter      |Description
-|`-g nobody`   		    |add user to group `nobody` which has the lowest privileges
-|`-s /bin/false`        |set a non login shell
 |`-d /opt/tomcat/temp`  |set `/opt/tomcat/temp` as a home directory
 
 |===
+
+User should be unable to login from `login shell` and `su tomcat`.
+....
+getent passwd tomcat
+....
+should result in containing `:!:`
+....
+tomcat:!:17174:0:99999:7:::
+....
 
 == Sources
 * https://linux.die.net/man/8/adduser

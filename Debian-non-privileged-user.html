@@ -445,7 +445,7 @@ The following points should be matched for this user:</p>
 <p>Disable the user login.</p>
 </li>
 <li>
-<p>Add to a group with low privileges like <code>nobody</code>.</p>
+<p>Add to a group with low privileges like <code>nogroup</code>.</p>
 </li>
 </ol>
 </div>
@@ -456,7 +456,7 @@ The following points should be matched for this user:</p>
 <div class="sectionbody">
 <div class="literalblock">
 <div class="content">
-<pre>sudo useradd -g nobody -s /sbin/nologin --no-create-home --disabled-login --gecos "" tomcat</pre>
+<pre>useradd -g nogroup -N -M -s /bin/false -c "Apache Tomcat" tomcat</pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -477,24 +477,28 @@ The following points should be matched for this user:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">not interactive like <code>adduser</code> but available on most Unix distributions.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-g tomcat</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add user to group <code>tomcat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-g nogroup</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add user to group <code>nogroup</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-s /sbin/nologin</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set a non login shell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-N</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">do not create a user group with the same name as user, but respect the <code>-g</code> flag.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--no-create-home</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-M</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no home directory</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--disabled-login</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">account is inactive, no login possible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-s /bin/false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set a non login shell</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--gecos ""</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Skip dialog for <code>full name</code>, <code>phone number</code>, &#8230;&#8203; etc. //TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-c "Apache Tomcat"</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a comment about the created user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tomcat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
 </tr>
 </tbody>
 </table>
@@ -512,19 +516,27 @@ The following points should be matched for this user:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-g nobody</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add user to group <code>nobody</code> which has the lowest privileges</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-s /bin/false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set a non login shell</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>-d /opt/tomcat/temp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">set <code>/opt/tomcat/temp</code> as a home directory</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>User should be unable to login from <code>login shell</code> and <code>su tomcat</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>getent passwd tomcat</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>should result in containing <code>:!:</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tomcat:!:17174:0:99999:7:::</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -551,7 +563,7 @@ The following points should be matched for this user:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-08 19:18:03 +01:00
+Last updated 2017-01-08 22:05:02 +01:00
 </div>
 <div style="color: #dddddd">
 <a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
