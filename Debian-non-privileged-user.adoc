@@ -18,7 +18,7 @@ The following points should be matched for this user:
 
 == Create a non privileged user
 ....
-sudo useradd -g nobody -s /sbin/nologin -d /opt/tomcat/temp --disabled-login --gecos "" tomcat
+sudo useradd -g nobody -s /sbin/nologin --no-create-home --disabled-login --gecos "" tomcat
 ....
 
 .Possible Tomcat user
