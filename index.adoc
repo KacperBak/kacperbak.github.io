@@ -16,8 +16,7 @@ No claim to completeness, correctness or something else... just notes for my laz
 ** http://kacperbak.github.io/Debian-Administrative-Commands.html[Debian administrative commands]
 ** Basic host setup.
 ** Basic security setup.
-** Creating a non-privileged user to run services.
-** Installing nginx from source.
+** http://kacperbak.github.io/Debian-non-privileged-user.html[Creating a non-privileged user to run services].
 * http://kacperbak.github.io/Daily-git-usage.html[Git] on the CLI.
 * *JVM* playground.
 ** http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html[Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA]

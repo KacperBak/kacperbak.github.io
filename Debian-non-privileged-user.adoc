@@ -1,0 +1,53 @@
+= Debian non privileged user
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+For security reasons it is very important to run services like a webserver or database as a user with very low privileges.
+This will prevent the exploitation of security flaws of the service.
+The following points should be matched for this user:
+
+. No login shell for this user.
+. Use only a home directory if necessary.
+. Disable the user login.
+. Add to a group with low privileges like `nobody`.
+
+== Create a non privileged user
+....
+sudo useradd -g nobody -s /sbin/nologin -d /opt/tomcat/temp --disabled-login --gecos "" tomcat
+....
+
+.Possible Tomcat user
+[cols="1,4" options="header"]
+|===
+
+|Command/Parameter      |Description
+|`useradd`		        |not interactive like `adduser` but available on most Unix distributions.
+|`-g tomcat`   		    |add user to group `tomcat`
+|`-s /sbin/nologin`     |set a non login shell
+|`--no-create-home`     |no home directory
+|`--disabled-login`     |account is inactive, no login possible
+|`--gecos ""`           |Skip dialog for `full name`, `phone number`, ... etc. //TODO
+
+|===
+
+.Further alternatives
+[cols="1,4" options="header"]
+|===
+
+|Command/Parameter      |Description
+|`-g nobody`   		    |add user to group `nobody` which has the lowest privileges
+|`-s /bin/false`        |set a non login shell
+|`-d /opt/tomcat/temp`  |set `/opt/tomcat/temp` as a home directory
+
+|===
+
+== Sources
+* https://linux.die.net/man/8/adduser
+* https://wiki.ubuntuusers.de/adduser/
+* http://unix.stackexchange.com/questions/96892/what-does-adduser-disabled-login-do
+* Brittain, Darwin - Tomcat The Definitive Guide, Page 4, ISBN 978-0-596-10106-0
