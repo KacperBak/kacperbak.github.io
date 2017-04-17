@@ -434,8 +434,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_setting_your_user_name_and_email_in_git">Setting your user name and email in Git</a></li>
 <li><a href="#_checking_your_username_and_email_in_git">Checking your username and email in Git</a></li>
-<li><a href="#_enable_cli_autocompletion_with_tabulator_key_mac_os_x">Enable CLI autocompletion with tabulator key (Mac OS X)</a></li>
-<li><a href="#_sources">Sources</a></li>
+<li><a href="#_enable_cli_auto_completion_with_tabulator_key_mac_os_x">Enable CLI auto completion with tabulator key (Mac OS X)</a></li>
+<li><a href="#_setup_basic_aliases">Setup basic aliases</a></li>
+<li><a href="#_shows_the_current_branch_in_the_bash_prompt">Shows the current branch in the bash prompt</a></li>
 </ul>
 </li>
 <li><a href="#_number_of_commits_per_user">Number of commits per user</a></li>
@@ -566,6 +567,13 @@ Simple follow the links to achieve the wanted result:</p>
 git config --global user.email "github@kacperbak.de"</pre>
 </div>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://help.github.com/articles/setting-your-username-in-git/">Source: Setting your username in Git</a></p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_checking_your_username_and_email_in_git">Checking your username and email in Git</h3>
@@ -577,7 +585,7 @@ git config --global user.email</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enable_cli_autocompletion_with_tabulator_key_mac_os_x">Enable CLI autocompletion with tabulator key (Mac OS X)</h3>
+<h3 id="_enable_cli_auto_completion_with_tabulator_key_mac_os_x">Enable CLI auto completion with tabulator key (Mac OS X)</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -596,22 +604,61 @@ git config --global user.email</pre>
 <pre>source ~/git-completion.bash</pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_sources">Sources</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://help.github.com/articles/setting-your-username-in-git/">Setting your username in Git</a></p>
+<p><a href="http://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks">Source: Auto completion of the current branch name with the tab key</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setup_basic_aliases">Setup basic aliases</h3>
+<div class="literalblock">
+<div class="content">
+<pre>git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases">Source: Define aliases for basic operations</a></p>
 </li>
 <li>
-<p><a href="http://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks">Auto completion of the current branch name with the <code>tabulator</code> key</a></p>
+<p><a href="https://coderwall.com/p/euwpig/a-better-git-log">Source: Pretty print for the <code>log</code> command</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_shows_the_current_branch_in_the_bash_prompt">Shows the current branch in the bash prompt</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Download the file <code>git-prompt.sh</code> from the <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh">git-repository</a>.</p>
 </li>
 <li>
-<p><a href="https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases">Define short aliases <code>st</code> for standard commands like <code>status</code></a></p>
+<p>Copy it into your home folder like <code>/Users/kaba/git-prompt.sh</code></p>
 </li>
 <li>
-<p><a href="https://coderwall.com/p/fz0e0g/show-current-git-branch-name-in-bash-ps1">Shows the current branch in the bash prompt</a></p>
+<p>Enter the following into your <code>.bash_profile</code></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>source ~/git-promp.sh
+PS1="[\[\033[32m\]\w]\[\033[0m\]\$(__git_ps1)\n\[\033[1;36m\]\u\[\033[32m\]$ \[\033[0m\]"</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://coderwall.com/p/fz0e0g/show-current-git-branch-name-in-bash-ps1">Source: Shows the current branch in the bash prompt</a></p>
 </li>
 </ul>
 </div>
@@ -692,7 +739,7 @@ git config --global user.email</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-04-15 19:23:39 CEST
+Last updated 2017-04-17 19:13:52 CEST
 </div>
 </div>
 <div style="color: #dddddd">
