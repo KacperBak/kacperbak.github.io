@@ -1,0 +1,22 @@
+= mac OS hints
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+toc::[]
+
+== Print a PDF document only in grey, black and white tones
+
+. Open a PDF document with the `Preview` app.
+. Click `File` > `Export...` in the application bar.
+. Select `Gray Tone` or `Black & White` as `Quartz Filter` value.
+. Save your document.
+
+
+
+== Sources
+* https://support.apple.com/en-us/HT201956
+* https://www.prepressure.com/pdf/basics/editing/convert-color-to-grayscale
