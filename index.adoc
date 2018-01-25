@@ -25,5 +25,6 @@ No claim to completeness, correctness or something else... just notes for my laz
 * http://kacperbak.github.io/Maven-notes.html[Maven] common commands and settings.
 * http://kacperbak.github.io/Using-OpenSSL.html[OpenSSL] commands and work flows.
 * http://kacperbak.github.io/Daily-svn-usage.html[SVN] on the CLI.
+* http://kacperbak.github.io/SOLID-principles.html[SOLID principles].
 * http://kacperbak.github.io/Terminal-multiplexer.html[Terminal-multiplexer] key binding for OS X and Ubuntu Linux.
 * http://kacperbak.github.io/VI-effective-usage.html[VI] basic usage.

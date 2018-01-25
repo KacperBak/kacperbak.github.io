@@ -1,0 +1,157 @@
+= SOLID principles
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+
+== Single responsibility
+* Avoid **god** class.
+* **ONE** kind of funtionality in **ONE** class.
+
+== Open/Closed
+* **Open** for extension
+** E.g.: Additional **field** in the class
+** E.g.: Additional **method** in the class
+* **Closed** for modification
+** expose only what is necessary using an interface or abstract class.
+
+== Liskov's substitution principle
+Is a kind of **strong** behavioral subtyping
+
+[quote, Liskov substitution principle, https://en.wikipedia.org/wiki/Liskov_substitution_principle]
+if S is a subtype of T, then objects of type T may be replaced with objects of type S without altering any of the desirable properties of T (correctness, task performed, etc.).
+
+.Example classes
+....
+class Engine {
+  power_in_kw = 120
+
+  status = NONE
+
+  Engine(){
+    this.status = ON
+  }
+
+  getStatus(){
+      return this.status
+  }
+}
+
+class ElectricEngine extends Engine {
+  energyType = AC  // A simple difference to class 'Engine'
+
+  ElectricEngine(){
+    super()
+  }
+}
+....
+
+Applying this rule to the example classes, then `Engine` can be replaced with `ElectricEngine` without altering it's behavior.
+There should be no difference in the **behavior** of the classes `Engine` and `ElectricEngine`.
+
+....
+void main(args){
+
+    Engine e = new Engine()
+    assert e.getStatus() == ON
+
+    ElectricEngine ee = new ElectricEngine()
+    assert ee.getStatus() == ON
+}
+....
+
+== Interface segragation
+* Avoid a **god** interface.
+* Group functionality by semantic use cases into interfaces.
+* E.g.: Persistence Layer that differs between **reading** and **modifying** data instaed of a simple CRUD interface.
+
+....
+IReadOnly {
+  getPersonById(id);
+}
+
+IModify {
+  createPerson(name, age);
+  updatePerson(name, age);
+  deletePerson(id);
+}
+....
+This is the basic idea behind the https://martinfowler.com/bliki/CommandQuerySeparation.html[CQRS] pattern.
+
+== Dependency inversion
+Avoid to depend on concrete implementations, especially when you expect change!
+
+Examine this on a typical 3-tier application.
+
+=== Implementations depend directly on each other
+image::3-tier-dependent.png[3-tier-dependent.png, align="center"]
+
+A possible implementation in pseudo code:
+....
+class PersonController{
+    PersonServiceImpl service = new PersonServiceImpl()
+}
+
+class PersonServiceImpl {
+    PersonRepositoryImpl repo = new PersonRepositoryImpl()
+}
+
+class PersonRepositoryImpl {
+    Connection con = Connector.createRdbmsConnection()
+}
+....
+
+=== Implementations decoupled with interfaces
+
+To resolve the direct dependencies, introduce an interface for each concrete implementation.
+* The concrete implementation of the `PersonServiceImpl` gets an Interface: `PersonService`
+
+....
+interface PersonService {
+}
+
+class PersonServiceImpl implements PersonService {
+    PersonRepositoryImpl repo = new PersonRepositoryImpl()
+}
+....
+
+* The consuming class `PersonController` can now depend on the interface instead of the concrete instance.
+* This is called **dependency inversion**.
+
+....
+class PersonController{
+    PersonService service = new PersonServiceImpl()
+}
+....
+
+Applied to all participants:
+
+image::3-tier-decoupled.png[3-tier-decoupled.png, align="center"]
+
+
+NOTE: But, why is this important?
+
+Because implementations can change! And it is very useful to change behavior in a controlled way, like using different data types for different behavior.
+So we need two implementations for each data base type `RDBMS` and `NoSQL` doing the same thing: Persist a Person object.
+
+E.g. Introducing a new persistence type: NoSQL
+
+* Rename the `PersonRepositoryImpl` to `PersonRepositoryRDBMS`
+* Add a new class `PersonRepositoryNoSQL`
+
+....
+interface PersonRepository {
+}
+
+class PersonRepositoryRDBMS implements PersonRepository{
+}
+
+class PersonRepositoryNoSQL implements PersonRepository{
+}
+....
+
+

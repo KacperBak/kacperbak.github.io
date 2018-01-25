@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Kacper Bak">
-<title>Rapid reference</title>
+<title>SOLID principles</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -428,95 +428,292 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Rapid reference</h1>
+<h1>SOLID principles</h1>
 <div class="details">
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
 </div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_single_responsibility">Single responsibility</a></li>
+<li><a href="#_open_closed">Open/Closed</a></li>
+<li><a href="#_liskov_s_substitution_principle">Liskov&#8217;s substitution principle</a></li>
+<li><a href="#_interface_segragation">Interface segragation</a></li>
+<li><a href="#_dependency_inversion">Dependency inversion</a>
+<ul class="sectlevel2">
+<li><a href="#_implementations_depend_directly_on_each_other">Implementations depend directly on each other</a></li>
+<li><a href="#_implementations_decoupled_with_interfaces">Implementations decoupled with interfaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_welcome_to_my_place_for_technical_details">Welcome to my place for technical details</h2>
+<h2 id="_single_responsibility">Single responsibility</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Avoid <strong>god</strong> class.</p>
+</li>
+<li>
+<p><strong>ONE</strong> kind of funtionality in <strong>ONE</strong> class.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_open_closed">Open/Closed</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Open</strong> for extension</p>
+<div class="ulist">
+<ul>
+<li>
+<p>E.g.: Additional <strong>field</strong> in the class</p>
+</li>
+<li>
+<p>E.g.: Additional <strong>method</strong> in the class</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Closed</strong> for modification</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expose only what is necessary using an interface or abstract class.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_liskov_s_substitution_principle">Liskov&#8217;s substitution principle</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This site provides short references how some technologies work.
-No claim to completeness, correctness or something else&#8230;&#8203; just notes for my lazy brain and easy spreading.</p>
+<p>Is a kind of <strong>strong</strong> behavioral subtyping</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+if S is a subtype of T, then objects of type T may be replaced with objects of type S without altering any of the desirable properties of T (correctness, task performed, etc.).
+</blockquote>
+<div class="attribution">
+&#8212; Liskov substitution principle<br>
+<cite>https://en.wikipedia.org/wiki/Liskov_substitution_principle</cite>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">Example classes</div>
+<div class="content">
+<pre>class Engine {
+  power_in_kw = 120
+
+  status = NONE
+
+  Engine(){
+    this.status = ON
+  }
+
+  getStatus(){
+      return this.status
+  }
+}
+
+class ElectricEngine extends Engine {
+  energyType = AC  // A simple difference to class 'Engine'
+
+  ElectricEngine(){
+    super()
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Applying this rule to the example classes, then <code>Engine</code> can be replaced with <code>ElectricEngine</code> without altering it&#8217;s behavior.
+There should be no difference in the <strong>behavior</strong> of the classes <code>Engine</code> and <code>ElectricEngine</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>void main(args){
+
+    Engine e = new Engine()
+    assert e.getStatus() == ON
+
+    ElectricEngine ee = new ElectricEngine()
+    assert ee.getStatus() == ON
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interface_segragation">Interface segragation</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Avoid a <strong>god</strong> interface.</p>
+</li>
+<li>
+<p>Group functionality by semantic use cases into interfaces.</p>
+</li>
+<li>
+<p>E.g.: Persistence Layer that differs between <strong>reading</strong> and <strong>modifying</strong> data instaed of a simple CRUD interface.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>IReadOnly {
+  getPersonById(id);
+}
+
+IModify {
+  createPerson(name, age);
+  updatePerson(name, age);
+  deletePerson(id);
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the basic idea behind the <a href="https://martinfowler.com/bliki/CommandQuerySeparation.html">CQRS</a> pattern.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dependency_inversion">Dependency inversion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Avoid to depend on concrete implementations, especially when you expect change!</p>
+</div>
+<div class="paragraph">
+<p>Examine this on a typical 3-tier application.</p>
+</div>
+<div class="sect2">
+<h3 id="_implementations_depend_directly_on_each_other">Implementations depend directly on each other</h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="./img/3-tier-dependent.png" alt="3-tier-dependent.png">
+</div>
+</div>
+<div class="paragraph">
+<p>A possible implementation in pseudo code:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>class PersonController{
+    PersonServiceImpl service = new PersonServiceImpl()
+}
+
+class PersonServiceImpl {
+    PersonRepositoryImpl repo = new PersonRepositoryImpl()
+}
+
+class PersonRepositoryImpl {
+    Connection con = Connector.createRdbmsConnection()
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implementations_decoupled_with_interfaces">Implementations decoupled with interfaces</h3>
+<div class="paragraph">
+<p>To resolve the direct dependencies, introduce an interface for each concrete implementation.
+* The concrete implementation of the <code>PersonServiceImpl</code> gets an Interface: <code>PersonService</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>interface PersonService {
+}
+
+class PersonServiceImpl implements PersonService {
+    PersonRepositoryImpl repo = new PersonRepositoryImpl()
+}</pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://kacperbak.github.io/Tomcat-HowTo.html">Apache Tomcat</a> HowTo&#8217;s.</p>
+<p>The consuming class <code>PersonController</code> can now depend on the interface instead of the concrete instance.</p>
 </li>
 <li>
-<p><a href="http://kacperbak.github.io/Basic-Bash-usage.html">Bash</a> usage on Ubuntu, Debian Linux and OS X.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Basic-cmd-usage.html">cmd</a> usage on Windows.</p>
-</li>
-<li>
-<p>Debian 8 server topics.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Debian-Administrative-Commands.html">Debian administrative commands</a></p>
-</li>
-<li>
-<p>Basic host setup.</p>
-</li>
-<li>
-<p>Basic security setup.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Debian-non-privileged-user.html">Creating a non-privileged user to run services</a>.</p>
+<p>This is called <strong>dependency inversion</strong>.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-git-usage.html">Git</a> on the CLI.</p>
-</li>
-<li>
-<p>JVM playground.</p>
+<div class="literalblock">
+<div class="content">
+<pre>class PersonController{
+    PersonService service = new PersonServiceImpl()
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Applied to all participants:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="./img/3-tier-decoupled.png" alt="3-tier-decoupled.png">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+But, why is this important?
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Because implementations can change! And it is very useful to change behavior in a controlled way, like using different data types for different behavior.
+So we need two implementations for each data base type <code>RDBMS</code> and <code>NoSQL</code> doing the same thing: Persist a Person object.</p>
+</div>
+<div class="paragraph">
+<p>E.g. Introducing a new persistence type: NoSQL</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html">Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</a></p>
+<p>Rename the <code>PersonRepositoryImpl</code> to <code>PersonRepositoryRDBMS</code></p>
+</li>
+<li>
+<p>Add a new class <code>PersonRepositoryNoSQL</code></p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/LESS-usage.html">LESS</a> basic usage.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/mac-OS-hints.html">mac OS</a> hints.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Maven-notes.html">Maven</a> common commands and settings.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Using-OpenSSL.html">OpenSSL</a> commands and work flows.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-svn-usage.html">SVN</a> on the CLI.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/SOLID-principles.html">SOLID principles</a>.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Terminal-multiplexer.html">Terminal-multiplexer</a> key binding for OS X and Ubuntu Linux.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/VI-effective-usage.html">VI</a> basic usage.</p>
-</li>
-</ul>
+<div class="literalblock">
+<div class="content">
+<pre>interface PersonRepository {
+}
+
+class PersonRepositoryRDBMS implements PersonRepository{
+}
+
+class PersonRepositoryNoSQL implements PersonRepository{
+}</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-25 12:49:00 CET
+Last updated 2018-01-25 12:45:46 CET
 </div>
 </div>
 <div style="color: #dddddd">
