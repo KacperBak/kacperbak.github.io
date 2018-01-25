@@ -1,0 +1,10 @@
+= Law of Demeter
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+TODO

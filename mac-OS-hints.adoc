@@ -15,8 +15,6 @@ toc::[]
 . Select `Gray Tone` or `Black & White` as `Quartz Filter` value.
 . Save your document.
 
-
-
 == Sources
 * https://support.apple.com/en-us/HT201956
 * https://www.prepressure.com/pdf/basics/editing/convert-color-to-grayscale

@@ -28,9 +28,9 @@ if S is a subtype of T, then objects of type T may be replaced with objects of t
 .Example classes
 ....
 class Engine {
-  power_in_kw = 120
+  powerInKiloWatt = 120
 
-  status = NONE
+  status = OFF
 
   Engine(){
     this.status = ON
