@@ -1,0 +1,19 @@
+= Vagrant
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:imagesdir: ./img
+:docinfo1: docinfo-footer.html
+
+== Development workflow
+....
+vagrant up --no-provision
+vagrant snapshot save vm-created-not-provisioned
+vagrant ssh #validate for changes made by provisioner
+vagrant provision
+vagrant ssh #validate for changes made by provisioner
+vagrant snapshot restore vm-created-not-provisioned --no-provision
+....
+
