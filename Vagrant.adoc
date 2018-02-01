@@ -7,7 +7,7 @@ Kacper Bak <http://kacperbak.de>
 :imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
-== Development workflow
+== Snapshot workflow
 ....
 vagrant up --no-provision
 vagrant snapshot save vm-created-not-provisioned
@@ -16,4 +16,78 @@ vagrant provision
 vagrant ssh #validate for changes made by provisioner
 vagrant snapshot restore vm-created-not-provisioned --no-provision
 ....
+
+== Boxes
+
+=== Create a local pre-provisioned box
+Creating an already provisioned base box based on `debian/jessie64`.
+
+Create a `Vagrant` file in your project folder
+
+.Vagrant file
+....
+Vagrant.configure("2") do |config|
+
+  ###############
+  # BOX / IMAGE #
+  ###############
+  config.vm.box = "debian/jessie64"
+
+  # inline - run a script to update, upgrade and install pkg
+  config.vm.provision :shell do |sh|
+    sh.inline = "apt-get -qq update"
+    sh.inline = "apt-get -qq upgrade"
+    sh.inline = "apt-get -qq install python3 ssh sudo curl htop"
+    sh.name = "shell-prov"
+  end
+
+  config.vm.provision :shell do |sh|
+    sh.inline = "/usr/bin/python3 -V"
+    sh.name = "shell-prov"
+  end
+
+  # disable default sync folder
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  ###########
+  # NETWORK #
+  ###########
+  config.vm.network "private_network", ip: "192.168.70.100"
+
+  ###############
+  # VM SETTINGS #
+  ###############
+
+  config.vm.provider "virtualbox" do |vb|
+      vb.cpus = "1"
+      vb.memory = "1024"
+  end
+
+end
+....
+
+NOTE: All commands need to be run from the folder containing the `Vagrant` file
+
+Start and provision the VM for the first time:
+....
+vagrant up
+....
+
+Create a custom box with the unique name `custom.jessie64.box`
+....
+vagrant package --output custom.jessie64.box
+....
+
+Optional: Move the custom box file to a dedicated folder outside of the project dir e.g.: `/home/user/vagrant/boxes/custom.jessie64.box`
+
+Add the custom box to Vagrant
+....
+vagrant box add --name custom.jessie64.box file:///home/user/vagrant/boxes/custom.jessie64.box
+....
+
+List all installed vagrant boxes. The `custom.jessie64.box` should now be part of this.
+....
+vagrant box list
+....
+
 

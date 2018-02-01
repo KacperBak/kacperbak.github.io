@@ -436,13 +436,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_development_workflow">Development workflow</a></li>
+<li><a href="#_snapshot_workflow">Snapshot workflow</a></li>
+<li><a href="#_boxes">Boxes</a>
+<ul class="sectlevel2">
+<li><a href="#_create_a_local_pre_provisioned_box">Create a local pre-provisioned box</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_development_workflow">Development workflow</h2>
+<h2 id="_snapshot_workflow">Snapshot workflow</h2>
 <div class="sectionbody">
 <div class="literalblock">
 <div class="content">
@@ -456,10 +461,114 @@ vagrant snapshot restore vm-created-not-provisioned --no-provision</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_boxes">Boxes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_create_a_local_pre_provisioned_box">Create a local pre-provisioned box</h3>
+<div class="paragraph">
+<p>Creating an already provisioned base box based on <code>debian/jessie64</code>.</p>
+</div>
+<div class="paragraph">
+<p>Create a <code>Vagrant</code> file in your project folder</p>
+</div>
+<div class="literalblock">
+<div class="title">Vagrant file</div>
+<div class="content">
+<pre>Vagrant.configure("2") do |config|
+
+  ###############
+  # BOX / IMAGE #
+  ###############
+  config.vm.box = "debian/jessie64"
+
+  # inline - run a script to update, upgrade and install pkg
+  config.vm.provision :shell do |sh|
+    sh.inline = "apt-get -qq update"
+    sh.inline = "apt-get -qq upgrade"
+    sh.inline = "apt-get -qq install python3 ssh sudo curl htop"
+    sh.name = "shell-prov"
+  end
+
+  config.vm.provision :shell do |sh|
+    sh.inline = "/usr/bin/python3 -V"
+    sh.name = "shell-prov"
+  end
+
+  # disable default sync folder
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  ###########
+  # NETWORK #
+  ###########
+  config.vm.network "private_network", ip: "192.168.70.100"
+
+  ###############
+  # VM SETTINGS #
+  ###############
+
+  config.vm.provider "virtualbox" do |vb|
+      vb.cpus = "1"
+      vb.memory = "1024"
+  end
+
+end</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+All commands need to be run from the folder containing the <code>Vagrant</code> file
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Start and provision the VM for the first time:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>vagrant up</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a custom box with the unique name <code>custom.jessie64.box</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>vagrant package --output custom.jessie64.box</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optional: Move the custom box file to a dedicated folder outside of the project dir e.g.: <code>/home/user/vagrant/boxes/custom.jessie64.box</code></p>
+</div>
+<div class="paragraph">
+<p>Add the custom box to Vagrant</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>vagrant box add --name custom.jessie64.box file:///home/user/vagrant/boxes/custom.jessie64.box</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>List all installed vagrant boxes. The <code>custom.jessie64.box</code> should now be part of this.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>vagrant box list</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-25 13:22:15 CET
+Last updated 2018-02-01 07:40:37 CET
 </div>
 </div>
 <div style="color: #dddddd">

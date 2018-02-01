@@ -67,5 +67,5 @@ To change the key binding in iTerm2 the following steps can be taken:
 |===
 |Action                           |Default binding
 |Toggle full screen               |Cmd + Enter
-|Maximize splitted pane           |Cmd + Ctrl + Enter
+|Maximize Active Pane             |Shift + Cmd + Enter
 |===
