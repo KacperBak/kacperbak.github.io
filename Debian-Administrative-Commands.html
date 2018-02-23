@@ -552,11 +552,11 @@ kacperbak:x:1000:</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Show all services/units and their state</p>
+<p>Show all services/units and their state.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>systemctl list-units</pre>
+<pre>systemctl list-units -t service --all | grep -w "active"</pre>
 </div>
 </div>
 </div>
@@ -565,7 +565,7 @@ kacperbak:x:1000:</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-02-22 11:57:33 CET
+Last updated 2018-02-23 08:34:33 CET
 </div>
 </div>
 <div style="color: #dddddd">

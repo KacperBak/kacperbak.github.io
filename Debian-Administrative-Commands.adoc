@@ -71,8 +71,8 @@ Reset all failed services
 systemctl reset-failed
 ....
 
-Show all services/units and their state
+Show all services/units and their state.
 ....
-systemctl list-units
+systemctl list-units -t service --all | grep -w "active"
 ....
 
