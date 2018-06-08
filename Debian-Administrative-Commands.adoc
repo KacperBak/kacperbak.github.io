@@ -76,3 +76,9 @@ Show all services/units and their state.
 systemctl list-units -t service --all | grep -w "active"
 ....
 
+== System
+
+.Get basic system information
+....
+lsb_release -a
+....
