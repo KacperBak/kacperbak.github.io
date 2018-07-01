@@ -1,0 +1,16 @@
+= Reclaim Agility
+
+This notes has been taken from the
+https://www.youtube.com/watch?time_continue=1395&v=a-BOSpxYJ9M[GOTO 2015 conference talk], performed by https://pragdave.me/[Dave Thomas].
+
+== What to do
+* Find out where you are
+* Take a small step towards your goal
+* Adjust your understanding based on what you learned
+* REPEAT
+
+== How to do it
+When faced with two or more alternatives that deliver the same value, take the path that makes future change easier.
+
+== What is good design?
+A **good** design is easier to change then a **bad** design.

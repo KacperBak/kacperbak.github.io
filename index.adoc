@@ -9,12 +9,16 @@ Kacper Bak <http://kacperbak.de>
 This site provides short references how some technologies work.
 No claim to completeness, correctness or something else... just notes for my lazy brain and easy spreading.
 
+* Agile methodologies
+** http://kacperbak.github.io/Reclaim-Agility.html[Reclaim Agility]
 * http://kacperbak.github.io/Tomcat-HowTo.html[Apache Tomcat] HowTo's.
 * http://kacperbak.github.io/Basic-Bash-usage.html[Bash] usage on Ubuntu, Debian Linux and OS X.
 * Clean Code
 ** http://kacperbak.github.io/SOLID-principles.html[SOLID principles].
 ** http://kacperbak.github.io/Law-of-demeter.html[Law of Demeter].
 * http://kacperbak.github.io/Basic-cmd-usage.html[cmd] usage on Windows.
+* Clouds
+** http://kacperbak.github.io/Microsoft-Azure-CLI.html[Microsoft Azure CLI]
 * Debian 8 server topics.
 ** http://kacperbak.github.io/Debian-Administrative-Commands.html[Debian administrative commands]
 ** Basic host setup.

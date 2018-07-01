@@ -1,0 +1,7 @@
+= Microsoft Azure CLI
+
+== Commands
+.List all locations
+....
+az account list-locations
+....
