@@ -66,6 +66,11 @@ To change the key binding in iTerm2 the following steps can be taken:
 [cols="1,1", options="header"]
 |===
 |Action                           |Default binding
-|Toggle full screen               |Cmd + Enter
+|Toggle Full Screen               |Cmd + Enter
 |Maximize Active Pane             |Shift + Cmd + Enter
 |===
+
+.iTerm2 overwriting default `Toggle Full Screen` binding to `Ctrl` + `Cmd` + `f`
+. Enter `System Preferences` and select `Keyboard`
+. Switch to the `Shortcuts` tab and select `App shortcuts`
+. Add a new shortcut with `+` for the `iTerm2` app.
