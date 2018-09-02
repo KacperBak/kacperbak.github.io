@@ -219,10 +219,20 @@ export PS1='\u@\h:\W$ '
 
 == Bash Scripting
 
-=== Simple loop
+=== Loops
+
+==== Loop over files
 
 Loop: for each file that end with `jpg` rename the file to the current name with the prefix `my.`
 ....
 for i in *.jpg; do mv "$i" "my.$i"; done
 ....
 
+==== Loop in `C` syntax
+Loop: Creates directories in the range from 0..9
+....
+#!/bin/bash
+for ((i=0; i<10; i++));
+do mkdir ${i};
+done
+....
