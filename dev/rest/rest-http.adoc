@@ -1,0 +1,25 @@
+= REST aka HTTP verbs
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+== Basic usage
+
+[cols="1,3" options="header"]
+|===
+
+|Method |Description
+|GET    |Retrieve a representation of a resource.
+|POST   |Create new new resources and sub-resources.
+|PUT    |Update existing resources, send resource is going to replace stored resource
+|PATCH  |Update existing resources, data what is going to be changed on already stored resource.
+|DELETE |Delete existing resources
+
+|===
+
+== Sources
+* https://swagger.io/resources/articles/best-practices-in-api-design
+

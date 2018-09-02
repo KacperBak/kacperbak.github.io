@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Kacper Bak">
-<title>Rapid reference</title>
+<title>REST aka HTTP verbs</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -428,184 +428,66 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Rapid reference</h1>
+<h1>REST aka HTTP verbs</h1>
 <div class="details">
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
 </div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_basic_usage">BASIC usage</a></li>
+<li><a href="#_sources">Sources</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_welcome_to_my_place_for_technical_details">Welcome to my place for technical details</h2>
+<h2 id="_basic_usage">BASIC usage</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This site provides short references how some technologies work.
-No claim to completeness, correctness or something else&#8230;&#8203; just notes for my lazy brain and easy spreading.</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a representation of a resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create new new resources and sub-resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update existing resources, send resource is going to replace stored resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PATCH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update existing resources, data what is going to be changed on already stored resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DELETE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete existing resources</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_sources">Sources</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Agile methodologies</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Reclaim-Agility.html">Reclaim Agility</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Clean Code</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/SOLID-principles.html">SOLID principles</a>.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Law-of-demeter.html">Law of Demeter</a>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Cloud Platforms</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Microsoft-Azure-CLI.html">Microsoft Azure CLI</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Development</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Java</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/dev/java/Tomcat-HowTo.html">Apache Tomcat</a> HowTo&#8217;s.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/dev/java/Maven-notes.html">Apache Maven</a> common commands and settings.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html">Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Python</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/dev/python/Python-hints.html">Python</a> hints.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>REST</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/dev/rest/rest-http.html">REST aka HTTP verbs</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Operations.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/ops/Linux-Debian.html">General Linux Debian OS</a></p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/ops/network.html">Network</a></p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/ops/services.html">Services</a></p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/ops/users-and-groups.html">Users and Groups</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools - General</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Basic-Bash-usage.html">Bash</a> usage on Ubuntu, Debian Linux and OS X.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Terminal-multiplexer.html">Terminal-multiplexer</a> key binding for OS X and Ubuntu Linux.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/mac-OS-hints.html">mac OS</a> hints.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools - Unix</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Using-OpenSSL.html">OpenSSL</a> commands and work flows.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/LESS-usage.html">LESS</a> basic usage.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Vagrant.html">Vagrant</a> usage.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/VI-effective-usage.html">VI</a> basic usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools - Windows</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Basic-cmd-usage.html">cmd</a> usage on Windows.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>UML</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/doc/uml-2-Notationsuebersicht-oose.de.pdf">UML 2</a> notation cheat sheet in German, by OOSE.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Version Control Systems</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-git-usage.html">Git</a> on the CLI.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-svn-usage.html">SVN</a> on the CLI.</p>
-</li>
-</ul>
-</div>
+<p><a href="https://swagger.io/resources/articles/best-practices-in-api-design" class="bare">https://swagger.io/resources/articles/best-practices-in-api-design</a></p>
 </li>
 </ul>
 </div>
@@ -614,12 +496,8 @@ No claim to completeness, correctness or something else&#8230;&#8203; just notes
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-02 21:04:59 CEST
+Last updated 2018-09-02 20:53:53 CEST
 </div>
-</div>
-<div style="color: #dddddd">
-<a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
 </body>
 </html>

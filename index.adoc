@@ -28,6 +28,9 @@ No claim to completeness, correctness or something else... just notes for my laz
 ** Python
 *** http://kacperbak.github.io/dev/python/Python-hints.html[Python] hints.
 
+** REST
+*** http://kacperbak.github.io/dev/rest/rest-http.html[REST aka HTTP verbs]
+
 * Operations.
 ** http://kacperbak.github.io/ops/Linux-Debian.html[General Linux Debian OS]
 ** http://kacperbak.github.io/ops/network.html[Network]
