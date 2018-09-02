@@ -1,0 +1,14 @@
+= Linux Debian
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+== Ubuntu/Debian
+
+Get basic system information
+....
+lsb_release -a
+....

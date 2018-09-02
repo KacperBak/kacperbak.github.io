@@ -1,12 +1,35 @@
-= Debian non privileged user
+= Users and Groups
 Kacper Bak <http://kacperbak.de>
 :toc:
 
 :author: Kacper Bak
 :homepage: http://kacperbak.de
-:imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
+== Users
+
+Get `root` user
+....
+su root OR sudo -s
+....
+
+Get current debian version
+....
+less /etc/debian_version
+....
+
+Show users: `less /etc/passwd`
+....
+kacperbak:x:1000:1000:Kacper Bak,,,:/home/kacperbak:/bin/bash
+....
+
+Show users: `less /etc/group`
+....
+sudo:x:27:kacperbak
+kacperbak:x:1000:
+....
+
+== Non privileged user
 For security reasons it is very important to run services like a webserver or database as a user with very low privileges.
 This will prevent the exploitation of security flaws of the service.
 The following points should be matched for this user:
@@ -16,7 +39,7 @@ The following points should be matched for this user:
 . Disable the user login.
 . Add to a group with low privileges like `nogroup`.
 
-== Create a non privileged user
+=== Create a non privileged user
 ....
 useradd -g nogroup -N -M -s /bin/false -c "Apache Tomcat" tomcat
 ....
@@ -54,7 +77,7 @@ should result in containing `:!:`
 tomcat:!:17174:0:99999:7:::
 ....
 
-== Sources
+.Sources
 * https://linux.die.net/man/8/adduser
 * https://wiki.ubuntuusers.de/adduser/
 * http://unix.stackexchange.com/questions/96892/what-does-adduser-disabled-login-do

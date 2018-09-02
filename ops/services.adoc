@@ -1,0 +1,39 @@
+= Services
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+== Systemd
+
+debug systemd on the fly
+....
+journalctl -f
+....
+
+Start a service
+....
+systemctl start app.service
+....
+
+Stop a service
+....
+systemctl stop app.service
+....
+
+Is-failed service
+....
+systemctl is-failed app.service
+....
+
+Reset all failed services
+....
+systemctl reset-failed
+....
+
+Show all services/units and their state.
+....
+systemctl list-units -t service --all | grep -w "active"
+....

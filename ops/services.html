@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Kacper Bak">
-<title>Rapid reference</title>
+<title>Services</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -428,139 +428,77 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Rapid reference</h1>
+<h1>Services</h1>
 <div class="details">
 <span id="author" class="author">Kacper Bak</span><br>
 <span id="email" class="email"><a href="http://kacperbak.de" class="bare">http://kacperbak.de</a></span><br>
 </div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_systemd">Systemd</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_welcome_to_my_place_for_technical_details">Welcome to my place for technical details</h2>
+<h2 id="_systemd">Systemd</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This site provides short references how some technologies work.
-No claim to completeness, correctness or something else&#8230;&#8203; just notes for my lazy brain and easy spreading.</p>
+<p>debug systemd on the fly</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Agile methodologies</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Reclaim-Agility.html">Reclaim Agility</a></p>
-</li>
-</ul>
+<div class="literalblock">
+<div class="content">
+<pre>journalctl -f</pre>
 </div>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Tomcat-HowTo.html">Apache Tomcat</a> HowTo&#8217;s.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Basic-Bash-usage.html">Bash</a> usage on Ubuntu, Debian Linux and OS X.</p>
-</li>
-<li>
-<p>Clean Code</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/SOLID-principles.html">SOLID principles</a>.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Law-of-demeter.html">Law of Demeter</a>.</p>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Basic-cmd-usage.html">cmd</a> usage on Windows.</p>
-</li>
-<li>
-<p>Clouds</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Microsoft-Azure-CLI.html">Microsoft Azure CLI</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Start a service</p>
 </div>
-</li>
-<li>
-<p>Operations.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/ops/Linux-Debian.html">General Linux Debian OS</a></p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/ops/network.html">Network</a></p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/ops/services.html">Services</a></p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/ops/users-and-groups.html">Users and Groups</a></p>
-</li>
-</ul>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl start app.service</pre>
 </div>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-git-usage.html">Git</a> on the CLI.</p>
-</li>
-<li>
-<p>JVM playground.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html">Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA</a></p>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/LESS-usage.html">LESS</a> basic usage.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/mac-OS-hints.html">mac OS</a> hints.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Maven-notes.html">Maven</a> common commands and settings.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Using-OpenSSL.html">OpenSSL</a> commands and work flows.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Python-hints.html">Python</a> hints.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Daily-svn-usage.html">SVN</a> on the CLI.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Terminal-multiplexer.html">Terminal-multiplexer</a> key binding for OS X and Ubuntu Linux.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/doc/uml-2-Notationsuebersicht-oose.de.pdf">UML 2</a> notation cheat sheet in German, by OOSE.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/Vagrant.html">Vagrant</a> usage.</p>
-</li>
-<li>
-<p><a href="http://kacperbak.github.io/VI-effective-usage.html">VI</a> basic usage.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Stop a service</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl stop app.service</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Is-failed service</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl is-failed app.service</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Reset all failed services</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl reset-failed</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Show all services/units and their state.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl list-units -t service --all | grep -w "active"</pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-02 18:08:05 CEST
+Last updated 2018-09-02 18:00:58 CEST
 </div>
-</div>
-<div style="color: #dddddd">
-<a href="https://twitter.com/KacperBak" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KacperBak</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
 </body>
 </html>

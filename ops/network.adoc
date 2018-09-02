@@ -1,0 +1,35 @@
+= Network
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+== Connections
+
+=== Debian/Ubuntu
+Show open socket connections
+....
+sudo netstat -tulpan
+....
+
+=== macOS Sierra
+Show open TCP socket connections
+....
+sudo lsof -nP -i4TCP
+....
+
+Show open TCP socket connections, filter for port `8080` and status `LISTEN`
+....
+lsof -nP -i4TCP:8080 | grep LISTEN
+....
+
+.Sources
+https://stackoverflow.com/questions/4421633/who-is-listening-on-a-given-tcp-port-on-mac-os-x[Stackoverflow open ports on macOS X]
+
+== Firewall
+Show `ufw` firewall status
+....
+sudo ufw status
+....

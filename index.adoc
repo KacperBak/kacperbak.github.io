@@ -19,11 +19,11 @@ No claim to completeness, correctness or something else... just notes for my laz
 * http://kacperbak.github.io/Basic-cmd-usage.html[cmd] usage on Windows.
 * Clouds
 ** http://kacperbak.github.io/Microsoft-Azure-CLI.html[Microsoft Azure CLI]
-* Debian 8 server topics.
-** http://kacperbak.github.io/Debian-Administrative-Commands.html[Debian administrative commands]
-** Basic host setup.
-** Basic security setup.
-** http://kacperbak.github.io/Debian-non-privileged-user.html[Creating a non-privileged user to run services].
+* Operations.
+** http://kacperbak.github.io/ops/Linux-Debian.html[General Linux Debian OS]
+** http://kacperbak.github.io/ops/network.html[Network]
+** http://kacperbak.github.io/ops/services.html[Services]
+** http://kacperbak.github.io/ops/users-and-groups.html[Users and Groups]
 * http://kacperbak.github.io/Daily-git-usage.html[Git] on the CLI.
 * JVM playground.
 ** http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html[Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA]
