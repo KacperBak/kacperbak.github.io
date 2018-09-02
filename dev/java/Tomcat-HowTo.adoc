@@ -4,7 +4,6 @@ Kacper Bak <http://kacperbak.de>
 
 :author: Kacper Bak
 :homepage: http://kacperbak.de
-:imagesdir: ./img
 :docinfo1: docinfo-footer.html
 
 == Start/Stop Tomcat as a service (debian 8.4)

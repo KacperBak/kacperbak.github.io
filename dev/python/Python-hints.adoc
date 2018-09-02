@@ -1,0 +1,17 @@
+= Python hints
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+== Hints
+
+Starting a simple HTTP server from the current directory on port 80
+....
+python3 -m http.server 80
+....
+
+== Examples
+Detailed exmples can be found in my https://github.com/KacperBak/python3-playground[Python Playground Repo]
