@@ -10,5 +10,16 @@ Kacper Bak <http://kacperbak.de>
 
 Get basic system information
 ....
-lsb_release -a
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Debian
+Description:	Debian GNU/Linux 9.4 (stretch)
+Release:	9.4
+Codename:	stretch
+....
+
+Get specific debian version
+....
+$ cat /etc/debian_version
+9.4
 ....

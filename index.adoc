@@ -11,29 +11,46 @@ No claim to completeness, correctness or something else... just notes for my laz
 
 * Agile methodologies
 ** http://kacperbak.github.io/Reclaim-Agility.html[Reclaim Agility]
-* http://kacperbak.github.io/Tomcat-HowTo.html[Apache Tomcat] HowTo's.
-* http://kacperbak.github.io/Basic-Bash-usage.html[Bash] usage on Ubuntu, Debian Linux and OS X.
+
 * Clean Code
 ** http://kacperbak.github.io/SOLID-principles.html[SOLID principles].
 ** http://kacperbak.github.io/Law-of-demeter.html[Law of Demeter].
-* http://kacperbak.github.io/Basic-cmd-usage.html[cmd] usage on Windows.
-* Clouds
+
+* Cloud Platforms
 ** http://kacperbak.github.io/Microsoft-Azure-CLI.html[Microsoft Azure CLI]
+
+* Development
+** Java
+*** http://kacperbak.github.io/Tomcat-HowTo.html[Apache Tomcat] HowTo's.
+*** http://kacperbak.github.io/Maven-notes.html[Apache Maven] common commands and settings.
+*** http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html[Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA]
+
+** Python
+*** http://kacperbak.github.io/Python-hints.html[Python] hints.
+
 * Operations.
 ** http://kacperbak.github.io/ops/Linux-Debian.html[General Linux Debian OS]
 ** http://kacperbak.github.io/ops/network.html[Network]
 ** http://kacperbak.github.io/ops/services.html[Services]
 ** http://kacperbak.github.io/ops/users-and-groups.html[Users and Groups]
-* http://kacperbak.github.io/Daily-git-usage.html[Git] on the CLI.
-* JVM playground.
-** http://kacperbak.github.io/Debugging-a-spring-mvc-web-app-with-the-gradle-tomcat-plugin-and-IntelliJ-IDEA.html[Debugging a spring-mvc web-app with the gradle-tomcat-plugin and IntelliJ IDEA]
-* http://kacperbak.github.io/LESS-usage.html[LESS] basic usage.
-* http://kacperbak.github.io/mac-OS-hints.html[mac OS] hints.
-* http://kacperbak.github.io/Maven-notes.html[Maven] common commands and settings.
-* http://kacperbak.github.io/Using-OpenSSL.html[OpenSSL] commands and work flows.
-* http://kacperbak.github.io/Python-hints.html[Python] hints.
-* http://kacperbak.github.io/Daily-svn-usage.html[SVN] on the CLI.
-* http://kacperbak.github.io/Terminal-multiplexer.html[Terminal-multiplexer] key binding for OS X and Ubuntu Linux.
-* http://kacperbak.github.io/doc/uml-2-Notationsuebersicht-oose.de.pdf[UML 2] notation cheat sheet in German, by OOSE.
-* http://kacperbak.github.io/Vagrant.html[Vagrant] usage.
-* http://kacperbak.github.io/VI-effective-usage.html[VI] basic usage.
+
+* Tools - General
+** http://kacperbak.github.io/Basic-Bash-usage.html[Bash] usage on Ubuntu, Debian Linux and OS X.
+** http://kacperbak.github.io/Terminal-multiplexer.html[Terminal-multiplexer] key binding for OS X and Ubuntu Linux.
+** http://kacperbak.github.io/mac-OS-hints.html[mac OS] hints.
+
+* Tools - Unix
+** http://kacperbak.github.io/Using-OpenSSL.html[OpenSSL] commands and work flows.
+** http://kacperbak.github.io/LESS-usage.html[LESS] basic usage.
+** http://kacperbak.github.io/Vagrant.html[Vagrant] usage.
+** http://kacperbak.github.io/VI-effective-usage.html[VI] basic usage.
+
+* Tools - Windows
+** http://kacperbak.github.io/Basic-cmd-usage.html[cmd] usage on Windows.
+
+* UML
+** http://kacperbak.github.io/doc/uml-2-Notationsuebersicht-oose.de.pdf[UML 2] notation cheat sheet in German, by OOSE.
+
+* Version Control Systems
+** http://kacperbak.github.io/Daily-git-usage.html[Git] on the CLI.
+** http://kacperbak.github.io/Daily-svn-usage.html[SVN] on the CLI.
