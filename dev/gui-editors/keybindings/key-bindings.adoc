@@ -1,0 +1,59 @@
+= Key Bindings
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+== Naming of Actions, Commands in Code Editors
+[cols="1,1,1" options="header"]
+|===
+
+|General Command Description |VS Code           |Jetbrains Tools                         |Atom
+|Delete Line                 |Delete Line       |Delete Line                             |`editor:delete-line`
+|Duplicate Line              |Copy Line Down    |Duplicate Line or Selection             |`editor:duplicate-lines`
+|Move Line Up                |Move Line Up      |Move Line Up AND Move Statement Up      |`editor:move-line-up`
+|Move Line Down              |Move Line Down    |Move Line Down AND Move Statement DOWN  |`editor:move-line-down`
+|Extend text selection       |Expand Select     |Extend selection                        |`expand-region:expand`
+|Shrink text selection       |Shrink Select     |Shrink selection                        |`expand-region:shrink`
+|Multiple Line Cursor Up     |Add Cursor Above  |Clone Caret Above                       |`multi-cursor:expandUp`
+|Multiple Line Cursor Down   |Add Cursor Below  |Clone Caret Below                       |`multi-cursor:expandDown`
+
+|===
+
+== Custom KeyBinding to Commands
+[cols="1,1" options="header"]
+|===
+
+|Command                   |KeyBinding
+|Delete Line               |cmd + y
+|Duplicate Line            |cmd + d
+|Extend text selection     |alt + up
+|Shrink text selection     |alt + down
+|Multiple Line Cursor Up   |cmd + shift + up
+|Multiple Line Cursor Down |cmd + shift + down
+
+|===
+
+== Editor Extensions
+
+=== Atom
+* https://atom.io/packages/multi-cursor
+* https://atom.io/packages/expand-region
+
+== Export Key Bindings
+
+=== Atom
+* Source: `~/.atom/keymap.cson`
+* Download: http://kacperbak.github.io/dev/gui-editors/keybindings/keymap.cson[keymap.cson]
+
+=== Jetbrains
+* NOTE: Use `select none` to exclude all default settings.
+* Source: `File > Export Settings > Select `key maps` AND `key maps (scheme)` > OK`
+* Download: http://kacperbak.github.io/dev/gui-editors/keybindings/jetbrains.keymap.settings.jar[jetbrains.keymap.settings.jar]
+
+=== VS Code
+* Source: `~/Library/Application Support/Code/User/keybindings.json`
+* Download: http://kacperbak.github.io/dev/gui-editors/keybindings/keybindings.json[keybindings.json]
+

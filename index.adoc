@@ -20,6 +20,9 @@ No claim to completeness, correctness or something else... just notes for my laz
 ** http://kacperbak.github.io/Microsoft-Azure-CLI.html[Microsoft Azure CLI]
 
 * Development
+** GUI Editors, IDE's
+*** http://kacperbak.github.io/dev/gui-editors/key-bindings.html[Key bindings]
+
 ** Java
 *** http://kacperbak.github.io/dev/java/Tomcat-HowTo.html[Apache Tomcat] HowTo's.
 *** http://kacperbak.github.io/dev/java/Maven-notes.html[Apache Maven] common commands and settings.
