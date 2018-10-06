@@ -7,7 +7,7 @@ Kacper Bak <http://kacperbak.de>
 :docinfo1: docinfo-footer.html
 
 == Naming of Actions, Commands in Code Editors
-[cols="1,1,1" options="header"]
+[cols="1,1,1,1" options="header"]
 |===
 
 |General Command Description |VS Code           |Jetbrains Tools                         |Atom
