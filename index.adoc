@@ -39,15 +39,15 @@ No claim to completeness, correctness or something else... just notes for my laz
 ** http://kacperbak.github.io/ops/users-and-groups.html[Users and Groups]
 
 * Tools
-* http://kacperbak.github.io/tools/keybindings/key-bindings.html[Editor and IDE key bindings]
-* http://kacperbak.github.io/tools/Basic-Bash-usage.html[Bash] usage on Ubuntu, Debian Linux and OS X.
-* http://kacperbak.github.io/tools/Terminal-multiplexer.html[Terminal-multiplexer] key binding for OS X and Ubuntu Linux.
-* http://kacperbak.github.io/tools/mac-OS-hints.html[mac OS] hints.
-* http://kacperbak.github.io/tools/Using-OpenSSL.html[OpenSSL] commands and work flows.
-* http://kacperbak.github.io/tools/LESS-usage.html[LESS] basic usage.
-* http://kacperbak.github.io/tools/Vagrant.html[Vagrant] usage.
-* http://kacperbak.github.io/tools/VI-effective-usage.html[VI] basic usage.
-* http://kacperbak.github.io/Windows-cmd-usage.html[cmd] usage on Windows.
+** http://kacperbak.github.io/tools/keybindings/key-bindings.html[Editor and IDE key bindings]
+** http://kacperbak.github.io/tools/Basic-Bash-usage.html[Bash] usage on Ubuntu, Debian Linux and OS X.
+** http://kacperbak.github.io/tools/Terminal-multiplexer.html[Terminal-multiplexer] key binding for OS X and Ubuntu Linux.
+** http://kacperbak.github.io/tools/mac-OS-hints.html[mac OS] hints.
+** http://kacperbak.github.io/tools/Using-OpenSSL.html[OpenSSL] commands and work flows.
+** http://kacperbak.github.io/tools/LESS-usage.html[LESS] basic usage.
+** http://kacperbak.github.io/tools/Vagrant.html[Vagrant] usage.
+** http://kacperbak.github.io/tools/VI-effective-usage.html[VI] basic usage.
+** http://kacperbak.github.io/tools/Windows-cmd-usage.html[Windows cmd.exe] default CLI on Windows 7.
 
 * UML
 ** http://kacperbak.github.io/doc/uml-2-Notationsuebersicht-oose.de.pdf[UML 2] notation cheat sheet in German, by OOSE.
