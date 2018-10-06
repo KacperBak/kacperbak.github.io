@@ -46,14 +46,14 @@ Kacper Bak <http://kacperbak.de>
 
 === Atom
 * Source: `~/.atom/keymap.cson`
-* Download: http://kacperbak.github.io/dev/gui-editors/keybindings/keymap.cson[keymap.cson]
+* Download: http://kacperbak.github.io/tools/keybindings/keymap.cson[keymap.cson]
 
 === Jetbrains
 * NOTE: Use `select none` to exclude all default settings.
 * Source: `File > Export Settings > Select `key maps` AND `key maps (scheme)` > OK`
-* Download: http://kacperbak.github.io/dev/gui-editors/keybindings/jetbrains.keymap.settings.jar[jetbrains.keymap.settings.jar]
+* Download: http://kacperbak.github.io/tools/keybindings/jetbrains.keymap.settings.jar[jetbrains.keymap.settings.jar]
 
 === VS Code
 * Source: `~/Library/Application Support/Code/User/keybindings.json`
-* Download: http://kacperbak.github.io/dev/gui-editors/keybindings/keybindings.json[keybindings.json]
+* Download: http://kacperbak.github.io/tools/keybindings/keybindings.json[keybindings.json]
 
