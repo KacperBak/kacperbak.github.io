@@ -40,6 +40,7 @@ No claim to completeness, correctness or something else... just notes for my laz
 
 * Tools
 ** http://kacperbak.github.io/tools/keybindings/key-bindings.html[Editor and IDE key bindings]
+** http://kacperbak.github.io/tools/jetbrains/jetbrains-ide-tools.html[Jetbrains IDE tools]
 ** http://kacperbak.github.io/tools/Basic-Bash-usage.html[Bash] usage on Ubuntu, Debian Linux and OS X.
 ** http://kacperbak.github.io/tools/Terminal-multiplexer.html[Terminal-multiplexer] key binding for OS X and Ubuntu Linux.
 ** http://kacperbak.github.io/tools/mac-OS-hints.html[mac OS] hints.

@@ -1,0 +1,16 @@
+= Jetbrains IDE Tools
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+== Replace multiple lines of code in project files
+. Create replaceString with CR (\n) eg.: `<div>\n<span>text</span>\n</div>`
+. Mark directory
+. Edit > Find > Replace in path
+. Paste created replaceString in "Replace with" Textfield
+. Check: Regular Expression Box to apply `\n`
+. Use directory scope
+. Push "Find" button
