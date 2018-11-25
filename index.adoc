@@ -48,6 +48,7 @@ No claim to completeness, correctness or something else... just notes for my laz
 ** http://kacperbak.github.io/tools/LESS-usage.html[LESS] basic usage.
 ** http://kacperbak.github.io/tools/Vagrant.html[Vagrant] usage.
 ** http://kacperbak.github.io/tools/VI-effective-usage.html[VI] basic usage.
+** http://kacperbak.github.io/tools/visual-studio-code/vs-code.html[Visual Studio Code] basic usage.
 ** http://kacperbak.github.io/tools/Windows-cmd-usage.html[Windows cmd.exe] default CLI on Windows 7.
 
 * UML

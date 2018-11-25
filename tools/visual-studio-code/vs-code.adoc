@@ -1,0 +1,21 @@
+= VS Code
+Kacper Bak <http://kacperbak.de>
+:toc:
+
+:author: Kacper Bak
+:homepage: http://kacperbak.de
+:docinfo1: docinfo-footer.html
+
+toc::[]
+
+== Plugins
+
+=== Git History aka. git log
+https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
+
+=== Commands
+.Show history
+....
+CMD + P
+Enter '>git log'
+....
