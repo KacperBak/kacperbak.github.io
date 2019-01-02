@@ -436,9 +436,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#_network_interfaces">Network interfaces</a>
+<ul class="sectlevel2">
+<li><a href="#_debian_ubuntu_using_ifconfig_from_net_tools_package">Debian/Ubuntu using 'ifconfig' from 'net-tools' package</a></li>
+<li><a href="#_debian_ubuntu_using_ip_from_iproute2_package">Debian/Ubuntu using 'ip' from 'iproute2' package</a></li>
+</ul>
+</li>
 <li><a href="#_connections">Connections</a>
 <ul class="sectlevel2">
-<li><a href="#_debian_ubuntu">Debian/Ubuntu</a></li>
+<li><a href="#_debian_ubuntu_using_netstat_from_net_tools_package">Debian/Ubuntu using 'netstat' from 'net-tools' package</a></li>
+<li><a href="#_debian_ubuntu_using_ss_from_iproute2_package">Debian/Ubuntu using 'ss' from 'iproute2' package</a></li>
 <li><a href="#_macos_sierra">macOS Sierra</a></li>
 </ul>
 </li>
@@ -448,16 +455,86 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
+<h2 id="_network_interfaces">Network interfaces</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_debian_ubuntu_using_ifconfig_from_net_tools_package">Debian/Ubuntu using 'ifconfig' from 'net-tools' package</h3>
+<div class="literalblock">
+<div class="content">
+<pre>$ ifconfig
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 11960  bytes 17022353 (17.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 5414  bytes 297073 (297.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_debian_ubuntu_using_ip_from_iproute2_package">Debian/Ubuntu using 'ip' from 'iproute2' package</h3>
+<div class="literalblock">
+<div class="content">
+<pre>$ ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: tunl0@NONE: &lt;NOARP&gt; mtu 1480 qdisc noop state DOWN group default qlen 1
+    link/ipip 0.0.0.0 brd 0.0.0.0
+3: ip6tnl0@NONE: &lt;NOARP&gt; mtu 1452 qdisc noop state DOWN group default qlen 1
+    link/tunnel6 :: brd ::
+14: eth0@if15: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_connections">Connections</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_debian_ubuntu">Debian/Ubuntu</h3>
+<h3 id="_debian_ubuntu_using_netstat_from_net_tools_package">Debian/Ubuntu using 'netstat' from 'net-tools' package</h3>
 <div class="paragraph">
 <p>Show open socket connections</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>sudo netstat -tulpan</pre>
+<pre>$ sudo netstat -tulpan
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 172.17.0.2:45280        91.189.88.161:80        TIME_WAIT   -
+tcp        0      0 172.17.0.2:45276        91.189.88.161:80        TIME_WAIT   -</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_debian_ubuntu_using_ss_from_iproute2_package">Debian/Ubuntu using 'ss' from 'iproute2' package</h3>
+<div class="paragraph">
+<p>Show open socket connections<br>
+<code>-t</code> all TCP connections<br>
+<code>-a</code> all connections<br>
+<code>-n</code> ports in number format</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>root@f67cfbe795d0:/# ss -t -a -n
+State      Recv-Q Send-Q    Local Address:Port         Peer Address:Port
+LISTEN     0      128                   *:80                      *:*
+TIME-WAIT  0      0            172.17.0.2:33376     151.101.120.204:80
+TIME-WAIT  0      0            172.17.0.2:39792         128.31.0.62:80</pre>
 </div>
 </div>
 </div>
@@ -506,7 +583,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-02 18:29:16 CEST
+Last updated 2019-01-03 00:34:19 CET
 </div>
 </div>
 </body>
