@@ -437,6 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_users">Users</a></li>
+<li><a href="#_file_modes">File modes</a></li>
 <li><a href="#_non_privileged_user">Non privileged user</a>
 <ul class="sectlevel2">
 <li><a href="#_create_a_non_privileged_user">Create a non privileged user</a></li>
@@ -458,14 +459,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>Get current debian version</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>less /etc/debian_version</pre>
-</div>
-</div>
-<div class="paragraph">
 <p>Show users: <code>less /etc/passwd</code></p>
 </div>
 <div class="literalblock">
@@ -480,6 +473,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <pre>sudo:x:27:kacperbak
 kacperbak:x:1000:</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_modes">File modes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>User, Group, All</p>
+</div>
+<div class="literalblock">
+<div class="title">Set user execute mode</div>
+<div class="content">
+<pre>sudo chmod u+x fileName</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">Set all write mode</div>
+<div class="content">
+<pre>sudo chmod a+w fileName</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">Set group read mode</div>
+<div class="content">
+<pre>sudo chmod g+r fileName</pre>
 </div>
 </div>
 </div>
@@ -616,7 +635,7 @@ The following points should be matched for this user:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-02 17:46:13 CEST
+Last updated 2019-01-03 00:53:16 CET
 </div>
 </div>
 </body>
